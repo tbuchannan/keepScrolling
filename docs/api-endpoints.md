@@ -35,4 +35,3 @@
   - `POST /api/blogs/:title`
   - `GET /api/blogs/:title`
   - `DELETE /api/blogs/:title`
-  - `GET /api/blogs/:title/notes`
