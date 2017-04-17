@@ -21,7 +21,6 @@ audio_url   | string    |
 video_url   | string    |
 quote_url   | string    |
 blog_id     | integer   | not null, foreign key (references blogs), indexed
-archived    | boolean   | not null, default: false
 
 ## blogs
 column name | data type | details
