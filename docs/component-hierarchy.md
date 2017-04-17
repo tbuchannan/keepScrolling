@@ -6,8 +6,6 @@
 **DashboardContainer**
  - FeedContainer
   - Posts
- - SidebarContainer
- - NavBarButtonContainer
 
 **SidebarContainer**
   - RecommendedBlogContainer
