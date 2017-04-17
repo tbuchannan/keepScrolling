@@ -1,4 +1,5 @@
 # Schema Information
+---
 
 ## users
 column name     | data type | details
@@ -45,8 +46,8 @@ user_id     | integer   | not null, foreign key (references user), indexed
 blog_id     | integer   | not null, foreign key (references blog), indexed
 
 
-
 # Bonus
+---
 
 ## tags
 column name | data type | details
@@ -65,5 +66,5 @@ tag_id      | integer   | not null, foreign key (references tags), indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references user)
+blog_id     | integer   | not null, foreign key (references blog where post will be sent)
 post_id     | integer   | not null, foreign key (references posts), indexed, unique [tag_id]
