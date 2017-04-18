@@ -45,10 +45,6 @@ KeepScrolling is a web application inspired by 'tumblr' built using Ruby on Rail
   the API.
 
 
-#### Blogs (2 days)
-  - Posts belong to Blogs that can be created, read, edited and destroyed through the API.
-
-
 #### Follows (1 day)
   - Be able to follow and unfollow blogs.
 
@@ -60,6 +56,9 @@ KeepScrolling is a web application inspired by 'tumblr' built using Ruby on Rail
 #### Likes (1 day)
   - Be able to like posts, which are then stored in a 'likes' dashboard.
 
+#### Blogs (2 days)
+  - Posts belong to Blogs that can be created, read, edited and destroyed through the API.
+  
 ---
 
 ### Bonus Features (TBD)
