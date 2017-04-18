@@ -2,9 +2,9 @@
 var path = require('path');
 
 module.exports = {
-  entry: './frontend/keepScrolling.jsx',
+  entry: './keepScrolling.jsx',
   output: {
-    filename: './app/assets/javascripts/bundle.js',
+    filename: '../app/assets/javascripts/bundle.js',
   },
   module: {
     loaders: [
