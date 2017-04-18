@@ -2,7 +2,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './keepScrolling.jsx',
+  entry: './frontend/keepScrolling.jsx',
   output: {
     filename: '../app/assets/javascripts/bundle.js',
   },
