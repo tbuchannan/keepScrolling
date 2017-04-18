@@ -30,8 +30,13 @@
   - `POST /api/follows`
   - `DELETE /api/follows/:id`
 
+
+<!--
+Alex: You could have a GET to /blogs/cashcats that routes to the UsersController and finds a user with username cashcats, for example
+  BONUS
 ### Blogs
   - `GET /api/blogs/:title`
   - `POST /api/blogs/:title`
   - `GET /api/blogs/:title`
   - `DELETE /api/blogs/:title`
+  -->
