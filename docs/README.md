@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://keep-scrolling.herokuapp.com/
 [trello]: https://trello.com/b/VDUbWkif/keepscrolling
 
 ## Minimum Viable Product
@@ -58,7 +58,7 @@ KeepScrolling is a web application inspired by 'tumblr' built using Ruby on Rail
 
 #### Blogs (2 days)
   - Posts belong to Blogs that can be created, read, edited and destroyed through the API.
-  
+
 ---
 
 ### Bonus Features (TBD)
