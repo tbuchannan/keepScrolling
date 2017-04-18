@@ -40,7 +40,7 @@ KeepScrolling is a web application inspired by 'tumblr' built using Ruby on Rail
   - Functioning rails project with front-end Authentication
 
 
-#### Posts Model, API, and components (2 days)
+#### Posts Model, API, and components (3 days)
   - Posts can be created, read, edited and destroyed through
   the API.
 
