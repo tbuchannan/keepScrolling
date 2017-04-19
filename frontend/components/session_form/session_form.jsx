@@ -50,34 +50,42 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to keepScrolling!
-          <br/>
+          <div className="logo-name">keepScrolling</div>
+
           Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
 
-            <label>Email:
+            <label>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
+                placeholder="Email"
                 className="login-input" />
             </label>
 
-            <br/>
-            <label> Password:
+            <label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
+                placeholder="Password"
                 className="login-input" />
             </label>
 
-            <br/>
-            <input type="submit" value="Submit"/>
+            <label>
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username"
+                className="login-input" />
+            </label>
+            <input
+              type="submit"
+              className="login-submit"
+              value="Submit"/>
           </div>
         </form>
       </div>

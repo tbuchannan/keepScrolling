@@ -9,20 +9,45 @@ body {
   height: 100%;
   background-color: red;
   background-size: cover;
-  background-image: asset-url("3.jpg");
-  background-position: 0px -10px;
+  background-image: asset-url("6.jpg");
 }
 .login-form-container {
   display: flex;
-  align-items: center;
-
+  align-self: center;
 }
 
 .login-form-box {
+  display: flex;
+  flex-direction: column;
   font-family: sans-serif;
-  color: black;
-  background-color: #F9F9FA;
   margin: auto;
   padding: 20px 20px 40px 20px;
+}
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  margin: auto;
+  border: none;
+  padding: 5px;
+}
+
+.login-form * {
+  margin: 2px;
+  align-self: center;
+}
+
+.logo-name {
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+}
+.login-submit {
+  background-color: #529ECC;
+  color: white;
+  height: 34px;
+  width: 176px;
 }
