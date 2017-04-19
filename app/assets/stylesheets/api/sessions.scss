@@ -8,8 +8,9 @@ html{
 body {
   height: 100%;
   background-color: red;
-  background-image: url(/assets/backgrounds/5.jpg);
   background-size: cover;
+  background-image: asset-url("3.jpg");
+  background-position: 0px -10px;
 }
 .login-form-container {
   display: flex;

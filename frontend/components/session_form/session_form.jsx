@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: "", password: ""};
+    this.state = {email: "", password: "", username: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -68,6 +68,7 @@ class SessionForm extends React.Component {
                 className="login-input" />
             </label>
 
+            <br/>
             <label> Password:
               <input type="password"
                 value={this.state.password}
