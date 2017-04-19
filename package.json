@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -19,13 +19,12 @@
     "react-redux": "^5.0.4",
     "react-router": "^3.0.5",
     "redux": "^3.6.0",
+    "redux-logger": "^3.0.1",
+    "redux-thunk": "^2.2.0",
     "webpack": "^2.4.1"
   },
   "engines": {
     "node": "6.10.1",
     "npm": "3.10.10"
-  },
-  "scripts": {
-    "postinstall": "webpack"
   }
 }
