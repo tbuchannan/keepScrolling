@@ -7,13 +7,20 @@ import configureStore  from './store/store';
 
 window.tj = {user:{username: 'tnice01', password:'password123'}};
 // window.login = APIUtil.login;
-// window.logout = APIUtil.logout;
+window.logout = APIUtil.logout;
 // window.signup = APIUtil.signup;
-window.store = configureStore();
+// window.store = configureStore();
 
 document.addEventListener("DOMContentLoaded", () => {
+  let store;
+    if (window.currentUser) {
+      const preloadedState = { session: { currentUser: window.currentUser } };
+      store = configureStore(preloadedState);
+    } else {
+      store = configureStore();
+    }
+  // const store = configureStore();
   const root = document.getElementById('root');
-  const store = configureStore();
   ReactDOM.render(<Root store={store}/>, root);
 
 });

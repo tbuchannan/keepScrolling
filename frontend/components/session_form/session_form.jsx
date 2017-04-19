@@ -39,6 +39,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(){
+    // debugger
     return (
       <ul>
         {this.props.errors.map((error, i) =>(
@@ -49,6 +50,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -69,6 +71,7 @@ class SessionForm extends React.Component {
             <label> Password:
               <input type="password"
                 value={this.state.password}
+                onChange={this.update("password")}
                 className="login-input" />
             </label>
 
