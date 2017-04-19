@@ -14,7 +14,8 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout if @current_user
+    debugger
+    logout if current_user
     render json: {}
   end
 end
