@@ -26,8 +26,14 @@ class SessionForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    const user = this.state;
-    this.props.processForm({user});
+    let user;
+    if (e.target.value === "Guest Login"){
+      user = {email: "tj.buchannan@gmail.com", password: "password123"};
+      this.props.guestLogin({user});
+    } else {
+      user = this.state;
+      this.props.processForm({user});
+    }
   }
 
 
@@ -93,6 +99,12 @@ class SessionForm extends React.Component {
               value={buttonText}/>
           </div>
         </form>
+        <input
+          onClick={this.handleSubmit}
+          className="guest-login"
+          type="submit"
+          value="Guest Login"
+        />
       </div>
     );
   }
