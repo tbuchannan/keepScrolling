@@ -3,9 +3,13 @@ import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
-});
+const mapStateToProps = ( state, ownProps ) => {
+  const formType = ownProps.page;
+  return {
+    currentUser: state.session.currentUser,
+    formType: formType
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())

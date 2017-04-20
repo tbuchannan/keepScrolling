@@ -1,13 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login" activeClassName="current">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup" activeClassName="current">Sign Up!</Link>
-  </nav>
-);
+const sessionLinks = (formType) => {
+  if (formType === "/signup"){
+    return (
+      <nav className="login-signup">
+        <button className="signup-btn">
+          <Link to="/login" activeClassName="current">Login</Link>
+        </button>
+      </nav>
+    );
+  } else {
+      return (<nav className="login-signup">
+        <button className="signup-btn">
+          <Link to="/signup"  activeClassName="current">Sign Up!</Link>
+        </button>
+      </nav>);
+    }
+  };
 
 const personalGreeting = (currentUser, logout) => (
   <hgroup>
@@ -16,8 +26,8 @@ const personalGreeting = (currentUser, logout) => (
   </hgroup>
 );
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+const Greeting = ({ currentUser, logout, formType }) => (
+  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(formType)
 );
 
 export default Greeting;

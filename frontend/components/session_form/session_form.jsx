@@ -50,6 +50,17 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    const onLoginPage = (this.props.route.path === "/login") ? true : false;
+    const usernameField = onLoginPage ? null : (
+      <label>
+        <input type="text"
+          value={this.state.username}
+          onChange={this.update("username")}
+          placeholder="Username"
+          className="login-input" />
+      </label>
+    );
+
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -74,14 +85,7 @@ class SessionForm extends React.Component {
                 placeholder="Password"
                 className="login-input" />
             </label>
-
-            <label>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username"
-                className="login-input" />
-            </label>
+            {usernameField}
             <input
               type="submit"
               className="login-submit"
