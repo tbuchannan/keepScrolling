@@ -8,7 +8,7 @@ const App = ({ children }) => (
         <Link to="/" className="header-link">
           kS.
         </Link>
-        <GreetingContainer page={children.props.route.path}/>
+        <GreetingContainer />
       </header>
       { children }
     </div>

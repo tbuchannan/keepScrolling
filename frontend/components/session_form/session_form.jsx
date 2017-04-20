@@ -6,15 +6,21 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {email: "", password: "", username: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   componentDidUpdate() {
     this.redirectIfLoggedIn();
   }
+  componentWillReceiveProps(nextProps){
+    if (this.props.formType !== nextProps.formType){
+      this.props.clearErrors();
+    }
+  }
 
   redirectIfLoggedIn(){
     if(this.props.loggedIn) {
-      this.props.router.push("/");
+      this.props.router.push("/dashboard");
     }
   }
 
@@ -26,20 +32,21 @@ class SessionForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+    const user = this.state;
+    this.props.processForm({user});
+  }
+
+  guestLogin(e){
+    e.preventDefault();
     let user;
-    if (e.target.value === "Guest Login"){
-      user = {email: "tj.buchannan@gmail.com", password: "password123"};
-      this.props.guestLogin({user});
-    } else {
-      user = this.state;
-      this.props.processForm({user});
-    }
+    user = {email: "tj.buchannan@gmail.com", password: "password123"};
+    this.props.guestLogin({user});
   }
 
 
   renderErrors(){
     return (
-      <ul>
+      <ul className="errors">
         {this.props.errors.map((error, i) =>(
           <li key={`error-${i}`}>{error}</li>
         ))}
@@ -100,7 +107,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
         <input
-          onClick={this.handleSubmit}
+          onClick={this.guestLogin}
           className="guest-login"
           type="submit"
           value="Guest Login"

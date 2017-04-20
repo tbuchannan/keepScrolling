@@ -5,7 +5,10 @@ class Api::UsersController < ApplicationController
     if @user.save
       render :show
     else
-      render :error
+      render(
+        json: @user.errors.full_messages,
+        status: 401
+      )
     end
   end
 

@@ -14,11 +14,12 @@ window.logout = APIUtil.logout;
 document.addEventListener("DOMContentLoaded", () => {
   let store;
     if (window.currentUser) {
-      const preloadedState = { session: { currentUser: window.currentUser } };
+      const preloadedState = { session: { currentUser: window.currentUser, errors: [] } };
       store = configureStore(preloadedState);
     } else {
       store = configureStore();
     }
+    window.store = store;
   // const store = configureStore();
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);

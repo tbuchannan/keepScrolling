@@ -9,7 +9,7 @@ body {
   height: 100%;
   background-color: red;
   background-size: cover;
-  background-image: asset-url("4.jpg");
+  background-image: asset-url("6.jpg");
 }
 .login-form-container {
   display: flex;
@@ -112,4 +112,8 @@ body {
   text-decoration: none;
   font-size: 13px;
   color: #444;
+}
+
+.errors {
+  color: white;
 }
