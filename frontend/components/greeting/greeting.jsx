@@ -5,14 +5,14 @@ const sessionLinks = (formType) => {
   if (formType === "/signup"){
     return (
       <nav className="login-signup">
-        <button className="signup-btn">
+        <button >
           <Link to="/login" activeClassName="current">Login</Link>
         </button>
       </nav>
     );
   } else {
       return (<nav className="login-signup">
-        <button className="signup-btn">
+        <button >
           <Link to="/signup"  activeClassName="current">Sign Up!</Link>
         </button>
       </nav>);

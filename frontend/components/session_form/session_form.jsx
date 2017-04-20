@@ -30,16 +30,8 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-  navLink(){
-    if (this.props.formType === "login"){
-      return <Link to="/signup">Click to Sign Up!</Link>;
-    } else {
-      return <Link to="/login">Click to Login</Link>;
-    }
-  }
 
   renderErrors(){
-    // debugger
     return (
       <ul>
         {this.props.errors.map((error, i) =>(
@@ -50,7 +42,16 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const onLoginPage = (this.props.route.path === "/login") ? true : false;
+    let onLoginPage;
+    let buttonText;
+    if (this.props.route.path === "/login"){
+      onLoginPage = true;
+      buttonText = "Login";
+    } else {
+      onLoginPage = false;
+      buttonText = "Sign Up";
+      }
+
     const usernameField = onLoginPage ? null : (
       <label>
         <input type="text"
@@ -66,7 +67,6 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="logo-name">keepScrolling</div>
 
-          Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}
           <div className="login-form">
 
@@ -86,10 +86,11 @@ class SessionForm extends React.Component {
                 className="login-input" />
             </label>
             {usernameField}
+
             <input
               type="submit"
               className="login-submit"
-              value="Submit"/>
+              value={buttonText}/>
           </div>
         </form>
       </div>
