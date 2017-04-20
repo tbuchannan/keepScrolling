@@ -15,7 +15,7 @@ column name  | data type | details
 -------------|-----------|-----------------------
 id           | integer   | not null, primary key
 title        | string    |  
-content_type |           |
+content_type | string    |
 body         | text      |
 photo_url    | string    |
 link_url     | string    |
