@@ -14,5 +14,9 @@
  *= require_self
  *= reset
  *= nav_bar
+ *= dashboard
+ *= feed
+ *= radar
+ *= recommendations
  *= login_signup_form
  */
