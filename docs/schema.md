@@ -14,15 +14,17 @@ session_token   | string    | not null, unique
 column name  | data type | details
 -------------|-----------|-----------------------
 id           | integer   | not null, primary key
+author_id    | integer   | not null, foreign key (references author), indexed
 title        | string    |  
-content_type | string    |
 body         | text      |
 photo_url    | string    |
 link_url     | string    |
+summary      | string    |
 audio_url    | string    |
 video_url    | string    |
 quote_url    | string    |
-author_id    | integer   | not null, foreign key (references author), indexed
+source       | string    |
+content_type | string    |
 
 ## blogs
 column name | data type | details
