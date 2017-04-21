@@ -1,0 +1,49 @@
+.login-form-container {
+  display: flex;
+  align-self: center;
+}
+
+.login-form-box {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial;
+  margin: auto;
+  padding: 20px 20px 40px 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  margin: auto;
+  border: none;
+  padding: 5px;
+}
+
+.login-form * {
+  margin: 2px;
+  align-self: center;
+}
+
+.login-submit {
+  background-color: #529ECC;
+  color: white;
+  height: 34px;
+  width: 176px;
+}
+
+.errors>li {
+  color: #D44120;
+  background: rgba(0, 0, 0, .55);
+  border-radius: 2px;
+  text-overflow: clip;
+  text-align: center;
+}
+.logo-name {
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+}
