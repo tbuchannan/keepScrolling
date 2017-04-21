@@ -14,6 +14,6 @@
  *= require_self
  */
 
- @import "./reset.scss";
- @import "./nav_bar.scss";
- @import "./login_signup_form.scss";
+ @import "reset";
+ @import "nav_bar";
+ @import "login_signup_form";
