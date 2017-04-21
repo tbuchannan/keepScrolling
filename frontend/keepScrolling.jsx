@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import * as APIUtil from './util/session_api_util';
+import * as PostUtil from './util/post_api_util';
 import configureStore  from './store/store';
 
 
