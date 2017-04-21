@@ -4,16 +4,18 @@
 #
 #  id           :integer          not null, primary key
 #  title        :string
-#  content_type :string
+#  author_id    :integer          not null
 #  body         :text
 #  photo_url    :string
 #  link_url     :string
+#  summary      :text
 #  audio_url    :string
 #  video_url    :string
 #  quote_url    :string
-#  author_id    :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  source       :text
+#  content_type :string
 #
 
 class Post < ApplicationRecord

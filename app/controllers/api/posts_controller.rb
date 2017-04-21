@@ -1,18 +1,19 @@
 class Api::PostsController < ApplicationController
 
   def index
-    # @posts = Post.all
+    @posts = Post.all
   end
 
   def create
-    # @post = Post.create(post_params)
-    # if @post.save
-    #   render :show
-    # else
-    #   render(
-    #   json: @post.errors.full_messages,
-    #   status: 401
-    #   )
+    @post = Post.create(post_params)
+    if @post.save
+      render :show
+    else
+      render(
+      json: @post.errors.full_messages,
+      status: 401
+      )
+    end
   end
 
   def destroy
@@ -28,7 +29,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-
+    @post = Post.find(params[:id])
   end
 
   def new
