@@ -6,7 +6,7 @@ const App = ({ children }) => (
     <div>
       <header className="header-signup">
         <Link to="/" className="header-link">
-          kS.
+          kS. "searchbar component"
         </Link>
         <GreetingContainer />
       </header>
