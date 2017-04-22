@@ -1,3 +1,90 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+textarea {
+  resize: none;
+}
+
+.text-post-form {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+  min-height: 100px;
+  font-family: Arial;
+  font-size: 20px;
+  width: 400px;
+  background: white;
+  padding: 10px;
+  border-radius: 3px;
+}
+.text-post-form * {
+  z-index: 10;
+  color: #454545;
+  }
+.title {
+  display: block;
+}
+.title *, .body * {
+  z-index: 10;
+  width: 100%;
+  padding: 8px 0px 0px 10px;
+}
+
+.title *:focus, .body *:focus {
+outline: none;
+
+
+}
+.body {
+  color: #9A9393;
+  font-size: 13px;
+  font-weight: 100;
+}
+
+.modal-buttons {
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid #F3F3F3;
+  outline: none;
+}
+.form-post-button {
+  background-color: #529ECC;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+.form-post-button:active {
+  background-color: #4689B3;
+  outline: none;
+}
+
+.form-close-button {
+  max-width: 60px;
+  padding: 3px;
+  background-color: #9EA6AE;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.form-close-button:active {
+  background-color: #80868D;
+}
+
+.translucent-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  height: 100vh;
+  background-color: rgba(56, 71, 92, .95);
+}
+
+.unselected {
+  user-select: none;
+  color: white;
+}
