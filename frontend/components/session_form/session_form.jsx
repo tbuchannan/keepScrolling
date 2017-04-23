@@ -50,6 +50,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    // document.body.style.background = "../../assets/images/5.jpg";
     let onLoginPage;
     let buttonText;
     if (this.props.route.path === "/login"){

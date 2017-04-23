@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import TextPostForm from '../posts/text_post_form';
+import PostBar from '../post_bar/post_bar';
 
 class Dashboard extends React.Component {
 
@@ -12,13 +12,50 @@ class Dashboard extends React.Component {
 
   }
 
+  componentWillMount(){
+    // document.body.style.background = "#36465d";
+  }
 
 
   render() {
+
     return (
       <div className="Dashboard">
-          <TextPostForm />
           <center>
+          <PostBar />
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
+          <h1>|bar  | recommendations|</h1>
+          <h1>|feed | radar          | </h1>
+          <h1>|     |                |</h1>
           <h1>|bar  | recommendations|</h1>
           <h1>|feed | radar          | </h1>
           <h1>|     |                |</h1>
