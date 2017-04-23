@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount(){
-    document.body.style.background = "#36465d";
+    document.body.style.background = "#36465D";
   }
 
   render() {

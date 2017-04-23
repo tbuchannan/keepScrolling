@@ -28,15 +28,15 @@ const sessionLinks = (formType, guestLogin) => {
     }
   };
 
-const personalGreeting = (currentUser, logout) => (
+const personalNavBar = (currentUser, logout) => (
   <hgroup>
     <h1>{currentUser.username} is here</h1>
     <button className="logout-button" onClick={logout}>Log Out</button>
   </hgroup>
 );
 
-const Greeting = ({ currentUser, logout, formType, guestLogin }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(formType, guestLogin)
+const RightNavBar = ({ currentUser, logout, formType, guestLogin }) => (
+  currentUser ? personalNavBar(currentUser, logout) : sessionLinks(formType, guestLogin)
 );
 
-export default Greeting;
+export default RightNavBar;
