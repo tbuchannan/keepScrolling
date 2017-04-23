@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 textarea {
   resize: none;
+
 }
 
 .text-post-form {
@@ -10,32 +11,33 @@ textarea {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  margin-left: 15%;
   min-height: 100px;
   font-family: Arial;
   font-size: 20px;
-  width: 400px;
+  width: 540px;
   background: white;
-  padding: 10px;
+  box-sizing: content-box;
+  // padding: 10px;
   border-radius: 3px;
 }
+
 .text-post-form * {
   z-index: 10;
   color: #454545;
-  }
+}
 
 .current-user-post-bar {
+  display: flex;
   font-size: 13px;
   font-weight: bold;
   padding: 10px;
-
 }
-
-
 
 .title {
   display: block;
+  width: 96%;
 }
+
 .title *, .body * {
   z-index: 10;
   width: 100%;
@@ -50,6 +52,7 @@ outline: none;
   color: #9A9393;
   font-size: 13px;
   font-weight: 100;
+  width: 96%;
 }
 
 .modal-buttons {
@@ -61,15 +64,28 @@ outline: none;
   outline: none;
 }
 
+.button-flex {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin: 20px;
+}
+
 .form-post-button {
   background-color: #529ECC;
   padding: 3px 5px;
   border-radius: 3px;
   font-size: 13px;
+  margin: 0px 20px 10px 0px;
 }
-.form-post-button:active {
+
+.form-post-button:active:enabled {
   background-color: #4689B3;
   outline: none;
+}
+
+.form-post-button:disabled .unselected{
+  color: #ADCEE3
 }
 
 .form-close-button {
@@ -78,6 +94,7 @@ outline: none;
   background-color: #9EA6AE;
   border-radius: 3px;
   font-size: 13px;
+  margin: 0px 0px 10px 20px;
 }
 
 .form-close-button:active {
@@ -85,7 +102,7 @@ outline: none;
 }
 
 .translucent-background {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;

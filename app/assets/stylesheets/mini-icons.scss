@@ -3,23 +3,25 @@
   margin: 20px;
   background: white;
   border-radius: 4px;
-  width: 50%;
+  width: 540px;
 }
 
 .mini-block {
-  width: 12.5%;
-  border: 1px solid red;
+  width: 14.2%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .mini-button{
   width: 100%;
+  height: 100%;
   border-radius: 4px;
   background: white;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-around;
+
 }
 .text-post-icon {
   font-family: 'Roboto', sans-serif;
@@ -38,18 +40,45 @@
   padding-bottom: 15px;
 }
 
-.temp-button {
-  width: 12.5%;
-  border: solid 1px cyan;
-}
 .icon-hover {
-  position: relative;
   transition: all .3s ease-in-out ;
-  top: 0;
+  transition: .3s ease-in-out ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
 
 }
 .mini-block:hover .icon-hover{
-  position: relative;
-  top: -3px;
+  transform: translate(0px, -3px);
+}
 
+.picture-icons {
+  top: 5px;
+  width: 65%;
+  height: 65%;
+  padding-bottom: 3px;
+}
+
+.photo-icon {
+  background-image: asset-url("cameraDark");
+}
+
+.quote-icon {
+  background-image: asset-url("quoteDark");
+}
+
+.link-icon {
+  background-image: asset-url("linkDark");
+}
+
+.chat-icon {
+  background-image: asset-url("chatDark");
+}
+
+.audio-icon {
+  background-image: asset-url("audioDark");
+}
+
+.video-icon {
+  background-image: asset-url("videoDark");
 }
