@@ -1,19 +1,23 @@
 .header-signup {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #505E72;
 }
 
 .header-link {
   font-family: Arial;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
   color: white;
   text-decoration: none;
-  margin-left: 20px;
+  margin: 5px 0 0 20px;
 }
 
 .login-signup {
   margin: 10px;
+}
+.logo-search {
+  display: flex;
 }
 
 .login-signup a{
@@ -58,4 +62,11 @@
   text-decoration: none;
   font-size: 13px;
   color: #444;
+}
+
+.search-bar {
+  background-color: #303E50;
+  border-radius: 2px;
+  height: 32px;
+  margin: 10px 54px 10px 20px;
 }

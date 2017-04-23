@@ -11,9 +11,10 @@ textarea {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  min-height: 100px;
-  font-family: Arial;
-  font-size: 20px;
+  min-height: 60px;
+  font-family: Helvetica;
+  font-size: 45px;
+  font-weight: 300;
   width: 540px;
   background: white;
   box-sizing: content-box;
@@ -35,16 +36,25 @@ textarea {
 
 .title {
   display: block;
-  width: 96%;
+  width: 95%;
+  height: 96px;
 }
 
-.title *, .body * {
-  z-index: 10;
+.title * {
+  // z-index: 10;
   width: 100%;
   padding: 8px 0px 0px 10px;
 }
 
-.title *:focus, .body *:focus {
+.body * {
+  width: 96%;
+  height: 96px;
+  padding: 8px 0px 0px 10px;
+  margin-top: 30px;
+}
+
+
+.title *:focus, .body *:focus, .tags:focus {
 outline: none;
 }
 
@@ -53,6 +63,7 @@ outline: none;
   font-size: 13px;
   font-weight: 100;
   width: 96%;
+  margin-top: 10px;
 }
 
 .modal-buttons {
@@ -60,7 +71,7 @@ outline: none;
   display: flex;
   justify-content: space-between;
   padding-top: 15px;
-  border-top: 1px solid #F3F3F3;
+  border-top: 2px solid #F3F3F3;
   outline: none;
 }
 
@@ -73,7 +84,7 @@ outline: none;
 
 .form-post-button {
   background-color: #529ECC;
-  padding: 3px 5px;
+  padding: 5px 10px;
   border-radius: 3px;
   font-size: 13px;
   margin: 0px 20px 10px 0px;
@@ -90,7 +101,7 @@ outline: none;
 
 .form-close-button {
   max-width: 60px;
-  padding: 3px;
+  padding: 5px 15px;
   background-color: #9EA6AE;
   border-radius: 3px;
   font-size: 13px;

@@ -41,15 +41,14 @@
 }
 
 .icon-hover {
-  transition: all .3s ease-in-out ;
-  transition: .3s ease-in-out ;
+  transition: .3s;
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
 
 }
 .mini-block:hover .icon-hover{
-  transform: translate(0px, -3px);
+  transform: translate(0px, -4px);
 }
 
 .picture-icons {
@@ -81,4 +80,12 @@
 
 .video-icon {
   background-image: asset-url("videoDark");
+}
+
+.divider {
+  position: absolute;
+  border-left: 1px solid #F00;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
 }
