@@ -12,10 +12,9 @@ class Dashboard extends React.Component {
 
   }
 
-  componentWillMount(){
-    // document.body.style.background = "#36465d";
+  componentDidMount(){
+    document.body.style.background = "#36465d";
   }
-
 
   render() {
 
@@ -26,39 +25,7 @@ class Dashboard extends React.Component {
           <h1>|bar  | recommendations|</h1>
           <h1>|feed | radar          | </h1>
           <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
+
           </center>
       </div>
     );

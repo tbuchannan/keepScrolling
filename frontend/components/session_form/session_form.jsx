@@ -36,8 +36,9 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-
-
+  componentDidMount(){
+    document.body.style.background = "";
+  }
 
   renderErrors(){
     return (
