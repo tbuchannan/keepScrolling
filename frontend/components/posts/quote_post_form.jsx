@@ -9,7 +9,7 @@ class QuotePostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: props.currentUser.username, photo_url: "",
+      author: props.currentUser.username, body: "", title: "",
       author_id: props.currentUser.id, hidden: props.hidden
     };
     this.makePost = this.makePost.bind(this);
@@ -50,38 +50,37 @@ class QuotePostForm extends React.Component {
             </label>
           </div>
       );
-    // }else {
-    //   return (
-    //       <div className="text-post-form-container">
-    //         <div className="translucent-background"></div>
-    //         <form className="text-post-form"
-    //           onSubmit={this.makePost}>
-    //           <span className="current-user-post-bar">{this.props.currentUser.username}</span>
-    //           <div className="title">
-    //             <input type="text" placeholder="Title" onChange={this.handleChange('title')} />
-    //           </div>
-    //           <div className="body">
-    //             <textarea placeholder="Your text here" onChange={this.handleChange('body')} />
-    //           </div>
-    //           <div className="tags">
-    //           </div>
-    //           <br />
-    //           <div className="modal-buttons">
-    //             <button className="form-close-button"
-    //               onClick={this.closeForm}>
-    //               <span className="unselected">Close</span>
-    //             </button>
-    //             <button className="form-post-button"
-    //               type="submit"
-    //               disabled={!this.state.body && !this.state.title}>
-    //               <span className="unselected">Post</span>
-    //             </button>
-    //           </div>
-    //         </form>
-    //       </div>
-    //   );
-    // }
-  }
+    }else {
+      return (
+          <div className="text-post-form-container">
+            <div className="translucent-background"></div>
+            <form className="text-post-form"
+              onSubmit={this.makePost}>
+              <span className="current-user-post-bar">{this.state.author}</span>
+              <div className="title quote">
+                <textarea placeholder='"Quote"' onChange={this.handleChange('body')} />
+              </div>
+              <div className="body">
+                <textarea placeholder="Your text here" onChange={this.handleChange('title')} />
+              </div>
+              <div className="tags">
+              </div>
+              <br />
+              <div className="modal-buttons">
+                <button className="form-close-button"
+                  onClick={this.closeForm}>
+                  <span className="unselected">Close</span>
+                </button>
+                <button className="form-post-button"
+                  type="submit"
+                  disabled={!this.state.body}>
+                  <span className="unselected">Post</span>
+                </button>
+              </div>
+            </form>
+          </div>
+      );
+    }
   }
 }
 

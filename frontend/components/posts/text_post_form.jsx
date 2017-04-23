@@ -29,7 +29,7 @@ class TextPostForm extends React.Component {
 
   handleChange(field){
     return (e)=>{
-      this.setState({[field]: e.target.value});
+      this.setState({[field]: `"{e.target.value}"`});
     };
   }
 
@@ -59,7 +59,7 @@ class TextPostForm extends React.Component {
               onSubmit={this.makePost}>
               <span className="current-user-post-bar">{this.props.currentUser.username}</span>
               <div className="title">
-                <input type="text" placeholder="Title" onChange={this.handleChange('title')} />
+                <textarea placeholder="Title" onChange={this.handleChange('title')} />
               </div>
               <div className="body">
                 <textarea placeholder="Your text here" onChange={this.handleChange('body')} />
