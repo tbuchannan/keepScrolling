@@ -17,13 +17,15 @@
 }
 
 .login-signup {
-  margin: 10px;
+  margin-right: 10px;
   display:flex;
   width: 50%;
+  align-items: center;
   justify-content: flex-end;
 }
 .logo-search {
   display: flex;
+  align-items: center;
   width: 50%;
 }
 
@@ -95,8 +97,9 @@
   height: 32px;
   margin: auto 10px;
   width: 100%;
+  max-width: 540px;
   border-radius: 3px;
-  background: rgba(47, 61, 81, .4);
+  background: rgba(0, 0, 0, .13);
 }
 
 
@@ -116,6 +119,7 @@
 
 .search-bar-text{
   width: 100%;
+  max-width: 540px;
   font-family: Helvetica;
   border-radius: 3px;
   background: rgba(47, 61, 81, .4);
