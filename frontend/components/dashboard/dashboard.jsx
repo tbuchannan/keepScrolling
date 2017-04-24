@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import PostBar from '../post_bar/post_bar';
+import PostBarContainer from '../post_bar/post_bar_container';
 
 class Dashboard extends React.Component {
 
@@ -21,10 +21,10 @@ class Dashboard extends React.Component {
     return (
       <div className="Dashboard">
           <center>
-          <PostBar />
-          <h1>|bar  | recommendations|</h1>
-          <h1>|feed | radar          | </h1>
-          <h1>|     |                |</h1>
+            <PostBarContainer />
+            <h1>|bar  | recommendations|</h1>
+            <h1>|feed | radar          | </h1>
+            <h1>|     |                |</h1>
 
           </center>
       </div>
