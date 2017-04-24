@@ -10,7 +10,7 @@ class TextPostForm extends React.Component {
     super(props);
     this.state = {
       title: "", body: "", author: props.currentUser.username,
-      author_id: props.currentUser.id, hidden: props.hidden
+      author_id: props.currentUser.id, hidden: props.hidden, content_type: ""
     };
     this.makePost = this.makePost.bind(this);
     this.showForm = this.showForm.bind(this);
@@ -29,12 +29,14 @@ class TextPostForm extends React.Component {
 
   handleChange(field){
     return e =>
-      this.setState({ [field]: e.target.value});
+      this.setState({ [field]: e.target.value, content_type: "text"});
   }
 
   makePost(e) {
     e.preventDefault();
-    const post = this.state;
+    let post = this.state;
+    // debugger
+
     createPost({post});
     this.closeForm(e);
   }
@@ -51,6 +53,7 @@ class TextPostForm extends React.Component {
           </div>
       );
     }else {
+      // debugger
       return (
           <div className="text-post-form-container">
             <div className="translucent-background"></div>
