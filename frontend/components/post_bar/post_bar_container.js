@@ -6,3 +6,5 @@ const mapStateToProps = (state, ownProps) => {
     state
   };
 };
+
+export default connect(mapStateToProps, {})(PostBar);
