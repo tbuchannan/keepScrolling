@@ -22,6 +22,21 @@ textarea {
   border-radius: 3px;
 }
 
+.text-post-form-container {
+    -webkit-animation: modalFade 1s;
+    // -webkit-animation: slideDown .5s;
+}
+
+@-webkit-keyframes modalFade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+// @-webkit-keyframes slideDown {
+//   { top: 0px; }
+//   { bottom: 0px; }
+// }
+
 .text-post-form * {
   z-index: 10;
   color: #454545;
