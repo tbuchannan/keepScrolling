@@ -29,7 +29,11 @@ class QuotePostForm extends React.Component {
 
   handleChange(field){
     return (e)=>{
-      this.setState({[field]: e.target.value});
+      // debugger
+      let quotedString = `"${e.target.value}"`;
+      let formattedString = `"${quotedString.replace(/\"/g, '')}"`;
+      formattedString === '""' ? this.setState({[field]: ""}) :
+      this.setState({[field]: formattedString});
     };
   }
 
@@ -51,6 +55,7 @@ class QuotePostForm extends React.Component {
           </div>
       );
     }else {
+      // debugger
       return (
           <div className="text-post-form-container">
             <div className="translucent-background"></div>
@@ -58,7 +63,7 @@ class QuotePostForm extends React.Component {
               onSubmit={this.makePost}>
               <span className="current-user-post-bar">{this.state.author}</span>
               <div className="title quote">
-                <textarea placeholder='"Quote"' onChange={this.handleChange('body')} />
+                <textarea placeholder='"Quote"' onChange={this.handleChange('body')} value={this.state.body}/>
               </div>
               <div className="body">
                 <textarea placeholder="Your text here" onChange={this.handleChange('title')} />
