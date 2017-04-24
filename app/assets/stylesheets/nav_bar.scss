@@ -92,6 +92,23 @@
   height: 32px;
   margin: auto 10px;
   width: 100%;
+  border-radius: 3px;
+  background: rgba(47, 61, 81, .4);
+}
+
+
+.fa {
+  // align-self: center;
+  font-size: 18px;
+  color: #9C9C9C;
+  padding: 5px;
+  margin-bottom: 1px;
+  border-radius: 3px;
+  background: rgba(47, 61, 81, .4);
+}
+
+.fa-search {
+  // background: white;
 }
 
 .search-bar-text{

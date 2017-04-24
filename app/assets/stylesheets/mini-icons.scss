@@ -7,13 +7,14 @@
 }
 
 .mini-block {
-  width: 14.2%;
+  min-width: 14.2%;
+  min-height: 85px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .mini-button{
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   border-radius: 4px;
   background: white;
