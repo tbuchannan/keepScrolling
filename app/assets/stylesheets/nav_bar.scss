@@ -6,7 +6,7 @@
 .header-signup-mounted {
   border-bottom: 1px solid #505E72;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 
@@ -74,6 +74,11 @@
   font-size: 13px;
   color: #444;
 }
+.guest-login:hover,
+.mini-button:hover,
+.logout-button:hover {
+  cursor: pointer;
+}
 
 .guest-login {
   margin-top: 6px;
@@ -89,6 +94,7 @@
   font-size: 13px;
   color: #444;
 }
+
 .current {
   margin-top: 20px;
 }

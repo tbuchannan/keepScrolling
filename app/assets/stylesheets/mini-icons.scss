@@ -2,8 +2,15 @@
   display: flex;
   margin: 20px;
   background: white;
+  max-width: 540px;
   border-radius: 4px;
-  width: 540px;
+  // border: 1px solid red;
+  width: 100%;
+}
+
+.bar-container {
+  display: flex;
+  justify-content: center;
 }
 
 .mini-block {
@@ -22,8 +29,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-
 }
+
 .text-post-icon {
   font-family: 'Roboto', sans-serif;
   color: #444;
@@ -31,6 +38,7 @@
   width: 100%;
   margin-bottom: -5px;
 }
+
 .mini-button-title {
   align-self: center;
   font-family: 'Roboto', sans-serif;
