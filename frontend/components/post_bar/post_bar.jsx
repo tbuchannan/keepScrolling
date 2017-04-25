@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
-import TextPostForm from '../posts/text_post_form';
-import PhotoPostForm from '../posts/photo_post_form';
-import QuotePostForm from '../posts/quote_post_form';
-import LinkPostForm from '../posts/link_post_form';
-import ChatPostForm from '../posts/chat_post_form';
-import AudioPostForm from '../posts/audio_post_form';
-import VideoPostForm from '../posts/video_post_form';
+import TextPostForm from '../post_forms/text_post_form';
+import PhotoPostForm from '../post_forms/photo_post_form';
+import QuotePostForm from '../post_forms/quote_post_form';
+import LinkPostForm from '../post_forms/link_post_form';
+import ChatPostForm from '../post_forms/chat_post_form';
+import AudioPostForm from '../post_forms/audio_post_form';
+import VideoPostForm from '../post_forms/video_post_form';
 
 class PostBar extends React.Component {
   constructor(props) {
