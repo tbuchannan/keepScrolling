@@ -12,7 +12,7 @@ class PostIndex extends React.Component {
       return (
       <div className = "feed">
         <ul>
-          {posts.reverse().map(post => <PostItem key={post.id} post={post}/>) }
+          {posts.reverse().map(post => <PostItem key={post.post_id} post={post}/>) }
         </ul>
       </div>
     );

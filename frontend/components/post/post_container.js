@@ -4,7 +4,6 @@ import {selectAllPosts } from '../../reducers/selector';
 import PostIndex from './post_index';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return { posts: selectAllPosts(state)};
 };
 const mapDispatchToProps = (dispatch) => {

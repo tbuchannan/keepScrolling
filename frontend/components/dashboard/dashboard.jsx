@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
   }
 
   componentWillUpdate(newProps, nextState){
-
+    debugger
   }
 
   componentDidMount(){
