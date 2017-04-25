@@ -10,7 +10,7 @@ class TextPostForm extends React.Component {
     super(props);
     this.state = {
       title: "", body: "", author: props.currentUser.username,
-      author_id: props.currentUser.id, hidden: props.hidden, content_type: ""
+      author_id: props.currentUser.id, hidden: props.hidden, content: ""
     };
     this.makePost = this.makePost.bind(this);
     this.showForm = this.showForm.bind(this);
@@ -29,7 +29,7 @@ class TextPostForm extends React.Component {
 
   handleChange(field){
     return e =>
-      this.setState({ [field]: e.target.value, content_type: "text"});
+      this.setState({ [field]: e.target.value, content: "text"});
   }
 
   makePost(e) {

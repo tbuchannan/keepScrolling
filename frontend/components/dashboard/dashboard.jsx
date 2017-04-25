@@ -14,15 +14,17 @@ class Dashboard extends React.Component {
 
   componentDidMount(){
     document.body.style.background = "#36465D";
+    document.getElementsByClassName('header-signup-unmounted')[0].className=('header-signup-mounted');
   }
 
   render() {
+    // <FeedContainer />
 
     return (
       <div className="Dashboard">
           <center>
             <PostBarContainer />
-            <h1>|bar  | recommendations|</h1>
+            <h1>|___bar___  | recommendations|</h1>
             <h1>|feed | radar          | </h1>
             <h1>|     |                |</h1>
 

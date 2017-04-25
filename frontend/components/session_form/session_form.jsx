@@ -38,6 +38,10 @@ class SessionForm extends React.Component {
 
   componentDidMount(){
     document.body.style.background = "";
+    let header = document.getElementsByClassName("header-signup-mounted");
+    if (header.length >= 1){
+      document.getElementsByClassName("header-signup-mounted")[0].className=("header-signup-unmounted");
+    }
   }
 
   renderErrors(){
@@ -51,7 +55,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // document.body.style.background = "../../assets/images/5.jpg";
     let onLoginPage;
     let buttonText;
     if (this.props.route.path === "/login"){
