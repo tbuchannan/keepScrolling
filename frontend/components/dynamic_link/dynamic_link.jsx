@@ -28,6 +28,8 @@ validLink(link){
 }
 
 render(){
+  // this logic needs to be fixed as well as the styling
+  
   if (this.validLink(this.state.link_url)){
     return (
       <div>
