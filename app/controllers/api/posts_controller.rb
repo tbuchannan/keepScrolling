@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:author).all
   end
 
   def create
@@ -40,7 +40,7 @@ class Api::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(
     :title, :author_id, :body, :summary,
-    :source, :content)
+    :source, :content, :image)
   end
 
 

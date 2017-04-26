@@ -35,11 +35,13 @@
   width: 64px;
   height: 64px;
   margin: 20px 5px;;
-  background: asset_url("avi");
   background-repeat: no-repeat;
   border-radius: 3px;
   position: -webkit-sticky;
   position: sticky;
+}
+.user-avatar img {
+  max-width: 100%;
 }
 
 .nav-user-avatar {

@@ -7,7 +7,7 @@ textarea {
 }
 
 .text-post-form {
-  position: fixed;
+  position: absolute;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,7 @@ textarea {
 
 .text-post-form-container *{
     -webkit-animation: modalFade .2s;
+    overflow: visible;
 
 }
 
