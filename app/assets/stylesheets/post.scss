@@ -3,7 +3,7 @@
   width: 540px;
   padding-top: 15px;
   border-radius: 3px;
-  margin: 20px;
+  margin: 20px 5px 20px 15px;
   font-family: Helvetica;
 }
 
@@ -12,7 +12,6 @@
   font-weight: 700;
   display: flex;
   padding: 0px 20px;
-  // border: 1px solid red;
   margin: -3px 0px 13px 0px;
 }
 
@@ -29,16 +28,28 @@
 }
 .li-post {
   display: flex;
-  // border: 1px solid red;
+  margin-top: -6px;
 }
 
 .user-avatar {
   width: 64px;
   height: 64px;
-  margin: 20px 8px;;
+  margin: 20px 5px;;
   background: asset_url("avi");
   background-repeat: no-repeat;
   border-radius: 3px;
   position: -webkit-sticky;
   position: sticky;
+}
+
+.nav-user-avatar {
+  width: 64px;
+  height: 64px;
+  margin-right: 8px;
+  background: asset_url("avi");
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  position: -webkit-sticky;
+  position: sticky;
+
 }

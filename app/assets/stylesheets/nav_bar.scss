@@ -1,6 +1,7 @@
 .header-signup-unmounted {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .header-signup-mounted {
@@ -9,6 +10,10 @@
   justify-content: space-around;
 }
 
+.parent-div-unmount {
+  width: 100%;
+  background: none;
+}
 
 .header-link {
   font-family: Arial;
@@ -99,7 +104,6 @@
   margin-top: 20px;
 }
 .search-bar {
-  // background-color: #303E50;
   display: flex;
   font-family: 'Roboto', sans-serif;
   border-radius: 3px;
@@ -113,17 +117,12 @@
 
 
 .fa {
-  // align-self: center;
   font-size: 18px;
   color: #9C9C9C;
   padding: 5px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   background: rgba(47, 61, 81, .4);
-}
-
-.fa-search {
-  // background: white;
 }
 
 .search-bar-text{
@@ -142,4 +141,15 @@
 
 ::-webkit-input-placeholder {
   color: #9C9C9C;
+}
+
+.parent-div {
+  position:fixed;
+  width: 100%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  background-color: #36465D;
+  z-index: 100;
+  border-bottom: 1px solid #505E72;
 }
