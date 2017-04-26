@@ -6,15 +6,17 @@ import SearchBarContainer from './search_bar/search_bar_container';
 
 const App = ({ children }) => (
     <div>
-      <header className="header-signup-unmounted">
-        <div className="logo-search">
-          <Link to="/" className="header-link">
-            kS.
-          </Link>
-          <SearchBarContainer />
-        </div>
-        <RightNavBarContainer />
-      </header>
+      <div className="parent-div">
+        <header className="header-signup-unmounted">
+          <div className="logo-search">
+            <Link to="/" className="header-link">
+              kS.
+            </Link>
+            <SearchBarContainer />
+          </div>
+          <RightNavBarContainer />
+        </header>
+      </div>
       { children }
     </div>
   );

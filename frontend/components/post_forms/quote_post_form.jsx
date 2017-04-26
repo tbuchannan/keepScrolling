@@ -16,7 +16,7 @@ class QuotePostForm extends React.Component {
     this.showForm = this.showForm.bind(this);
     this.closeForm = this.closeForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
-  }
+    }
 
   showForm(){
     this.setState({"hidden": false});
@@ -29,13 +29,20 @@ class QuotePostForm extends React.Component {
 
   handleChange(field){
     return (e)=>{
-      // debugger
-      let quotedString = `"${e.target.value}"`;
-      let formattedString = `"${quotedString.replace(/\"/g, '')}"`;
+      let currentVal = e.target.value;
+      debugger
+      if (currentVal.endsWith('"')) {
+        currentVal = currentVal.slice(0, -1);
+      } else {
+        currentVal = `"${e.target.value}"`;
+      }
+      let formattedString = `"${currentVal.replace(/\"/g, '')}"`;
       formattedString === '""' ? this.setState({[field]: ""}) :
       this.setState({[field]: formattedString});
     };
   }
+
+  
 
   makePost(e) {
     e.preventDefault();
@@ -43,6 +50,8 @@ class QuotePostForm extends React.Component {
     this.props.createPost({post});
     this.closeForm(e);
   }
+
+
   render (){
     if (this.state.hidden){
       return(
@@ -55,7 +64,6 @@ class QuotePostForm extends React.Component {
           </div>
       );
     }else {
-      // debugger
       return (
           <div className="text-post-form-container">
             <div className="translucent-background"></div>

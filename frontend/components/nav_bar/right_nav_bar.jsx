@@ -23,7 +23,7 @@ const sessionLinks = (formType, guestLogin) => {
       return (
         <nav className="login-signup">
           <Link to="/signup"  activeClassName="current">
-            <span className="login-button-text">Sign Up!</span>  
+            <span className="login-button-text">Sign Up!</span>
           </Link>
 
           <button onClick={guest} className="guest-login">
@@ -44,6 +44,3 @@ const RightNavBar = ({ currentUser, logout, formType, guestLogin }) => (
 );
 
 export default RightNavBar;
-
-
-// <h1>{currentUser.username} is here</h1>

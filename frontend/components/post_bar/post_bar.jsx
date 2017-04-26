@@ -28,7 +28,7 @@ render() {
       return (
         <div className="bar-container">
           <div className="sticky-avatar">
-            <div className="user-avatar"></div>
+            <div className="nav-user-avatar"></div>
           </div>
             <div className="bar">
                 <TextPostForm onClick={this.handleSubmit} hidden={true}/>

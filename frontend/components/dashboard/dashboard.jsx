@@ -10,12 +10,13 @@ class Dashboard extends React.Component {
 
   componentDidMount(){
     document.body.style.background = "#36465D";
-    document.getElementsByClassName('header-signup-unmounted')[0].className=('header-signup-mounted');
+    let header = document.getElementsByClassName('parent-div-unmount');
+    if (header.length >= 1) {
+      document.getElementsByClassName('parent-div-unmount')[0].className=('parent-div');
+    }
   }
 
   render() {
-    // <FeedContainer />
-
     return (
       <div className="Dashboard">
         <div className="left-col">

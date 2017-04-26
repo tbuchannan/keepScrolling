@@ -14,7 +14,7 @@ import configureStore  from './store/store';
 
 
 window.tj = {user:{username: 'tnice01', password:'password123'}};
-window.txtPost = {post: {author_id: 14, title: "Mars", body: "Good old Bruce, the man is a beast.", content_type: "txt"}}
+window.txtPost = {post: {author_id: 14, title: "Mars", body: "Good old Bruce, the man is a beast.", content_type: "txt"}};
 window.createPost = PostUtil.createPost;
 window.logout = APIUtil.logout;
 // window.signup = APIUtil.signup;

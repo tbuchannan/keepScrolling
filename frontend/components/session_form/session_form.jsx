@@ -38,9 +38,9 @@ class SessionForm extends React.Component {
 
   componentDidMount(){
     document.body.style.background = "";
-    let header = document.getElementsByClassName("header-signup-mounted");
+    let header = document.getElementsByClassName("parent-div");
     if (header.length >= 1){
-      document.getElementsByClassName("header-signup-mounted")[0].className=("header-signup-unmounted");
+      document.getElementsByClassName('parent-div')[0].className=('parent-div-unmount');
     }
   }
 
