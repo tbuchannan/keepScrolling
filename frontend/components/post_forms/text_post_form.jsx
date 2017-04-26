@@ -24,7 +24,7 @@ class TextPostForm extends React.Component {
 
   closeForm(e) {
     e.preventDefault();
-    this.setState({"hidden": true});
+    this.setState({"hidden": true, "body": "", "title": ""});
   }
 
   handleChange(field){

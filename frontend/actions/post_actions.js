@@ -29,3 +29,7 @@ export const createPost = post => dispatch => (
   PostUtil.createPost(post)
   .then(post => dispatch(receivePost(post)))
 );
+export const createPhotoPost = post => dispatch => (
+  PostUtil.createPhotoPost(post)
+  .then(post => dispatch(receivePost(post)))
+);

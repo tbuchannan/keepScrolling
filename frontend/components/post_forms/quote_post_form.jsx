@@ -24,7 +24,7 @@ class QuotePostForm extends React.Component {
 
   closeForm(e) {
     e.preventDefault();
-    this.setState({"hidden": true});
+    this.setState({"hidden": true, "body": "", "title": ""});
   }
 
   handleChange(field){
@@ -42,7 +42,7 @@ class QuotePostForm extends React.Component {
     };
   }
 
-  
+
 
   makePost(e) {
     e.preventDefault();

@@ -14,7 +14,6 @@ class DynamicLink extends React.Component {
 
 handleChange(e){
   e.preventDefault();
-  // debugger
   this.setState({"link_url": e.target.value});
 
 }
