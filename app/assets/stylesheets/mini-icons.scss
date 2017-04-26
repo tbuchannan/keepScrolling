@@ -1,0 +1,103 @@
+.bar {
+  display: flex;
+  margin: 0px 0px 20px 15px;
+  background: white;
+  min-width: 540px;
+  min-height: 99px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.bar-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.mini-block {
+  min-width: 14.2%;
+  min-height: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+.mini-button{
+  min-width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.text-post-icon {
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+  font-size: 39px;
+  width: 100%;
+  margin-bottom: -5px;
+}
+
+.mini-button-title {
+  align-self: center;
+  font-family: 'Roboto', sans-serif;
+  color: #696969;
+  font-size: 15px;
+  font-weight: 100;
+  margin-top: -10px;
+  padding: 0px 0px 15px 7px;
+}
+
+.icon-hover {
+  transition: .3s;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-left: 8px;
+
+}
+.mini-block:hover .icon-hover{
+  transform: translate(0px, -4px);
+}
+
+.picture-icons {
+  top: 8px;
+  left: -1px;
+  width: 60%;
+  height: 60%;
+  padding-bottom: 3px;
+}
+
+.photo-icon {
+  background-image: asset-url("cameraDark");
+}
+
+.quote-icon {
+  background-image: asset-url("quoteDark");
+}
+
+.link-icon {
+  background-image: asset-url("linkDark");
+}
+
+.chat-icon {
+  background-image: asset-url("chatDark");
+}
+
+.audio-icon {
+  background-image: asset-url("audioDark");
+}
+
+.video-icon {
+  background-image: asset-url("videoDark");
+}
+
+.divider {
+  position: absolute;
+  border-left: 1px solid #F00;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
+}

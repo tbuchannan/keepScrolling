@@ -56,6 +56,9 @@ KeepScrolling is a web application inspired by 'tumblr' built using Ruby on Rail
 #### Likes (1 day)
   - Be able to like posts, which are then stored in a 'likes' dashboard.
 
+---
+# Bonus
+
 #### Blogs (2 days)
   - Posts belong to Blogs that can be created, read, edited and destroyed through the API.
 

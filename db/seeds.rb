@@ -13,12 +13,12 @@ User.create(email: 'number1detective@gmail.com', username: 'jon', password: 'pas
 User.create(email: 'aksheathsheath420@gmail.com', username: 'sheath', password: 'password123');
 User.create(email: 'rkimthunkmaster@gmail.com', username: 'royce', password: 'password123');
 User.create(email: 'mokmok@gmail.com', username: 'moktar', password: 'password123');
-User.create(email: 'phillyphil@gmail.com', username: 'philip', password: 'password123');
+User.create(email: 'rauhfkjs@gmail.com', username: 'rahul', password: 'password123');
 
-text = Post.create(author_id: User.first.id, title: "Mars", body: "Good old Bruce, the man is a beast.", content_type: "txt")
-photo = Post.create(author_id: User.last.id, title: "", body: "Should I add a description?", photo_url: "www.external_photo_link.com", content_type: "jpg")
-quote = Post.create(author_id: User.second.id, title: "source information here?", body: "quote text will go in here", content_type: "txt", source: "source users")
-link = Post.create(author_id: User.third.id, title: "this will be on the link itself", body: "this is just a description", content_type: "", summary: "this is just a summary")
-chat = Post.create(author_id: User.fourth.id, title: "title of the chat", body: "chat text", content_type: "txt")
-audio = Post.create(author_id: User.fifth.id, title: "", body: " song description, def not a youtube link AUDIO ONLY", content_type: "mp3")
-video = Post.create(author_id: User.first.id, title: "", body: "Good old Bruce, the man is a beast.", content_type: "mp4")
+text = Post.create(author_id: User.first.id, title: "Mars", body: "Good old Bruce, the man is a beast.", content: "text")
+photo = Post.create(author_id: User.last.id, body: "Should I add a description?",  content: "http://farm4.staticflickr.com/3826/12897959993_a654e00dd2.jpg")
+quote = Post.create(author_id: User.second.id, title: "source information here?", body: "quote text will go in here", source: "source users", content: "quote")
+link = Post.create(author_id: User.third.id, title: "this will be on the link itself", body: "this is just a description", content: "https://github.com/thfxdszunanjfgfg", summary: "this is just a summary")
+chat = Post.create(author_id: User.fourth.id, title: "title of the chat", body: "chat text", content: "chat")
+audio = Post.create(author_id: User.fifth.id, body: " song description, def not a youtube link AUDIO ONLY", content: "https://soundcloud.com/radio1stories/future-rnb")
+video = Post.create(author_id: User.first.id, body: "Good old Bruce, the man is a beast.", content: "https://www.youtube.com/watch?v=S7OCzDNeENg")

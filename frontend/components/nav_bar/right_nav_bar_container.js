@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout, login } from '../../actions/session_actions';
-import Greeting from './greeting';
+import RightNavBar from './right_nav_bar';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = ( state, ownProps ) => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Greeting));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(RightNavBar));

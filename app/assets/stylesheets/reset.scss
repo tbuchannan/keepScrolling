@@ -9,8 +9,8 @@
  table, caption, tbody, tfoot, thead, tr, th, td,
  article, aside, canvas, details, embed,
  figure, figcaption, footer, header, hgroup,
- menu, nav, output, ruby, section, summary,
- time, mark, audio, video, input, button {
+ menu, nav, output, ruby, section, summary,span,
+ time, mark, audio, video, input, button, textarea {
    margin: 0;
    padding: 0;
    border: 0;
@@ -23,7 +23,7 @@
  footer, header, hgroup, menu, nav, section {
    display: block;
  }
- body {
+ body, textarea{
    line-height: 1.5;
  }
  ol, ul {
@@ -46,4 +46,7 @@
  }
  a:active {
    color: inherit;
+ }
+ button {
+   outline: none;
  }

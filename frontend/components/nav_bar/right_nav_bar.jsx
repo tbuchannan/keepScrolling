@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory} from 'react-router';
 
 const sessionLinks = (formType, guestLogin) => {
   const guest = (e) => {
@@ -11,7 +11,9 @@ const sessionLinks = (formType, guestLogin) => {
   if (formType === "/signup"){
     return (
       <nav className="login-signup">
-        <Link to="/login" activeClassName="current">Login</Link>
+        <Link to="/login" activeClassName="current">
+          <span className="login-button-text">Login</span>
+        </Link>
       <button onClick={guest} className="guest-login">
         Guest Login
       </button>
@@ -20,7 +22,10 @@ const sessionLinks = (formType, guestLogin) => {
   } else {
       return (
         <nav className="login-signup">
-          <Link to="/signup"  activeClassName="current">Sign Up!</Link>
+          <Link to="/signup"  activeClassName="current">
+            <span className="login-button-text">Sign Up!</span>
+          </Link>
+
           <button onClick={guest} className="guest-login">
             Guest Login
           </button>
@@ -28,15 +33,14 @@ const sessionLinks = (formType, guestLogin) => {
     }
   };
 
-const personalGreeting = (currentUser, logout) => (
-  <hgroup>
-    <h1>{currentUser.username} is here</h1>
+const personalNavBar = (currentUser, logout) => (
+  <div className="logout-button-container">
     <button className="logout-button" onClick={logout}>Log Out</button>
-  </hgroup>
+  </div>
 );
 
-const Greeting = ({ currentUser, logout, formType, guestLogin }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(formType, guestLogin)
+const RightNavBar = ({ currentUser, logout, formType, guestLogin }) => (
+  currentUser ? personalNavBar(currentUser, logout) : sessionLinks(formType, guestLogin)
 );
 
-export default Greeting;
+export default RightNavBar;

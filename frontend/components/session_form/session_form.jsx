@@ -36,8 +36,13 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-
-
+  componentDidMount(){
+    document.body.style.background = "";
+    let header = document.getElementsByClassName("parent-div");
+    if (header.length >= 1){
+      document.getElementsByClassName('parent-div')[0].className=('parent-div-unmount');
+    }
+  }
 
   renderErrors(){
     return (

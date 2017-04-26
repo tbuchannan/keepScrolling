@@ -1,0 +1,144 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+textarea {
+  resize: none;
+
+}
+
+.text-post-form {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-height: 60px;
+  font-family: Helvetica;
+  font-size: 45px;
+  font-weight: 300;
+  min-width: 540px;
+  background: white;
+  box-sizing: content-box;
+  border-radius: 3px;
+}
+
+.text-post-form-container *{
+    -webkit-animation: modalFade .2s;
+    overflow: visible;
+
+}
+
+@-webkit-keyframes modalFade {
+  0%   {
+    transform: translateY(-100%);
+    opacity: .5;
+    z-index: 40;
+   }
+  100% {
+    opacity: 1;
+    z-index: 40;
+   }
+}
+
+.text-post-form * {
+  z-index: 10;
+  color: #454545;
+}
+
+.current-user-post-bar {
+  display: flex;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.title {
+  display: block;
+  width: 95%;
+  height: 96px;
+}
+
+.title * {
+  width: 100%;
+  padding: 8px 0px 0px 10px;
+}
+
+.body * {
+  width: 96%;
+  height: 96px;
+  padding: 8px 0px 0px 10px;
+  margin-top: 30px;
+}
+
+
+.title *:focus, .body *:focus, .tags:focus {
+outline: none;
+}
+
+.body {
+  color: #9A9393;
+  font-size: 13px;
+  font-weight: 100;
+  width: 96%;
+  margin-top: 10px;
+}
+
+.modal-buttons {
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 2px solid #F3F3F3;
+  outline: none;
+}
+
+.button-flex {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.form-post-button {
+  background-color: #529ECC;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin: 0px 20px 10px 0px;
+}
+
+.form-post-button:active:enabled {
+  background-color: #4689B3;
+  outline: none;
+}
+
+.form-post-button:disabled .unselected{
+  color: #ADCEE3
+}
+
+.form-close-button {
+  max-width: 60px;
+  padding: 5px 15px;
+  background-color: #9EA6AE;
+  border-radius: 3px;
+  font-size: 13px;
+  margin: 0px 0px 10px 20px;
+}
+
+.form-close-button:active {
+  background-color: #80868D;
+}
+
+.translucent-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  height: 100vh;
+  background-color: rgba(56, 71, 92, .95);
+}
+
+.unselected {
+  user-select: none;
+  color: white;
+}

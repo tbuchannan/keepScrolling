@@ -12,7 +12,14 @@
  *
  *= require_tree .
  *= require_self
- *= reset
- *= nav_bar
- *= login_signup_form
  */
+ @import "reset";
+ @import "nav_bar";
+ @import "dashboard";
+ @import "feed";
+ @import "radar";
+ @import "recommendations";
+ @import "login_signup_form";
+ @import "mini-icons";
+ @import "post_bar";
+ @import "post";
