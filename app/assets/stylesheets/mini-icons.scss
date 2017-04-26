@@ -2,7 +2,8 @@
   display: flex;
   margin: 20px;
   background: white;
-  max-width: 540px;
+  min-width: 540px;
+  min-height: 99px;
   border-radius: 4px;
   // border: 1px solid red;
   width: 100%;
@@ -11,6 +12,7 @@
 .bar-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .mini-block {

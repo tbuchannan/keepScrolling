@@ -1,3 +1,33 @@
 .Dashboard {
-  margin-top: 37px;
+  margin-top: 17px;
+  display: flex;
+  justify-content: center;
+}
+.right-col {
+  margin-left: 30px;
+  width: 320px;
+  height: 750px;
+  background: #grey;
+  padding-top: -5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recommendations{
+  border: 1px solid pink;
+  width: 320px;
+  height: 243px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.radar
+{
+border: 1px solid yellow;
+width: 320px;
+height: 500px;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
