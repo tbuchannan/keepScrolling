@@ -18,14 +18,19 @@ class Dashboard extends React.Component {
 
     return (
       <div className="Dashboard">
-          <center>
+        <div className="left-col">
             <PostBarContainer />
             <PostContainer />
-            <h1>|___bar___  | recommendations|</h1>
-            <h1>|___feed___ | radar          | </h1>
-            <h1>|           |                |</h1>
+        </div>
+        <div className="right-col">
+          <div className="recommendations">
+            <span>Recommended Blogs</span>
+          </div>
+          <div className="radar">
+            <span>Radar</span>
+          </div>
+        </div>
 
-          </center>
       </div>
     );
   }
