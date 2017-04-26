@@ -11,7 +11,6 @@ import VideoPostForm from '../post_forms/video_post_form';
 class PostBar extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
     this.state = {formVisible: false, form: ""};
 
     this.handleSubmit = this.handleSubmit.bind(this);

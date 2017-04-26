@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
 import PostBar from '../post_bar/post_bar';
-import { createPost } from '../../util/post_api_util';
+import { createPost } from '../../actions/post_actions';
 import { hashHistory } from 'react-router';
 
 class TextPostForm extends React.Component {
@@ -35,9 +35,8 @@ class TextPostForm extends React.Component {
   makePost(e) {
     e.preventDefault();
     let post = this.state;
-    // debugger
 
-    createPost({post});
+    this.props.createPost({post});
     this.closeForm(e);
   }
   render (){
@@ -53,7 +52,7 @@ class TextPostForm extends React.Component {
           </div>
       );
     }else {
-      // debugger
+
       return (
           <div className="text-post-form-container">
             <div className="translucent-background"></div>
@@ -97,7 +96,7 @@ const mapStateToProps= (state, props) => {
   };
 };
   const mapDispatchToProps = dispatch => ({
-    createPost: post => dispatch(createPost)
+    createPost: post => dispatch(createPost(post))
   });
 
 

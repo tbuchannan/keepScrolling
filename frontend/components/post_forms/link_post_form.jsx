@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
 import PostBar from '../post_bar/post_bar';
-import { createPost } from '../../util/post_api_util';
+import { createPost } from '../../actions/post_actions';
 import { hashHistory } from 'react-router';
 import DynamicLink from '../dynamic_link/dynamic_link';
 
@@ -37,7 +37,7 @@ class LinkPostForm extends React.Component {
   makePost(e) {
     e.preventDefault();
     const post = this.state;
-    createPost({post});
+    this.props.createPost({post});
     this.closeForm(e);
   }
   render (){
@@ -68,7 +68,7 @@ class LinkPostForm extends React.Component {
                 <span className="unselected">Close</span>
               </button>
 
-              <button className="form-post-button" type="submit" disabled={!this.state.body && !this.state.title}>
+              <button className="form-post-button" type="submit" disabled={!this.state.link_url}>
                 <span className="unselected">Post</span>
               </button>
 
@@ -86,7 +86,7 @@ const mapStateToProps= (state, props) => {
   };
 };
   const mapDispatchToProps = dispatch => ({
-    createPost: post => dispatch(createPost)
+    createPost: post => dispatch(createPost(post))
   });
 
 

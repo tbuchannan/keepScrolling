@@ -4,13 +4,8 @@ import PostBarContainer from '../post_bar/post_bar_container';
 import PostContainer from '../post/post_container';
 
 class Dashboard extends React.Component {
-
   constructor(props){
     super(props);
-  }
-
-  componentWillUpdate(newProps, nextState){
-    debugger
   }
 
   componentDidMount(){
@@ -27,13 +22,12 @@ class Dashboard extends React.Component {
             <PostBarContainer />
             <PostContainer />
             <h1>|___bar___  | recommendations|</h1>
-            <h1>|feed | radar          | </h1>
-            <h1>|     |                |</h1>
+            <h1>|___feed___ | radar          | </h1>
+            <h1>|           |                |</h1>
 
           </center>
       </div>
     );
-
   }
 
 }

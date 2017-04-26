@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
 import PostBar from '../post_bar/post_bar';
-import { createPost } from '../../util/post_api_util';
+import { createPost } from '../../actions/post_actions';
 import { hashHistory } from 'react-router';
 
 class QuotePostForm extends React.Component {
@@ -40,7 +40,7 @@ class QuotePostForm extends React.Component {
   makePost(e) {
     e.preventDefault();
     const post = this.state;
-    createPost({post});
+    this.props.createPost({post});
     this.closeForm(e);
   }
   render (){
@@ -95,7 +95,7 @@ const mapStateToProps= (state, props) => {
   };
 };
   const mapDispatchToProps = dispatch => ({
-    createPost: post => dispatch(createPost)
+    createPost: post => dispatch(createPost(post))
   });
 
 

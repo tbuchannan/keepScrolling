@@ -6,6 +6,12 @@ class PostIndex extends React.Component {
   componentDidMount(){
     this.props.requestAllPosts();
   }
+  componentWillReceiveProps(nextProps){
+    if (this.props.posts.length !== nextProps.posts.length){
+      this.props.requestAllPosts();
+    }
+  }
+
 
   render() {
     const { posts, children } = this.props;
