@@ -33,3 +33,7 @@ export const createPhotoPost = post => dispatch => (
   PostUtil.createPhotoPost(post)
   .then(post => dispatch(receivePost(post)))
 );
+export const createAudioPost = post => dispatch => (
+  PostUtil.createAudioPost(post)
+  .then(post => dispatch(receivePost(post)))
+);

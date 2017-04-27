@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const PostItem = ({ post, router }) => {
-  let picture = post.image_url.includes("/assets/default-avatar") ? null :
-  post.image_url;
   if (post.content === 'link'){
     let externalLink = "http://" + post.source;
     return (
@@ -18,7 +16,7 @@ const PostItem = ({ post, router }) => {
           <span>{post.username}</span>
         </div>
         <div className="link-container">
-          <a classname= "link-post-link" href={externalLink} >{post.source}
+          <a className= "link-post-link" href={externalLink} >{post.source}
             <div>
               <div className="link-title">
                 <span>{post.title}
@@ -38,32 +36,66 @@ const PostItem = ({ post, router }) => {
       </li>
     );
 
-  }else {
+  }else if (post.content === 'audio') {
     return(
       <li className="li-post">
-      <div className="user-avatar">
-        <div className="user-image-stick">
-          <img src={post.avatar_url} />
+        <div className="user-avatar">
+          <div className="user-image-stick">
+            <img src={post.avatar_url} />
+          </div>
         </div>
-      </div>
-      <div className={"post"}>
-        <div className="post-header">
-          <span>{post.username}</span>
-        </div>
-        <div className="indiv-post-title">
-          <span>{post.title}</span>
-        </div>
-        <div className="indiv-post-body">
+        <div className={"post"}>
+          <div className="post-header">
+            <span>{post.username}</span>
+          </div>
+          <div className="indiv-post-title">
+            <span>{post.title}</span>
+          </div>
+          <div className="indiv-post-body">
 
-          <div className="picture-post-photo">
-            <img src={picture} />
+            <div className="audio-post-audio">
+              <audio controls>
+                <source src={post.image_url} type="audio/mp3"></source>
+                <source src={post.image_url} type="audio/ogg"></source>
+                <source src={post.image_url} type="audio/wav"></source>
+              </audio>
+            </div>
+            <div className = "body-caption">
+              <span>{post.body}</span>
+            </div>
           </div>
-          <div className = "body-caption">
-            <span>{post.body}</span>
+          <h2>{post.content}</h2>
+        </div>
+      </li>
+    );
+  }else {
+
+    let picture = post.content === "photo" ? post.image_url : null;
+    return(
+      <li className="li-post">
+        <div className="user-avatar">
+          <div className="user-image-stick">
+            <img src={post.avatar_url} />
           </div>
         </div>
-           <h2>{post.content}</h2>
-        </div>
+        <div className={"post"}>
+          <div className="post-header">
+            <span>{post.username}</span>
+          </div>
+          <div className="indiv-post-title">
+            <span>{post.title}</span>
+          </div>
+          <div className="indiv-post-body">
+
+            <div className="picture-post-photo">
+              <img src={picture} />
+            </div>
+            <div className = "body-caption">
+              <span>{post.body}</span>
+            </div>
+          </div>
+             <h2>{post.content}</h2>
+          </div>
       </li>
 
     );

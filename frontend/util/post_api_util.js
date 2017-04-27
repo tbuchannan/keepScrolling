@@ -14,6 +14,15 @@ export const createPhotoPost = (post) => {
     contentType: false
   });
 };
+export const createAudioPost = (post) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/posts',
+    data: post,
+    processData: false,
+    contentType: false
+  });
+};
 
 export const getAllPosts = () => {
   return $.ajax({

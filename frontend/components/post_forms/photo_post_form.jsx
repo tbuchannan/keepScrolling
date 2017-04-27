@@ -50,7 +50,6 @@ class PhotoPostForm extends React.Component {
 
   makePost(e) {
     e.preventDefault();
-    // const post = this.state;
     let file = this.state.imageFile;
     var formData = new FormData();
     formData.append('post[author_id]', this.state.author_id);

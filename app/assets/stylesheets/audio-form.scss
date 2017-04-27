@@ -1,0 +1,47 @@
+.audio-form {
+  display: flex;
+  width: 100%;
+  font-size: 20px;
+  margin-left: 10px;
+
+}
+.photo-input:focus {
+  outline: none;
+}
+
+.photo-input {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.audio-post-form {
+  margin-left: -383px;
+}
+
+.preview-image-form {
+  max-width: 540px;
+}
+
+.preview-image-form img {
+  width: 100%;
+}
+
+.picture-post-photo {
+  width: 540px;
+}
+
+.picture-post-photo img {
+  width: 100%;
+  margin-left: -20px;
+}
+
+.indiv-post-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.body-caption {
+  margin-top: 15px;
+  padding: 0px 20px;
+}
