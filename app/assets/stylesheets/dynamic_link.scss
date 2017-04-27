@@ -3,8 +3,6 @@
   margin-left: 15px;
 }
 
-
-
 .dynamic-link-textarea,
 .dynamic-summary-user-entry,
 .dynamic-title-user-entry,
@@ -14,10 +12,4 @@
   height: 60px;
   margin: 0px -15px 0px 15px;
   overflow: hidden;
-}
-.dynamic-link-textarea:focus,
-.dynamic-summary-user-entry:focus,
-.dynamic-title-user-entry:focus,
-.dynamic-description-entry:focus {
-  // outline: none;
 }

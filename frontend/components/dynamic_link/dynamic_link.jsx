@@ -30,7 +30,6 @@
 //
 // render(){
 //   // this logic needs to be fixed as well as the styling
-//   // debugger
 //   // if (this.validLink(this.state.link_url)){
 //   //   return (
 //   //     <div className = "dynamic-form-container">

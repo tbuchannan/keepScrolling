@@ -13,6 +13,7 @@
 .link-container {
   padding: 20px 20px 0px 20px;
   background: #F2F2F2;
+  text-decoration: none;
 }
 
 .indiv-post-description{
@@ -25,4 +26,8 @@
 .huge-pointer {
   font-size: 18px;
   font-weight: 700;
+}
+
+.link-post-link {
+  text-decoration-color: black;
 }

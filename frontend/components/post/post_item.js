@@ -4,9 +4,8 @@ import { Link } from 'react-router';
 const PostItem = ({ post, router }) => {
   let picture = post.image_url.includes("/assets/default-avatar") ? null :
   post.image_url;
-  debugger;
   if (post.content === 'link'){
-    let external_link = "http://" + post.source;
+    let externalLink = "http://" + post.source;
     return (
       <li className="li-post">
       <div className="user-avatar">
@@ -19,16 +18,19 @@ const PostItem = ({ post, router }) => {
           <span>{post.username}</span>
         </div>
         <div className="link-container">
-          <a href={external_link} >{post.source}</a>
-            <div className="link-title">
-              <span>{post.title}
-                <span className='huge-pointer'>  ></span>
-              </span>
+          <a classname= "link-post-link" href={externalLink} >{post.source}
+            <div>
+              <div className="link-title">
+                <span>{post.title}
+                  <span className='huge-pointer'>  ></span>
+                </span>
+              </div>
+              <div className="link-summary">
+                <span>{post.summary}</span>
+              </div>
             </div>
-            <div className="link-summary">
-              <span>{post.summary}</span>
-            </div>
-          </div>
+          </a>
+        </div>
           <div className = "indiv-post-description">
             {post.body}
           </div>

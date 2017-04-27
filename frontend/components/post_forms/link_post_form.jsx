@@ -48,7 +48,6 @@ class LinkPostForm extends React.Component {
   makePost(e) {
     e.preventDefault();
     const post = this.state;
-    debugger
     this.props.createPost({post});
     this.closeForm(e);
     }
