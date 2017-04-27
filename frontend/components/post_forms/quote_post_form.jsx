@@ -30,7 +30,7 @@ class QuotePostForm extends React.Component {
   handleChange(field){
     return (e)=>{
       let currentVal = e.target.value;
-      debugger
+      // debugger
       if (currentVal.endsWith('"')) {
         currentVal = currentVal.slice(0, -1);
       } else {

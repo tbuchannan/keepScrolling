@@ -9,7 +9,7 @@ class PhotoPostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: props.currentUser.username, content: "photo",
+      author: props.currentUser, content: "photo",
       author_id: props.currentUser.id, hidden: props.hidden, source: "",
       imageFile: null, body: ""
     };

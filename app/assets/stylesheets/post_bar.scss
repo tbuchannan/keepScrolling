@@ -11,7 +11,7 @@ textarea {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  min-height: 60px;
+  min-height: 120px;
   font-family: Helvetica;
   font-size: 45px;
   font-weight: 300;
@@ -23,7 +23,6 @@ textarea {
 
 .text-post-form-container *{
     -webkit-animation: modalFade .2s;
-    overflow: visible;
 
 }
 

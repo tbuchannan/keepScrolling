@@ -1,3 +1,23 @@
 .dynamic-link-title {
-  font-size: 24px;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+
+
+.dynamic-link-textarea,
+.dynamic-summary-user-entry,
+.dynamic-title-user-entry,
+.dynamic-description-entry {
+  font-size: 18px;
+  width: 95%;
+  height: 60px;
+  margin: 0px -15px 0px 15px;
+  overflow: hidden;
+}
+.dynamic-link-textarea:focus,
+.dynamic-summary-user-entry:focus,
+.dynamic-title-user-entry:focus,
+.dynamic-description-entry:focus {
+  // outline: none;
 }

@@ -37,8 +37,6 @@
   margin: 20px 5px;;
   background-repeat: no-repeat;
   border-radius: 3px;
-  position: -webkit-sticky;
-  position: sticky;
 }
 .user-avatar img {
   max-width: 100%;
@@ -48,10 +46,8 @@
   width: 64px;
   height: 64px;
   margin-right: 8px;
-  background: asset_url("avi");
+  // background: asset_url("default-avatar");
   background-repeat: no-repeat;
   border-radius: 3px;
-  position: -webkit-sticky;
-  position: sticky;
 
 }
