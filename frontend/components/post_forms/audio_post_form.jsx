@@ -39,7 +39,6 @@ class AudioPostForm extends React.Component {
     let reader = new FileReader();
     let file = e.currentTarget.files[0];
     reader.onloadend = function() {
-      // debugger;
       this.setState({ source: reader.result, audioFile: file});
     }.bind(this);
     if (file) {
@@ -81,7 +80,7 @@ class AudioPostForm extends React.Component {
               <span className="current-user-post-bar">{this.props.currentUser.username}</span>
 
               <div className="audio-form">
-                <input type="file" className="audio-input" onChange={this.handleAudio} />
+                <input type="file" className="audio-input" accept="audio/*" onChange={this.handleAudio} />
               </div>
               <div className="preview-image-form">
 

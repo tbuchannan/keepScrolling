@@ -37,3 +37,7 @@ export const createAudioPost = post => dispatch => (
   PostUtil.createAudioPost(post)
   .then(post => dispatch(receivePost(post)))
 );
+export const createVideoPost = post => dispatch => (
+  PostUtil.createVideoPost(post)
+  .then(post => dispatch(receivePost(post)))
+);

@@ -5,6 +5,8 @@ export const createPost = (post) => {
     data: post
   });
 };
+
+
 export const createPhotoPost = (post) => {
   return $.ajax({
     method: 'POST',
@@ -15,6 +17,15 @@ export const createPhotoPost = (post) => {
   });
 };
 export const createAudioPost = (post) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/posts',
+    data: post,
+    processData: false,
+    contentType: false
+  });
+};
+export const createVideoPost = (post) => {
   return $.ajax({
     method: 'POST',
     url: '/api/posts',

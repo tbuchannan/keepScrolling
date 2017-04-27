@@ -1,4 +1,4 @@
-.audio-form {
+.audio-form, .video-form {
   display: flex;
   width: 100%;
   font-size: 20px;
@@ -44,4 +44,7 @@
 .body-caption {
   margin-top: 15px;
   padding: 0px 20px;
+}
+audio {
+  width: 100%;
 }
