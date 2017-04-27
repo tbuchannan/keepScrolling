@@ -114,7 +114,7 @@ const PostItem = ({ post, router }) => {
           <div className="indiv-post-title">
             <span>{post.title}</span>
           </div>
-          <div className="indiv-post-body">
+          <div className="indiv-video-body">
             <div className="video-post-video">
               <video width="540" height="360" controls>
                 <source src={post.image_url} type="video/mp4" />
@@ -122,9 +122,6 @@ const PostItem = ({ post, router }) => {
               </video>
             </div>
 
-            <div className="picture-post-photo">
-              <img src={post.image_url} />
-            </div>
             <div className = "body-caption">
               <span>{post.body}</span>
             </div>
