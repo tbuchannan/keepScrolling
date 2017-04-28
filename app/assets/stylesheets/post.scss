@@ -3,7 +3,7 @@
   width: 540px;
   padding-top: 15px;
   border-radius: 3px;
-  margin: 20px 5px 20px 15px;
+  margin: 0px 5px 20px 15px;
   font-family: Helvetica;
 }
 
@@ -12,7 +12,7 @@
   font-weight: 700;
   display: flex;
   padding: 0px 20px;
-  margin: -3px 0px 13px 0px;
+  margin: 0px 0px 13px 0px;
 }
 
 .indiv-post-title{
@@ -50,4 +50,68 @@
   background-repeat: no-repeat;
   border-radius: 3px;
 
+}
+
+.post-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cog-div {
+  height: 25px;
+  width: 25px;
+}
+.fa-cog {
+font-size: 22px;
+color: #8F8F8F;
+}
+.cog-div *:hover {
+  cursor: pointer;
+}
+
+.edit_delete_drop {
+  width: 128px;
+  height: 75px;
+  border-radius: 3px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border: 1px solid #E6E6E6;
+  font-size: 14px;
+  font-family: Helvetica;
+  margin: -3px 0px 0px -65px;
+  box-shadow: -1px 2px 5px #444;
+  display: none;
+}
+
+.cog-div:hover {
+  .edit_delete_drop {
+    display: flex;
+  }
+}
+.hidden {
+}
+
+.show {
+  display: flex;
+}
+
+.edit_delete_drop * {
+  background: white;
+  color: #444;
+  height: 100%;
+  text-align: left;
+  padding-left: 10px;
+}
+.edit_delete_drop *:hover {
+  background: #E7EFF6;
+}
+
+.edit-label {
+  padding-top: 5px;
+}
+.delete-label {
+  padding-bottom: 5px;
 }
