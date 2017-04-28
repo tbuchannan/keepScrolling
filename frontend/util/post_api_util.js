@@ -5,6 +5,12 @@ export const createPost = (post) => {
     data: post
   });
 };
+export const removePost = (post) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/posts/${post.post_id}`
+  });
+};
 
 
 export const createPhotoPost = (post) => {
