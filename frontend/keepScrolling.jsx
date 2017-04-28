@@ -12,13 +12,10 @@ import configureStore  from './store/store';
 // audio = Post.create(author_id: User.fifth.id, title: "", body: " song description, def not a youtube link AUDIO ONLY", content_type: "mp3")
 // video = Post.create(author_id: User.first.id, title: "", body: "Good old Bruce, the man is a beast.", content_type: "mp4")
 
-
 window.tj = {user:{username: 'tnice01', password:'password123'}};
 window.txtPost = {post: {author_id: 14, title: "Mars", body: "Good old Bruce, the man is a beast.", content_type: "txt"}};
 window.createPost = PostUtil.createPost;
 window.logout = APIUtil.logout;
-// window.signup = APIUtil.signup;
-// window.store = configureStore();
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -29,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
       store = configureStore();
     }
     window.store = store;
-  // const store = configureStore();
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 

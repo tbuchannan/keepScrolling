@@ -9,8 +9,8 @@ class TextPostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "", body: "", author: props.currentUser.username,
-      author_id: props.currentUser.id, hidden: props.hidden, content: ""
+      title: "", body: "", author: props.currentUser,
+      author_id: props.currentUser.id, hidden: props.hidden, content: "text"
     };
     this.makePost = this.makePost.bind(this);
     this.showForm = this.showForm.bind(this);

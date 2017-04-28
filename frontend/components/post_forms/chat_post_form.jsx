@@ -9,7 +9,7 @@ class ChatPostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: props.currentUser.username, title: "", body: "",
+      author: props.currentUser, title: "", body: "",
       author_id: props.currentUser.id, hidden: props.hidden
     };
     this.makePost = this.makePost.bind(this);

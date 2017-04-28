@@ -105,26 +105,11 @@ class LinkPostForm extends React.Component {
                     </button>
                   </div>
               </div>
-
             </div>
             );
           }
-
-        // <div className="text-post-form-container">
-        //   <div className="translucent-background"></div>
-        //   <div className="text-post-form link" onSubmit={this.makePost}>
-        //     <span className="current-user-post-bar">{this.props.currentUser.username}</span>
-        //
-        //
-        //     <div className="dynamic-link-style">
-        //     </div>
-        //
-        //
-        //
-        //   </div>
-        // </div>
-    }
-  }
+        }
+      }
 
 const mapStateToProps= (state, props) => {
   return {
@@ -135,28 +120,4 @@ const mapStateToProps= (state, props) => {
     createPost: post => dispatch(createPost(post))
   });
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(LinkPostForm);
-
-
-//
-//
-// <input type="text" placeholder="Title" onChange={this.handleChange('title')} />
-// </div>
-// <div className="body">
-//   <textarea placeholder="Your text here" onChange={this.handleChange('body')} />
-// </div>
-// <div className="tags">
-// </div>
-// <br />
-
-
-// <div className="modal-buttons">
-//
-//   <button className="form-close-button" onClick={this.closeForm}>
-//     <span className="unselected">Close</span>
-//   </button>
-//
-//   <button className="form-post-button" type="submit" disabled={!this.state.link_url}>
-//     <span className="unselected">Post</span>
-//   </button>

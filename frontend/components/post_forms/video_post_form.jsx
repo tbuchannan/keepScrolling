@@ -9,7 +9,7 @@ class VideoPostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: props.currentUser.username, content: "video", source: "",
+      author: props.currentUser, content: "video", source: "",
       videoFile: null, author_id: props.currentUser.id, hidden: props.hidden,
       body: ""
     };

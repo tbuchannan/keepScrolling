@@ -2,10 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const PostItem = ({ post, router }) => {
-  // const switchaRoo = (event) => {
-  //   document.getElementsByClassName("edit_delete_drop").classList=("edit_delete_drop hidden");
-  // };
-
   if (post.content === 'link'){
     let externalLink = "http://" + post.source;
     return (
@@ -39,6 +35,10 @@ const PostItem = ({ post, router }) => {
           <div className="post-footer">
             <div className="cog-div">
               <i className="fa fa-cog" aria-hidden="true"></i>
+              <div className = "edit_delete_drop hidden">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
             </div>
           </div>
       </div>
@@ -76,13 +76,16 @@ const PostItem = ({ post, router }) => {
           <div className="post-footer">
             <div className="cog-div">
               <i className="fa fa-cog" aria-hidden="true"></i>
+              <div className = "edit_delete_drop hidden">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
             </div>
           </div>
         </div>
       </li>
     );
-  }else if (post.content === "photo"){
-    // debugger;
+  } else if (post.content === "photo"){
 
     let picture = post.content === "photo" ? post.image_url : null;
     return(
@@ -111,9 +114,9 @@ const PostItem = ({ post, router }) => {
           <div className="post-footer">
             <div className="cog-div">
               <i className="fa fa-cog" aria-hidden="true"></i>
-              <div className = "edit_delete_drop">
-                <label className="edit-label">Edit</label>
-                <label className="delete-label">Delete</label>
+              <div className = "edit_delete_drop hidden">
+                <button>Edit</button>
+                <button>Delete</button>
               </div>
             </div>
           </div>
@@ -150,8 +153,10 @@ const PostItem = ({ post, router }) => {
           </div>
           <div className="post-footer">
             <div className="cog-div">
-              <div className="cog-div">
-                <i className="fa fa-cog" aria-hidden="true"></i>
+              <i className="fa fa-cog" aria-hidden="true"></i>
+              <div className = "edit_delete_drop hidden">
+                <button>Edit</button>
+                <button>Delete</button>
               </div>
             </div>
           </div>

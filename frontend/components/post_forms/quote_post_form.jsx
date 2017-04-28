@@ -9,7 +9,7 @@ class QuotePostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: props.currentUser.username, body: "", title: "",
+      author: props.currentUser, body: "", title: "", content: "quote",
       author_id: props.currentUser.id, hidden: props.hidden
     };
     this.makePost = this.makePost.bind(this);
@@ -64,11 +64,11 @@ class QuotePostForm extends React.Component {
       );
     }else {
       return (
-          <div className="text-post-form-container">
+          <div className="text-post-form-container quote">
             <div className="translucent-background"></div>
-            <form className="text-post-form quote"
+            <form className="text-post-form "
               onSubmit={this.makePost}>
-              <span className="current-user-post-bar">{this.state.author}</span>
+              <span className="current-user-post-bar">{this.state.author.username}</span>
               <div className="title">
                 <textarea placeholder='"Quote"' onChange={this.handleChange('body')} value={this.state.body}/>
               </div>

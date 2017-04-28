@@ -9,7 +9,7 @@ class AudioPostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: props.currentUser.username, content: "audio", source: "",
+      author: props.currentUser, content: "audio", source: "",
       audioFile: null, author_id: props.currentUser.id, hidden: props.hidden,
       body: ""
     };
