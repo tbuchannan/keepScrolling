@@ -12,20 +12,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  display: hidden
 }
 
 .recommendations{
-  border: 1px solid pink;
-  width: 320px;
+  // border: 1px solid pink;
+  // width: 320px;
   height: 243px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: hidden
 }
 .radar
 {
-border: 1px solid yellow;
-width: 320px;
+// border: 1px solid yellow;
+// width: 320px;
 height: 500px;
 display: flex;
 flex-direction: column;
