@@ -30,9 +30,13 @@ class Dashboard extends React.Component {
         <div className="right-col">
           <div className="recommendations">
 
+
+
+
+
           </div>
-          <div className="radar">
-          </div>
+
+
         </div>
 
       </div>
