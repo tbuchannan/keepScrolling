@@ -28,6 +28,9 @@ class User < ApplicationRecord
     primary_key: :id,
     class_name: "Post"
 
+
+
+
   after_initialize :ensure_session_token
 
   attr_reader :password

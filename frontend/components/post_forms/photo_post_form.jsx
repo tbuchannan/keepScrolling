@@ -80,7 +80,7 @@ class PhotoPostForm extends React.Component {
               <span className="current-user-post-bar">{this.props.currentUser.username}</span>
 
               <div className="photo-form">
-                <input type="file" className="photo-input" onChange={this.handlePicture} />
+                <input type="file" className="photo-input" accept="image/*" onChange={this.handlePicture} />
               </div>
               <div className="preview-image-form">
                 <img src={this.state.source} />

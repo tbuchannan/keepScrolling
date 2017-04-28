@@ -15,10 +15,10 @@ export const receiveAllPosts = posts => ({
   posts
 });
 
-export const removePost = post => ({
+export const removePost = post =>({
   type: REMOVE_POST,
   post
-});
+  });
 
 export const requestAllPosts = () => dispatch => (
   PostUtil.getAllPosts().then(
@@ -35,8 +35,8 @@ export const createPost = post => dispatch => (
   .then(post => dispatch(receivePost(post)))
 );
 
-export const removeOnePost = post => dispatch => (
-  PostUtil.removePost(post).then(post => dispatch(removePost(post)))
+export const removeOnePost = id => dispatch => (
+  PostUtil.removePost(id).then(post => dispatch(removePost(post)))
 );
 
 export const createPhotoPost = post => dispatch => (

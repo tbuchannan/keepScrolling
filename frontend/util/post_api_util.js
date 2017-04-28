@@ -5,10 +5,10 @@ export const createPost = (post) => {
     data: post
   });
 };
-export const removePost = (post) => {
+export const removePost = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/posts/${post.post_id}`
+    url: `/api/posts/${id}`
   });
 };
 
