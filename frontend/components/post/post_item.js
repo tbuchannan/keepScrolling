@@ -163,7 +163,42 @@ const PostItem = (props) => {
           </div>
       </li>
     );
-  } else {
+  } else if (props.post.content === "quote"){
+    return (
+      <li className="li-post">
+        <div className="user-avatar">
+          <div className="user-image-stick">
+            <img src={props.post.avatar_url} />
+          </div>
+        </div>
+        <div className={"post"}>
+          <div className="post-header">
+            <span>{props.post.username}</span>
+          </div>
+            <div className="indiv-post-title">
+            <span>{props.post.body}</span>
+          </div>
+          <div className="indiv-post-body">
+
+            <div className = "body-caption">
+              <span>{props.post.title}</span>
+            </div>
+          </div>
+          <div className="post-footer">
+            <div className="cog-div">
+              <i className="fa fa-cog" aria-hidden="true"></i>
+              <div className = "edit_delete_drop hidden">
+                <button>Edit</button>
+                <button onClick={() => props.removeOnePost(props.post.post_id)}>Delete</button>
+              </div>
+            </div>
+          </div>
+          </div>
+        </li>
+    );
+  }
+    else {
+
       return (
       <li className="li-post">
         <div className="user-avatar">
@@ -174,6 +209,7 @@ const PostItem = (props) => {
         <div className={"post"}>
           <div className="post-header">
             <span>{props.post.username}</span>
+
           </div>
           <div className="indiv-post-title">
             <span>{props.post.title}</span>

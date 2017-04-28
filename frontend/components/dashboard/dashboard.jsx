@@ -2,11 +2,14 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import PostBarContainer from '../post_bar/post_bar_container';
 import PostContainer from '../post/post_container';
+// import RecommendedContainer from '../recommended/recommended_container';
+
+
 
 class Dashboard extends React.Component {
   constructor(props){
     super(props);
-  }
+    }
 
   componentDidMount(){
     document.body.style.background = "#36465D";
@@ -17,6 +20,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    // <RecommendedContainer />
     return (
       <div className="Dashboard">
         <div className="left-col">

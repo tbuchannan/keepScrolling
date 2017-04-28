@@ -30,7 +30,6 @@ class User < ApplicationRecord
 
 
 
-
   after_initialize :ensure_session_token
 
   attr_reader :password
