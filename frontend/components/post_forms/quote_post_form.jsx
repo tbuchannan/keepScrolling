@@ -66,10 +66,10 @@ class QuotePostForm extends React.Component {
       return (
           <div className="text-post-form-container">
             <div className="translucent-background"></div>
-            <form className="text-post-form"
+            <form className="text-post-form quote"
               onSubmit={this.makePost}>
               <span className="current-user-post-bar">{this.state.author}</span>
-              <div className="title quote">
+              <div className="title">
                 <textarea placeholder='"Quote"' onChange={this.handleChange('body')} value={this.state.body}/>
               </div>
               <div className="body">

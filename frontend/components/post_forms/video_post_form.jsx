@@ -74,7 +74,7 @@ class VideoPostForm extends React.Component {
       return (
           <div className="text-post-form-container">
             <div className="translucent-background"></div>
-            <form className="text-post-form video-post-form"
+            <form className="text-post-form video-post-form video"
               onSubmit={this.makePost}>
               <span className="current-user-post-bar">{this.props.currentUser.username}</span>
               <div className="video-form">

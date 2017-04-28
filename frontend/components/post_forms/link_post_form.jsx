@@ -94,7 +94,18 @@ class LinkPostForm extends React.Component {
               <div className="text-post-form link">
                 <span className="current-user-post-bar">{this.props.currentUser.username}</span>
                 <input type="textarea" className= "dynamic-link-textarea" placeholder="Type or paste a URL" onChange={this.handleChange("source")} />
+                  <div className="modal-buttons">
+
+                    <button className="form-close-button" onClick={this.closeForm}>
+                      <span className="unselected">Close</span>
+                    </button>
+
+                    <button className="form-post-button" type="submit" disabled={!this.state.source}>
+                      <span className="unselected">Post</span>
+                    </button>
+                  </div>
               </div>
+
             </div>
             );
           }
