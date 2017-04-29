@@ -14,7 +14,7 @@ keepScrollig is a fullstack web application inspired by tumblr. It utilizes Ruby
 
 Posts are rendered in one component, the PostItem component, which displays the author of the post, their profile picture, the post and options to delete the post. The PostItem Component is rendered on the, PostItemIndex Component which is rendered on the Dashboard component upon login. The UI is taken directly from tumblr, for a clean minimalist look.
 
-![image of dashboard](keepScrolling/docs/wireframes/loggedInDash.png)
+![image of dashboard](/docs/wireframes/loggedInDash.png)
 
 ## Future Directions for the Project
 In addition to the features already implemented, The next steps for keepScrolling are outlined below.
