@@ -1,7 +1,7 @@
 # keepScrolling
 
 [keepScrolling live][heroku]
-[heroku]: https://keep-scrolling.herokuapp.com/#/login
+[heroku]:https://keep-scrolling.herokuapp.com
 
 keepScrollig is a fullstack web application inspired by tumblr. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
