@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const PostItem = (props) => {
   if (props.post.content === 'link'){
-    let externalLink = "http://" + props.post.source;
+    let externalLink = "https://" + props.post.source;
     return (
       <li className="li-post">
       <div className="user-avatar">
