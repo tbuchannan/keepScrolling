@@ -18,8 +18,11 @@ class Api::PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-
+    if current_user.id == @post.author_id
+      @post.destroy
+    else
+      render(json: @post.errors.full_messages)
+    end
   end
 
   def edit
