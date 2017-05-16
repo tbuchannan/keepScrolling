@@ -4,7 +4,7 @@ import { Link, hashHistory} from 'react-router';
 const sessionLinks = (formType, guestLogin) => {
   const guest = (e) => {
     let user;
-    user = {email: "tj.buchannan@gmail.com", password: "password123"};
+    user = {email: "guest@guest.com", password: "guest1234"};
     guestLogin({user});
   };
 
