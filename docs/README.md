@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: https://keep-scrolling.herokuapp.com/
+[heroku]: https://www.keepscrolling.us/
 [trello]: https://trello.com/b/VDUbWkif/keepscrolling
 
 ## Minimum Viable Product
