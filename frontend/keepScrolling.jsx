@@ -19,8 +19,8 @@ window.logout = APIUtil.logout;
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
-    if (window.currentUser) {
-      const preloadedState = { session: { currentUser: window.currentUser, errors: [] } };
+    if (window.current_user) {
+      const preloadedState = { session: { currentUser: window.current_user, errors: [] } };
       store = configureStore(preloadedState);
     } else {
       store = configureStore();
