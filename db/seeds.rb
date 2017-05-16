@@ -8,6 +8,7 @@
 User.destroy_all
 Post.destroy_all
 
+User.create(email: 'guest@guest.com', username: 'guest', password: 'guest1234');
 User.create(email: 'tj.buchannan@gmail.com', username: 'tnice01', password: 'password123');
 User.create(email: 'number1detective@gmail.com', username: 'jon', password: 'password123');
 User.create(email: 'aksheathsheath420@gmail.com', username: 'sheath', password: 'password123');
