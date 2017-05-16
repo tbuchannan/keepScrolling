@@ -4,9 +4,6 @@ import Root from './components/root';
 import * as APIUtil from './util/session_api_util';
 import * as PostUtil from './util/post_api_util';
 import configureStore  from './store/store';
-<<<<<<< HEAD
-=======
->>>>>>> 2f4edf58ccda108ab2bd8fe99487f635cbf7ea1a
 
 window.tj = {user:{username: 'tnice01', password:'password123'}};
 window.txtPost = {post: {author_id: 14, title: "Mars", body: "Good old Bruce, the man is a beast.", content_type: "txt"}};
