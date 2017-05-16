@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const PostItem = (props) => {
+  // debugger
+  if (!props.currentUser){return null;}
+  let currUserPost = props.post.author === props.currentUser.id ? "curr" : "hidden";
   if (props.post.content === 'link'){
     let externalLink = "https://" + props.post.source;
     return (
@@ -33,9 +36,9 @@ const PostItem = (props) => {
             {props.post.body}
           </div>
           <div className="post-footer">
-            <div className="cog-div">
+            <div className={'cog-div ' + currUserPost}>
               <i className="fa fa-cog" aria-hidden="true"></i>
-              <div className = "edit_delete_drop hidden">
+              <div className ="edit_delete_drop hidden">
                 <button>Edit</button>
                 <button onClick={() => props.removeOnePost(props.post.post_id)}>Delete</button>
               </div>
@@ -74,9 +77,9 @@ const PostItem = (props) => {
             </div>
           </div>
           <div className="post-footer">
-            <div className="cog-div">
+            <div className={'cog-div ' + currUserPost}>
               <i className="fa fa-cog" aria-hidden="true"></i>
-              <div className = "edit_delete_drop hidden">
+              <div className ="edit_delete_drop hidden">
                 <button>Edit</button>
                 <button onClick={() => props.removeOnePost(props.post.post_id)}>Delete</button>
               </div>
@@ -112,9 +115,9 @@ const PostItem = (props) => {
             </div>
           </div>
           <div className="post-footer">
-            <div className="cog-div">
+            <div className={'cog-div ' + currUserPost}>
               <i className="fa fa-cog" aria-hidden="true"></i>
-              <div className = "edit_delete_drop hidden">
+              <div className ="edit_delete_drop hidden">
                 <button>Edit</button>
                 <button onClick={() => props.removeOnePost(props.post.post_id)}>Delete</button>
               </div>
@@ -152,9 +155,9 @@ const PostItem = (props) => {
             </div>
           </div>
           <div className="post-footer">
-            <div className="cog-div">
+            <div className={'cog-div ' + currUserPost}>
               <i className="fa fa-cog" aria-hidden="true"></i>
-              <div className = "edit_delete_drop hidden">
+              <div className ="edit_delete_drop hidden">
                 <button>Edit</button>
                 <button onClick={() => props.removeOnePost(props.post.post_id)}>Delete</button>
               </div>
@@ -185,9 +188,9 @@ const PostItem = (props) => {
             </div>
           </div>
           <div className="post-footer">
-            <div className="cog-div">
+            <div className={'cog-div ' + currUserPost}>
               <i className="fa fa-cog" aria-hidden="true"></i>
-              <div className = "edit_delete_drop hidden">
+              <div className ="edit_delete_drop hidden">
                 <button>Edit</button>
                 <button onClick={() => props.removeOnePost(props.post.post_id)}>Delete</button>
               </div>
@@ -198,7 +201,6 @@ const PostItem = (props) => {
     );
   }
     else {
-
       return (
       <li className="li-post">
         <div className="user-avatar">
@@ -221,9 +223,9 @@ const PostItem = (props) => {
             </div>
           </div>
           <div className="post-footer">
-            <div className="cog-div">
+            <div className={'cog-div ' + currUserPost}>
               <i className="fa fa-cog" aria-hidden="true"></i>
-              <div className = "edit_delete_drop hidden">
+              <div className ="edit_delete_drop hidden">
                 <button>Edit</button>
                 <button onClick={() => props.removeOnePost(props.post.post_id)}>Delete</button>
               </div>

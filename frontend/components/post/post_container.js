@@ -4,7 +4,10 @@ import {selectAllPosts } from '../../reducers/selector';
 import PostIndex from './post_index';
 
 const mapStateToProps = (state, ownProps) => {
-  return { posts: selectAllPosts(state)};
+  return {
+    posts: selectAllPosts(state),
+    currentUser: state.session.currentUser
+  };
 };
 const mapDispatchToProps = (dispatch) => {
   return{

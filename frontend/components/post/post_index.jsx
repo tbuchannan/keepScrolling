@@ -16,11 +16,10 @@ class PostIndex extends React.Component {
   render() {
     // debugger
     // const { posts, children, removeOnePost } = this.props;
-    // debugger
       return (
       <div className = "feed">
         <ul>
-          {this.props.posts.reverse().map(post => <PostItem key={post.post_id} removeOnePost={this.props.removeOnePost} post={post}/>) }
+          {this.props.posts.reverse().map(post => <PostItem key={post.post_id} removeOnePost={this.props.removeOnePost} post={post} currentUser={this.props.currentUser}/>) }
         </ul>
       </div>
     );
