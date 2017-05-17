@@ -94,9 +94,40 @@ color: #8F8F8F;
   display: none;
 }
 
-.curr{
-
+// .edit_avatar{
+//   // border: 1px solid red;
+// }
+// .edit_profile {
+//   height: 20px;
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   top: -28px;
+// }
+.change{
+  opacity: 0;
+  user-select: none;
 }
+//
+// @-webkit-keyframes changeFade {
+//   0%   {
+//     opacity: .5;
+//    }
+//   100% {
+//     opacity: 1;
+//    }
+// }
+//
+//
+// .edit_avatar:hover{
+//   cursor: pointer;
+// }
+// .edit_profile:hover {
+//   .change{
+//     -webkit-animation: changeFade .2s;
+//     opacity: 1;
+//   }
+// }
 
 .show {
   display: flex;

@@ -15,6 +15,7 @@ User.create(email: 'aksheathsheath420@gmail.com', username: 'sheath', password: 
 User.create(email: 'rkimthunkmaster@gmail.com', username: 'royce', password: 'password123');
 User.create(email: 'mokmok@gmail.com', username: 'moktar', password: 'password123');
 User.create(email: 'rauhfkjs@gmail.com', username: 'rahul', password: 'password123');
+User.create(email: 'test@test.com', username: 'test', password: 'tester123');
 
 text = Post.create(author_id: User.first.id, title: "Mars", body: "Good old Bruce, the man is a beast.", content: "text")
 photo = Post.create(author_id: User.last.id, body: "Should I add a description?",  content: "http://farm4.staticflickr.com/3826/12897959993_a654e00dd2.jpg")

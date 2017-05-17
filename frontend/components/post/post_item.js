@@ -2,17 +2,24 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const PostItem = (props) => {
-  // debugger
   if (!props.currentUser){return null;}
-  let currUserPost = props.post.author === props.currentUser.id ? "curr" : "hidden";
+  let currUserPost = "";
+  let editAvatar = "";
+  if (props.post.author === props.currentUser.id){
+    currUserPost = "curr";
+    editAvatar = "edit_avatar";
+  } else {
+     currUserPost = "hidden";
+  }
   if (props.post.content === 'link'){
     let externalLink = "https://" + props.post.source;
     return (
       <li className="li-post">
-      <div className="user-avatar">
-        <div className="user-image-stick">
-          <img src={props.post.avatar_url} />
-        </div>
+      <div className={'user-avatar ' + editAvatar}>
+          <div className="user-image-stick">
+            <img src={props.post.avatar_url} />
+          </div>
+          <div className="edit_profile"><span className="change">Change</span></div>
       </div>
       <div className={"post"}>
         <div className="post-header">
@@ -51,7 +58,7 @@ const PostItem = (props) => {
   }else if (props.post.content === 'audio') {
     return(
       <li className="li-post">
-        <div className="user-avatar">
+        <div className={'user-avatar ' + editAvatar}>
           <div className="user-image-stick">
             <img src={props.post.avatar_url} />
           </div>
@@ -93,7 +100,7 @@ const PostItem = (props) => {
     let picture = props.post.content === "photo" ? props.post.image_url : null;
     return(
       <li className="li-post">
-        <div className="user-avatar">
+        <div className={'user-avatar ' + editAvatar}>
           <div className="user-image-stick">
             <img src={props.post.avatar_url} />
           </div>
@@ -130,7 +137,7 @@ const PostItem = (props) => {
   } else if (props.post.content === "video") {
     return (
       <li className="li-post">
-        <div className="user-avatar">
+        <div className={'user-avatar ' + editAvatar}>
           <div className="user-image-stick">
             <img src={props.post.avatar_url} />
           </div>
@@ -169,7 +176,7 @@ const PostItem = (props) => {
   } else if (props.post.content === "quote"){
     return (
       <li className="li-post">
-        <div className="user-avatar">
+        <div className={'user-avatar ' + editAvatar}>
           <div className="user-image-stick">
             <img src={props.post.avatar_url} />
           </div>
@@ -201,9 +208,10 @@ const PostItem = (props) => {
     );
   }
     else {
+      // debugger
       return (
       <li className="li-post">
-        <div className="user-avatar">
+        <div className={'user-avatar ' + editAvatar}>
           <div className="user-image-stick">
             <img src={props.post.avatar_url} />
           </div>
