@@ -208,7 +208,6 @@ const PostItem = (props) => {
     );
   }
     else {
-      // debugger
       return (
       <li className="li-post">
         <div className={'user-avatar ' + editAvatar}>

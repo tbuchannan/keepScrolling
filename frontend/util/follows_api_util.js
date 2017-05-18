@@ -18,3 +18,10 @@ export const getAllFollowees = (id) => {
     url: `/api/users/${id}/follows`
   });
 };
+
+export const getAllPotentialFollowees = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/users/${id}/potential_followers`
+  });
+};

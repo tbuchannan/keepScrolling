@@ -4,22 +4,23 @@ import RecommendedItem from './recommended_item';
 
 class Recommended extends React.Component {
   componentDidMount(){
-    this.props.requestAllFollowees(this.props.current_user.id);
+    // debugger
+    // this.props.requestAllFollowees(this.props.current_user.id);
+    this.props.requestPotentialFollowees(this.props.current_user.id);
   }
 
   componentWillReceiveProps(nextProps){
     if (this.props.followees.length !== nextProps.followees.length){
-      this.props.requestAllFollowees();
+      this.props.requestPotentialFollowees(nextProps.current_user.id);
     }
   }
 
 
   render() {
-    // debugger;
       return (
       <div className = "follow-feed">
         <ul>
-          {this.props.followees.map(follow => <RecommendedItem key={follow.followee_id} follow={follow}/>) }
+          {this.props.followees.map((potential, idx) => <RecommendedItem key={idx} potential={potential}/>) }
         </ul>
       </div>
     );
