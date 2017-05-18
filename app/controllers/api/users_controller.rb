@@ -17,6 +17,14 @@ class Api::UsersController < ApplicationController
     not(id: @user.id)
   end
 
+  def followed_posts
+    @user = User.find(params[:id])
+    @posts = Post.where(author_id: @user.followees.pluck(:followee_id)).or(
+      Post.where(author_id: User.first.id)).order(:updated_at)
+
+    # debugger
+  end
+
   def show
     @user = User.find(params[:id])
     render "/api/users/show"

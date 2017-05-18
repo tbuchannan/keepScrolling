@@ -4,11 +4,11 @@ import PostItem from './post_item';
 
 class PostIndex extends React.Component {
   componentDidMount(){
-    this.props.requestAllPosts();
+    this.props.requestAllPosts(this.props.currentUser.id);
   }
   componentWillReceiveProps(nextProps){
     if (this.props.posts.length !== nextProps.posts.length){
-      this.props.requestAllPosts();
+      this.props.requestAllPosts(this.props.currentUser.id);
     }
   }
 

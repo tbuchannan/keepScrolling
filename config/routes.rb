@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create] do
       resources :follows, only: [:create, :destroy, :index]
       get "potential_followers", on: :member
+      get "followed_posts", on: :member
     end
     resources :posts
     resource :session, only: [:create, :destroy]
