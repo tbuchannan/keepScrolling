@@ -1,7 +1,7 @@
 // webpack.config.js
 let path = require('path');
 let webpack = require('webpack');
-// const prod = process.argv.indexOf('-p') !== -1;
+
 
 let plugins = [];
 let devPlugins = [];
@@ -46,10 +46,3 @@ module.exports = {
     extensions: ['.js', '.jsx', '*']
   }
 };
-//   new webpack.DefinePlugin({
-//     'process.env': {
-//       NODE_ENV: JSON.stringify('production')
-//     }
-//   }),
-//   new webpack.optimize.UglifyJsPlugin()
-// ],
