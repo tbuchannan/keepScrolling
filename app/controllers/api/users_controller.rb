@@ -20,7 +20,6 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = Post.where(author_id: @user.followees.pluck(:followee_id)).or(Post.where(author_id: @user.id)).order(:updated_at)
 
-    # debugger
   end
 
   def show
