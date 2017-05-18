@@ -1,24 +1,25 @@
 class Api::FollowsController < ApplicationController
 
   def index
-    # debugger
-    @followees = Follow.all
+    @followees = Follow.includes(:followee, :follower).where(follower_id: params[:user_id])
+    render "/api/follows/index"
   end
 
   def create
-    # debugger
-    @follow = current_user.followers.create(followee_id: params[:user_id])
-
+    @follow = Follow.create(follow_params);
     if @follow.save
       render :show
     end
   end
 
-
-
   def destroy
-    @follow = current_user.follows.find_by(followee_id: params[:user_id])
+    @follow = Follow.find(params[:id])
     @follow.destroy!
     render :show
+  end
+
+  private
+  def follow_params
+    params.require(:follow).permit(:follower_id, :followee_id)
   end
 end
