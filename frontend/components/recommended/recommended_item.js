@@ -7,7 +7,9 @@ const RecommendedItem = (props) => {
     <li>
       <div className="radar-item">
         <div className= "radar-img-container">
-          <img className="radar-img" src={props.potential.avatar} />
+          <div className="image-container">
+            <img className="radar-img" src={props.potential.avatar} />
+          </div>
           <span className="radar-username">{props.potential.username}</span>
         </div>
 

@@ -14,10 +14,16 @@
 .follow-feed > ul > li:first-child {
   border-top: solid 2px #505E72;
 }
-
-.radar-img {
+.image-container{
   height: 37px;
   width: 37px;
+  display: flex;
+  justify-content: center;
+}
+
+.radar-img {
+  height: 100%;
+  width: 100%;
 }
 
 .radar-img-container{
