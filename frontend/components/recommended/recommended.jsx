@@ -17,10 +17,11 @@ class Recommended extends React.Component {
 
 
   render() {
+    let potentialList = this.props.followees.slice(0,4);
       return (
       <div className = "follow-feed">
         <ul>
-          {this.props.followees.map((potential, idx) => <RecommendedItem key={idx} potential={potential}/>) }
+          {potentialList.map((potential, idx) => <RecommendedItem key={idx} potential={potential} current_user={this.props.current_user} followUser={this.props.createFollow}/>) }
         </ul>
       </div>
     );

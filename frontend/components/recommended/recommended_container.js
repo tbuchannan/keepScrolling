@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Recommended from './recommended';
-import { receiveFollow, requestAllFollowees, requestPotentialFollowees } from '../../actions/follow_actions.js';
+import { receiveFollow, requestAllFollowees, requestPotentialFollowees, createFollow } from '../../actions/follow_actions.js';
 import { selectAllFollowees } from '../../reducers/selector';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,7 +14,8 @@ const mapDispatchToProps = (dispatch) => {
   return{
     receiveFollow: (follow) => dispatch(receiveFollow(follow)),
     requestAllFollowees: (id) => dispatch(requestAllFollowees(id)),
-    requestPotentialFollowees: (id) => dispatch(requestPotentialFollowees(id))
+    requestPotentialFollowees: (id) => dispatch(requestPotentialFollowees(id)),
+    createFollow: (id, follow) => dispatch(createFollow(id, follow))
   };
 
 };
