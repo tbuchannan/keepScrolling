@@ -1,13 +1,14 @@
-export const createFollow = (id) => {
+export const createFollow = (id, follow) => {
   return $.ajax({
       method: 'POST',
       url: `/api/users/${id}/follows`,
+      data: follow
   });
 };
-export const removeFollow = (id) => {
+export const removeFollow = (user_id, id) => {
   return $.ajax({
       method: 'DELETE',
-      url: `/api/users/${id}/follows`,
+      url: `/api/users/${user_id}/follows/${id}`
   });
 };
 
