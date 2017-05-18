@@ -12,9 +12,9 @@ Follow.destroy_all
 
 User.create(email: 'guest@guest.com', username: 'guest', password: 'guest1234');
 User.create(email: 'tj.buchannan@gmail.com', username: 'tnice01', password: 'password123');
-User.create(email: 'number1detective@gmail.com', username: 'jon', password: 'password123');
-User.create(email: 'aksheathsheath420@gmail.com', username: 'sheath', password: 'password123');
-User.create(email: 'rkimthunkmaster@gmail.com', username: 'royce', password: 'password123');
+User.create(email: 'gotfanboy@gmail.com', username: 'JonSnow', password: 'password123');
+User.create(email: 'himym@gmail.com', username: 'HowIMetYourMother', password: 'password123');
+User.create(email: 'dwight@gmail.com', username: 'DKSchrute', password: 'password123');
 User.create(email: 'mokmok@gmail.com', username: 'moktar', password: 'password123');
 User.create(email: 'rauhfkjs@gmail.com', username: 'rahul', password: 'password123');
 User.create(email: 'test@test.com', username: 'test', password: 'tester123');
@@ -26,3 +26,7 @@ User.create(email: 'test@test.com', username: 'test', password: 'tester123');
 # chat = Post.create(author_id: User.fourth.id, title: "title of the chat", body: "chat text", content: "chat")
 # audio = Post.create(author_id: User.fifth.id, body: " song description, def not a youtube link AUDIO ONLY", content: "https://soundcloud.com/radio1stories/future-rnb")
 # video = Post.create(author_id: User.first.id, body: "Good old Bruce, the man is a beast.", content: "https://www.youtube.com/watch?v=S7OCzDNeENg")
+
+link = Post.create(author_id: User.third.id, title: "Winter is Coming", body: "Game of Thrones news source", content: "http://winteriscoming.net/", summary: "")
+link2 = Post.create(author_id: User.fourth.id, title: "How I Met Your Mother Opening", body: "", content: "https://www.youtube.com/watch?v=ZPLOsabhQSM", summary: "")
+link3 = Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "http://www.barneystinsonblog.com/", summary: "")
