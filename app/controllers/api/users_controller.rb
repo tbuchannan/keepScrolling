@@ -13,14 +13,12 @@ class Api::UsersController < ApplicationController
 
   def potential_followers
     @user = User.find(params[:id])
-    @potentials = User.where.not(id: @user.followees.pluck(:followee_id)).where.
-    not(id: @user.id)
+    @potentials = User.where.not(id: @user.followees.pluck(:followee_id)).where.not(id: @user.id)
   end
 
   def followed_posts
     @user = User.find(params[:id])
-    @posts = Post.where(author_id: @user.followees.pluck(:followee_id)).or(
-      Post.where(author_id: @user.id)).order(:updated_at)
+    @posts = Post.where(author_id: @user.followees.pluck(:followee_id)).or(Post.where(author_id: @user.id)).order(:updated_at)
 
     # debugger
   end

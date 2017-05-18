@@ -12,7 +12,7 @@ const PostItem = (props) => {
      currUserPost = "hidden";
   }
   if (props.post.content === 'link'){
-    let externalLink = "https://" + props.post.source;
+    let externalLink = props.post.source.includes("://") ? props.post.source : 'https://' + props.post.source;
     return (
       <li className="li-post">
       <div className={'user-avatar ' + editAvatar}>

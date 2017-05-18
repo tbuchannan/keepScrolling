@@ -20,6 +20,7 @@ class Recommended extends React.Component {
     let potentialList = this.props.followees.slice(0,4);
       return (
       <div className = "follow-feed">
+        <span className="radar-title">Recommended Users</span>
         <ul>
           {potentialList.map((potential, idx) => <RecommendedItem key={idx} potential={potential} current_user={this.props.current_user} followUser={this.props.createFollow}/>) }
         </ul>
