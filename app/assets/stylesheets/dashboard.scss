@@ -22,12 +22,9 @@
   align-items: center;
   display: hidden;
 }
-.radar
-{
-// border: 1px solid yellow;
-// width: 320px;
-height: 500px;
-display: flex;
-flex-direction: column;
-align-items: center;
+.radar{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
