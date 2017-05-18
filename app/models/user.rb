@@ -29,6 +29,15 @@ class User < ApplicationRecord
     primary_key: :id,
     class_name: "Post"
 
+  has_many :followers,
+    foreign_key: :followee_id,
+    primary_key: :id,
+    class_name: "Follow"
+
+  has_many :followees,
+    foreign_key: :follower_id,
+    primary_key: :id,
+    class_name: "Follow"
 
 
   after_initialize :ensure_session_token
