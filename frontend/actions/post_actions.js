@@ -22,8 +22,8 @@ export const removePost = post =>({
   });
 
 
-export const requestAllPosts = () => dispatch => (
-  PostUtil.getAllPosts().then(
+export const requestAllPosts = (id) => dispatch => (
+  PostUtil.getAllPosts(id).then(
     posts => dispatch(receiveAllPosts(posts)))
 );
 

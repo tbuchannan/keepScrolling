@@ -41,10 +41,10 @@ export const createVideoPost = (post) => {
   });
 };
 
-export const getAllPosts = () => {
+export const getAllPosts = (id) => {
   return $.ajax({
     method: 'GET',
-    url: '/api/posts',
+    url: `/api/users/${id}/followed_posts`,
     error: (err) => console.log(err)
   });
 };
