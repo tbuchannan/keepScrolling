@@ -26,7 +26,7 @@ const PostItem = (props) => {
           <span>{props.post.username}</span>
         </div>
         <div className="link-container">
-          <a className= "link-post-link" href={externalLink} >{props.post.source}
+          <a className= "link-post-link" target="_blank" href={externalLink} >{props.post.source}
             <div>
               <div className="link-title">
                 <span>{props.post.title}
