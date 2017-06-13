@@ -16,6 +16,10 @@
   text-decoration: none;
 }
 
+.link-container:active {
+  background: #DEDEDE;
+}
+
 .indiv-post-description{
   margin-top: 15px;
   padding-left: 20px;
@@ -29,5 +33,9 @@
 }
 
 .link-post-link {
-  text-decoration-color: black;
+  text-decoration: none;
+}
+
+.link-post-link:visited {
+  color: black;
 }
