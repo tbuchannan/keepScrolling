@@ -4,7 +4,6 @@ import { receiveFollow, requestAllFollowees, requestPotentialFollowees, createFo
 import { selectAllFollowees } from '../../reducers/selector';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     followees: selectAllFollowees(state),
     current_user: state.session.currentUser};

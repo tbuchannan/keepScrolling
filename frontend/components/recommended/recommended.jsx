@@ -4,7 +4,6 @@ import RecommendedItem from './recommended_item';
 
 class Recommended extends React.Component {
   componentDidMount(){
-    // debugger
     // this.props.requestAllFollowees(this.props.current_user.id);
     this.props.requestPotentialFollowees(this.props.current_user.id);
   }
