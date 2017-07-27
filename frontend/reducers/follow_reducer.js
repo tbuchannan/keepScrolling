@@ -7,7 +7,6 @@ const defaultState = Object.freeze({
 
 const FollowReducer = (state = {}, action) => {
   Object.freeze(state);
-  // console.log("This is the Follow REDUCER")
   switch (action.type) {
     case RECEIVE_FOLLOW:
       const followee = action.followee;
