@@ -7,6 +7,10 @@
 # Post.create(author_id: User.fourth.id, title: "How I Met Your Mother Opening", body: "", content: "https://www.youtube.com/watch?v=ZPLOsabhQSM", summary: "")
 # Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
 
+
+
+# 50 users, 10-20 posts each
+
 User.destroy_all
 Post.destroy_all
 Follow.destroy_all

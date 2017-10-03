@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.4.1
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database keepscrolling_travis_ci_test;' -U postgres
