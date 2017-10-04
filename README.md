@@ -1,4 +1,4 @@
-# keepScrolling
+# keepScrolling [![Build Status](https://travis-ci.org/tbuchannan/keepScrolling.svg?branch=master)](https://travis-ci.org/tbuchannan/keepScrolling)
 
 [keepScrolling live][heroku]
 
