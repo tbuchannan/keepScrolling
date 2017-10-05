@@ -18,7 +18,7 @@
 FactoryGirl.define do
   # sequence(:user_id, 978){|n| "uid#{ n.to_s }"}
 
-  factory :user, class: User do
+  factory :user, aliases:[:author, :followee, :follower], class: User do
     username { Faker::Internet.user_name(5..14) }
     email { Faker::Internet.email }
     password 'password'

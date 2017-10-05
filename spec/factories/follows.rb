@@ -11,6 +11,7 @@
 
 FactoryGirl.define do
   factory :follow do
-    
+    followee
+    follower
   end
 end

@@ -12,5 +12,10 @@
 require 'rails_helper'
 
 RSpec.describe Follow, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:follow) { FactoryGirl.create(:follow) }
+
+  it { should validate_presence_of :followee }
+  it { should validate_presence_of :follower }
+
+  it { should validate_uniqueness_of(:follower_id).scoped_to(:followee_id) }
 end

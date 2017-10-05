@@ -18,7 +18,7 @@
 #
 
 FactoryGirl.define do
-  factory :post do
-    
+  factory :post, class: Post do
+    author
   end
 end

@@ -20,5 +20,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:post) { FactoryGirl.build(:post)}
+
+  it { should validate_presence_of :author_id}
+  it { should belong_to :author}
 end
