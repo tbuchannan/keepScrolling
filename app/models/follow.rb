@@ -10,8 +10,9 @@
 #
 
 class Follow < ApplicationRecord
+  validate :not_following_self
   validates :followee, :follower, presence: true
-  validates :follower, uniqueness: { scope: :followee }
+  validates :follower_id, uniqueness: { scope: :followee_id }
 
   belongs_to :followee,
     primary_key: :id,
@@ -22,5 +23,13 @@ class Follow < ApplicationRecord
     primary_key: :id,
     foreign_key: :follower_id,
     class_name: "User"
+
+
+    private
+    def not_following_self
+      if (self.followee_id == self.follower_id)
+        errors.add(:base, "Follower_id and Followee_id cannot be the same")
+      end
+    end
 
 end
