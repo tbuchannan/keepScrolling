@@ -1,3 +1,0 @@
-test:
-  adapter: postgresql
-  database: keepscrolling_travis_ci_test
