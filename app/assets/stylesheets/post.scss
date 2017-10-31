@@ -25,6 +25,8 @@
 .indiv-post-body {
   display: flex;
   padding: 0px 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 .li-post {
   display: flex;
