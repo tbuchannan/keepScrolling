@@ -17,6 +17,7 @@
 
 class User < ApplicationRecord
   validates :username, :email, :session_token, :password_digest, presence: true
+  validates :username, length: {maximum: 32, too_long: "is too long. Please enter %{count} or fewer characters." }
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
