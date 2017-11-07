@@ -1,13 +1,13 @@
 .header-signup-unmounted {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 
 .header-signup-mounted {
   border-bottom: 1px solid #505E72;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .parent-div-unmount {
@@ -39,7 +39,7 @@
 
 .logout-button-container {
   align-self: center;
-  margin-right: 10px;
+  margin-right: 22px;
 }
 
 .login-button-text {
