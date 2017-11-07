@@ -15,7 +15,8 @@ const RecommendedItem = (props) => {
         <div className= "radar-button-container">
           <label
             onClick={() => props.followUser(
-              props.current_user.id, {follow:{follower_id: props.current_user.id, followee_id: props.potential.id }})} className="follow-button">
+              props.current_user.id, {follow:{follower_id: props.current_user.id,
+                followee_id: props.potential.id }})} className="follow-button">
             <span className="radar-plus">+</span>
           </label>
         </div>
