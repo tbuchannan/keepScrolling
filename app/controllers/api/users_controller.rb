@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
 
   def potential_followers
     @user = User.find(params[:id])
-    @potentials = User.where.not(id: @user.followees.pluck(:followee_id)).where.not(id: @user.id)
+    @potentials = User.where.not(id: @user.followees.pluck(:followee_id)).where.not(id: @user.id).order('random()').limit(10)
   end
 
   def followed_posts
