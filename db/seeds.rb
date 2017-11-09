@@ -23,11 +23,48 @@ User.create(email: 'himym@gmail.com', username: 'HowIMetYourMother', password: '
 User.create(email: 'dwight@gmail.com', username: 'DKSchrute', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/avatar_47daeec01aae_512-min.png');
 User.create(email: 'jerome@gmail.com', username: 'Playa4rmHimalayas', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/jerome.jpg');
 User.create(email: 'teemo@gmail.com', username: 'Teemo', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/Teemo_square.png');
-User.create(email: 'ramen@gmail.com', username: 'Naruto Uzumaki', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/naruto-min.png');
+naruto = User.create(email: 'ramen@gmail.com', username: 'Naruto Uzumaki', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/naruto-min.png');
 User.create(email: 'wethebest@gmail.com', username: 'DJ Khaled', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/khaled.jpg');
-Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
+
+family_guy_avatars = [
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyBrianBanana.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyCrazyStewie.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyFancyStewie.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyMocking.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyQuagmire.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyQuagmireGiggity.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyMayor.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyMocking.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyQuagmire.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyQuagmireGiggity.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuySickChris.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyStewiePres.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyStewieStare.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyupsideDown.jpg"
+].shuffle
+
+family_guy_users = []
+
+family_guy_avatars.length.times do
+  person = Faker::FamilyGuy.unique.character
+  family_guy_users << User.create(email: Faker::Internet.unique.safe_email, username: person, password: Faker::Internet.password(8), avatar: family_guy_avatars.pop )
+end
+
+family_guy_pic_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuyHuddle.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuyStewieLoveMe.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuychinDance.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuyPortait.jpg"
+]
+
+Post.create(author_id: naruto.id, title: "Naruto Opening 2", body: "Dope track", content: "audio", image: "https://s3.amazonaws.com/keepscrolling-pro/naruto/narutoOpening2.mp3")
+
+
+
+# Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
 
 # users = [guest, tj, jonSnow, himym, dwight, jerome, teemo, naruto, khaled]
 
-# 50.times do |index|
-  # Post.create(author_id: users.sample.id, title: Faker::HowIMetYourMother.quote)
+50.times do |index|
+  Post.create(author_id: User.all.sample.id, title: Faker::HowIMetYourMother.quote, body:Faker::ChuckNorris.fact)
+end

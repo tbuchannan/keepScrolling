@@ -26,7 +26,6 @@ export const receivePotentialFollowees = followees => ({
   followees
 });
 
-
 export const createFollow = (id, follow) => dispatch => (
   FollowUtil.createFollow(id, follow)
   .then(follow => dispatch(receiveFollow(follow)))
