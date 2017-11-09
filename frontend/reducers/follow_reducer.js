@@ -9,12 +9,13 @@ const FollowReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_FOLLOW:
-      const followee = action.followee;
-      return merge({}, state, { followees });
+    const nextState = merge({}, state);
+    delete nextState[action.follow.followee_id];
+    return nextState;
     case REMOVE_FOLLOW:
-      const nextState = merge({}, state);
-      delete nextState[action.followees.id];
-      return nextState;
+      // const nextState = merge({}, state);
+      // delete nextState[action.follow.followee_id];
+      // return nextState;
     case RECEIVE_ALL_FOLLOWEES:
     const followees = action.followees;
       return merge({}, followees);
