@@ -19,7 +19,7 @@ Follow.destroy_all
 User.create(email: 'guest@guest.com', username: 'guest', password: 'guest1234');
 User.create(email: 'tj.buchannan@gmail.com', username: 'tnice01', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/10389538_10205830560710800_963345743579597519_n.jpg');
 User.create(email: 'gotfanboy@gmail.com', username: 'JonSnow', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/gotavatar.jpg');
-User.create(email: 'himym@gmail.com', username: 'HowIMetYourMother', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/himym-min.png');
+mother = User.create(email: 'himym@gmail.com', username: 'HowIMetYourMother', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/himym-min.png');
 User.create(email: 'dwight@gmail.com', username: 'DKSchrute', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/avatar_47daeec01aae_512-min.png');
 User.create(email: 'jerome@gmail.com', username: 'Playa4rmHimalayas', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/jerome.jpg');
 User.create(email: 'teemo@gmail.com', username: 'Teemo', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/Teemo_square.png');
@@ -45,9 +45,9 @@ family_guy_avatars = [
 
 family_guy_users = []
 
-family_guy_avatars.length.times do
+family_guy_avatars.each do |image|
   person = Faker::FamilyGuy.unique.character
-  family_guy_users << User.create(email: Faker::Internet.unique.safe_email, username: person, password: Faker::Internet.password(8), avatar: family_guy_avatars.pop )
+  family_guy_users << User.create(email: Faker::Internet.unique.safe_email, username: person, password: Faker::Internet.password(8), avatar: image )
 end
 
 family_guy_pic_posts = [
@@ -57,9 +57,32 @@ family_guy_pic_posts = [
   "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuyPortait.jpg"
 ]
 
-Post.create(author_id: naruto.id, title: "Naruto Opening 2", body: "Dope track", content: "audio", image: "https://s3.amazonaws.com/keepscrolling-pro/naruto/narutoOpening2.mp3")
+family_guy_video_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/video_posts/familyGuyCoolWhip.mp4",
+  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/video_posts/familyGuyStewieSinging.mp4"
+]
+
+family_guy_pic_posts.each do |pic|
+  Post.create(author_id: family_guy_users.sample.id, title: Faker::FamilyGuy.unique.location, body: Faker::FamilyGuy.unique.quote, content: "photo", image: pic)
+end
+
+family_guy_video_posts.each do |vid|
+  Post.create(author_id: family_guy_users.sample.id, title: Faker::FamilyGuy.unique.location, body: Faker::FamilyGuy.unique.quote, content: "video", image: vid)
+end
 
 
+# Post.create(author_id: naruto.id, title: "Naruto Opening 2", body: "Dope track", content: "audio", image: "https://s3.amazonaws.com/keepscrolling-pro/naruto/narutoOpening2.mp3")
+
+naruto_audio_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/naruto/audio_posts/narutoOpening2.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/naruto/audio_posts/narutoOpening3.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/naruto/audio_posts/narutoOpening8.mp3",
+].shuffle
+
+naruto_audio_posts.each do |audio|
+  post_number = audio.split(/[\/.]/)[-2][-1]
+  Post.create(author_id: naruto.id, title: "Naruto Opening #{post_number}", body: "I beat #{Faker::DragonBall.character} to this", content: "audio", image: audio)
+end
 
 # Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
 
