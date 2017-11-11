@@ -21,6 +21,6 @@ FactoryGirl.define do
   factory :user, aliases:[:author, :followee, :follower], class: User do
     username { Faker::Internet.user_name(5..32) }
     email { Faker::Internet.email }
-    password 'password'
+    password { Faker::Internet.password(7, 10) }
   end
 end
