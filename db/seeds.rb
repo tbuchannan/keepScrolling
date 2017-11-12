@@ -23,16 +23,13 @@ posts = []
 family_guy_avatars = [
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyBrianBanana.gif",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyCrazyStewie.png",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyFancyStewie.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMocking.jpg",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyDeath.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyEvilMonkey.png",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmire.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmireGiggity.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMayor.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMocking.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyFancyStewie.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmire.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmireGiggity.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMayor.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMocking.jpg",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuySickChris.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyStewiePres.jpg",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyStewieStare.png",
@@ -137,11 +134,17 @@ naruto_pic_posts.each do |pic|
     title: villages.sample,
     body: "BELIEVE IT#{"!" * rand(6)}",
     content: "photo",
-    image: pic)
+    image: pic
+  )
 end
 
 naruto_video_posts.each do |video|
-  posts << Post.new(author_id: naruto.id, title: "He wasn't ready, BELIEVE IT", body: , content: "video", image: vid)
+  posts << Post.new(
+    author_id: naruto.id,
+    title: "He wasn't ready, BELIEVE IT",
+    content: "video",
+    image: video
+  )
 end
 
 ################################ Dwight Schrute ################################
@@ -203,7 +206,7 @@ got_video_posts.each do |video|
     author_id: got.id,
     title: "#{Faker::GameOfThrones.character} would enjoy this",
     content: "video",
-    image: vid
+    image: video
   )
 end
 
@@ -241,7 +244,7 @@ himym_video_posts.each do |video|
     author_id: himym.id,
     title: "#{Faker::GameOfThrones.character} would enjoy this",
     content: "video",
-    image: vid
+    image: video
   )
 end
 
@@ -266,7 +269,7 @@ khaled_pic_posts = [
 
 khaled_strings = [
   "Major Key Alert", "Another One", "Cloth Talk", "Yes Boy! Yes Boy!", "Lion!",
-  "They don't want you to have stars on your roof, so I got stars on my roof", "Fan Love"
+  "They don't want you to have stars on your roof, so I got stars on my roof", "Fan Love",
   "Bless Up", "Major Key", "Sty away from 'They'"
 ]
 
@@ -285,7 +288,7 @@ khaled_video_posts.each do |video|
     author_id: khaled.id,
     title: "#{khaled_strings.sample}",
     content: "video",
-    image: vid
+    image: video
   )
 end
 
@@ -321,10 +324,12 @@ anime_video_posts = [
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/video_posts/bokuNoHeroFight.mp4",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/video_posts/bokuNoHeroSaveUraraka.mp4"
 ]
+
 anime_strings = [
   "Which is your favorite gif?", "This gave me goosebumps!", "So Sick!!!", "Saitama would still win",
   "Dope!", "Sick!!"
 ]
+
 anime_pic_posts.each do |pic|
   posts << Post.new(
     author_id: anime.id,
@@ -338,11 +343,13 @@ end
 anime_video_posts.each do |video|
   posts << Post.new(
     author_id: anime.id,
-    title: "Deku#{! * rand(9)}",
+    title: "Deku#{"!" * rand(9)}",
     content: "video",
-    image: vid
+    image: video
   )
 end
+
+puts posts
 
 
 # Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
@@ -351,6 +358,6 @@ end
 
 # users = [guest, tj, jonSnow, himym, dwight, jerome, teemo, naruto, khaled]
 
-50.times do |index|
-  Post.create(author_id: User.all.sample.id, title: Faker::HowIMetYourMother.quote, body:Faker::ChuckNorris.fact)
-end
+# 50.times do |index|
+#   Post.create(author_id: User.all.sample.id, title: Faker::HowIMetYourMother.quote, body:Faker::ChuckNorris.fact)
+# end
