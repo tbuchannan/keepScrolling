@@ -247,13 +247,47 @@ end
 
 
 
-################################## Family Guy ##################################
+################################## DJ Khaled ###################################
 khaled = User.create(
   email: 'wethebest@gmail.com',
   username: 'DJ Khaled',
   password: 'password123',
-  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/khaled.jpg');
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/khaled.jpg'
+)
 
+khaled_video_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/khaled/video_posts/congratsYouJustPlayedYourself.mp4"
+]
+
+khaled_pic_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/khaled/posts/majorKey.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/khaled/posts/yesBoyYesBoy.gif"
+]
+
+khaled_strings = [
+  "Major Key Alert", "Another One", "Cloth Talk", "Yes Boy! Yes Boy!", "Lion!",
+  "They don't want you to have stars on your roof, so I got stars on my roof", "Fan Love"
+  "Bless Up", "Major Key", "Sty away from 'They'"
+]
+
+khaled_pic_posts.each do |pic|
+  posts << Post.new(
+    author_id: khaled.id,
+    title: "#{khaled_strings.sample}",
+    body: "#{khaled_strings.sample}",
+    content: "photo",
+    image: pic
+  )
+end
+
+khaled_video_posts.each do |video|
+  posts << Post.new(
+    author_id: khaled.id,
+    title: "#{khaled_strings.sample}",
+    content: "video",
+    image: vid
+  )
+end
 
 ##################################### Anime ####################################
 anime = User.create(
