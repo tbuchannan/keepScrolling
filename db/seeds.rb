@@ -422,7 +422,9 @@ supreme_pic_posts.each do |pic|
   )
 end
 
-puts posts
+posts.shuffle.each do |post|
+  post.save
+end
 
 
 # Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
