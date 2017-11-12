@@ -354,41 +354,73 @@ doom = User.create(
   email: Faker::Internet.safe_email("doom"),
   username: 'Anime4Lyfe',
   password: 'password',
-  avatar: ''
+  avatar: "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/doomAvi.png"
 )
 
 doom_songs = [
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Black+Star+-+Re%3ADefinition.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Bruno+Mars+-+24K_Magic.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Bruno+Mars+-+Thats_What_I_Like.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Chance+The+Rapper+-+Cocoa_Butter_Kisses.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Chance+the+Rapper+-+Same_Drugs.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Chance+the+Rapper+-+Sunday_Candy.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Childish+Gambino+-+Break.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Childish+Gambino+-+So+Into+You.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Kanye+West+-+Through_The_Wire.mp3"
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Black+Star+-+Re%3ADefinition.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Bruno+Mars+-+24K_Magic.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Bruno+Mars+-+Thats_What_I_Like.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Chance+The+Rapper+-+Cocoa_Butter_Kisses.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Chance+the+Rapper+-+Same_Drugs.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Chance+the+Rapper+-+Sunday_Candy.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Childish+Gambino+-+Break.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Childish+Gambino+-+So+Into+You.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/song_posts/Kanye+West+-+Through_The_Wire.mp3"
 ]
 
-words = ["Classic", "Dope", "Dirty", "Chill", "Sleek", "Clean"]
+adjectives = ["Classic", "Dope", "Dirty", "Chill", "Sleek", "Clean"]
 
 sentences = [
   "Nothing to say but this is a ", "Where were you when this came out?",
   "This is a ", "Sometimes you just need a beer and a "
 ]
 
-word = [ "hit", "banger", "track", "song" ]
+song_synonym = [ "hit", "banger", "track", "song" ]
 
 
 doom_songs.each do |audio|
   posts << Post.new(
     author_id: doom.id,
-    title: "#{words.sample} AF",
-    body: "#{sentences.sample} #{words.sample} #{word.sample}",
+    title: "#{adjectives.sample} AF",
+    body: "#{adjectives.sample} #{sentences.sample} #{song_synonym.sample}",
     content: "audio",
     image: audio
   )
 end
 
+#################################### Supreme ###################################
+
+supreme = User.create(
+  email: Faker::Internet.safe_email("HypeBeast"),
+  username: 'Hyp3B3ast',
+  password: 'password',
+  avatar: "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/supremeAvatar.png"
+)
+supreme_pic_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeAsapRocky.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeBen.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeBiggie.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeCamo.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeHawaii.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeKYS.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeMarilynMonroe.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeMoney.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeMoneyGun.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeNYC.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremePool.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/bapeCamo.jpg"
+]
+
+supreme_pic_posts.each do |pic|
+  posts << Post.new(
+    author_id: supreme.id,
+    title: "HypeBeast",
+    body: "",
+    content: "photo",
+    image: pic
+  )
+end
 
 puts posts
 
