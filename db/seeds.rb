@@ -294,7 +294,57 @@ anime = User.create(
   email: Faker::Internet.safe_email("anime"),
   username: 'Anime4Lyfe',
   password: 'password',
-  avatar: '');
+  avatar: ''
+)
+
+anime_pic_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/dekuArm.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/dekuFace.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/goku.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/gon.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/itachi.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/magicbeast.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/onePunchMan.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/pizzadesopixl.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/purplecity.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/sakura.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/sasuke.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/ssj.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/ssjBlue.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/titan.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/titans.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/tokyo.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/posts/youjousenki.gif"
+]
+
+anime_video_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/video_posts/bokuNoHeroFight.mp4",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/video_posts/bokuNoHeroSaveUraraka.mp4"
+]
+anime_strings = [
+  "Which is your favorite gif?", "This gave me goosebumps!", "So Sick!!!", "Saitama would still win",
+  "Dope!", "Sick!!"
+]
+anime_pic_posts.each do |pic|
+  posts << Post.new(
+    author_id: anime.id,
+    title: "#{anime_strings.sample}",
+    body: "#{Faker::OnePiece.quote}",
+    content: "photo",
+    image: pic
+  )
+end
+
+anime_video_posts.each do |video|
+  posts << Post.new(
+    author_id: anime.id,
+    title: "Deku#{! * rand(9)}",
+    content: "video",
+    image: vid
+  )
+end
+
+
 # Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
 
 # Post.create(author_id: naruto.id, title: "Naruto Opening 2", body: "Dope track", content: "audio", image: "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/narutoOpening2.mp3")
