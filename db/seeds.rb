@@ -88,13 +88,14 @@ naruto = User.create(
   email: 'ramen@gmail.com',
   username: 'Naruto Uzumaki',
   password: 'password123',
-  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/naruto-min.png');
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/naruto-min.png'
+)
 
 naruto_audio_posts = [
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/audio_posts/narutoOpening2.mp3",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/audio_posts/narutoOpening3.mp3",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/audio_posts/narutoOpening8.mp3",
-].shuffle
+]
 
 naruto_audio_posts.each do |audio|
   post_number = audio.split(/[\/.]/)[-2][-1]
@@ -158,7 +159,7 @@ dwight_posts = [
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/fakeCrying.gif",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/hired.gif",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/stare.png"
-].shuffle
+]
 
 dwight_posts.each do |pic|
   posts << Post.new(
@@ -187,6 +188,7 @@ got_pic_posts = [
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/gameOfThrones/posts/jonSnow.gif",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/gameOfThrones/posts/tyrionLanister.png"
 ]
+
 got_pic_posts.each do |pic|
   posts << Post.new(
     author_id: got.id,
@@ -206,11 +208,44 @@ got_video_posts.each do |video|
 end
 
 ############################ How I Met Your Mother #############################
-mother = User.create(
+himym = User.create(
   email: 'himym@gmail.com',
   username: 'HowIMetYourMother',
   password: 'password123',
-  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/himym-min.png');
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/himym-min.png'
+)
+
+himym_video_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/himym/video_posts/barneysResumeVideo.mp4",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/himym/video_posts/himymSinging.mp4"
+]
+
+himym_pic_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/himym/posts/highFive.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/himym/posts/marshal.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/himym/posts/suitup.jpg"
+]
+
+himym_pic_posts.each do |pic|
+  posts << Post.new(
+    author_id: himym.id,
+    title: "#{Faker::HowIMetYourMother.catch_phrase}",
+    body: "#{Faker::HowIMetYourMother.quote} - #{Faker::HowIMetYourMother.character}",
+    content: "photo",
+    image: pic
+  )
+end
+
+himym_video_posts.each do |video|
+  posts << Post.new(
+    author_id: himym.id,
+    title: "#{Faker::GameOfThrones.character} would enjoy this",
+    content: "video",
+    image: vid
+  )
+end
+
+
 
 ################################## Family Guy ##################################
 khaled = User.create(
