@@ -26,10 +26,10 @@ family_guy_avatars = [
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyDeath.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyEvilMonkey.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyFancyStewie.png",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmire.png",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmireGiggity.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMayor.gif",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMocking.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmire.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmireGiggity.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuySickChris.png",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyStewiePres.jpg",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyStewieStare.png",
@@ -41,7 +41,7 @@ family_guy_users = []
 family_guy_avatars.each do |image|
   person = Faker::FamilyGuy.unique.character
   family_guy_users << User.create(
-    email: Faker::Internet.unique.safe_email,
+    email: Faker::Internet.unique.safe_email(person),
     username: person,
     password: Faker::Internet.password(8),
     avatar: image
@@ -82,7 +82,7 @@ end
 
 #################################### Naruto ####################################
 naruto = User.create(
-  email: 'ramen@gmail.com',
+  email: Faker::Internet.safe_email('Naruto Uzumaki'),
   username: 'Naruto Uzumaki',
   password: 'password123',
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/naruto-min.png'
@@ -149,7 +149,7 @@ end
 
 ################################ Dwight Schrute ################################
 dwight = User.create(
-  email: 'dwight@gmail.com',
+  email: Faker::Internet.safe_email('DwightSchrute'),
   username: 'DKSchrute',
   password: 'password123',
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/stare.png'
@@ -176,7 +176,7 @@ end
 
 ################################ Game Of Thrones ###############################
 got = User.create(
-  email: 'gotfanboy@gmail.com',
+  email: Faker::Internet.safe_email('GameOfThrones'),
   username: 'JonSnow',
   password: 'password123',
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/gotavatar.jpg'
@@ -212,7 +212,7 @@ end
 
 ############################ How I Met Your Mother #############################
 himym = User.create(
-  email: 'himym@gmail.com',
+  email: Faker::Internet.safe_email("HowIMetYourMother"),
   username: 'HowIMetYourMother',
   password: 'password123',
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/himym-min.png'
@@ -252,7 +252,7 @@ end
 
 ################################## DJ Khaled ###################################
 khaled = User.create(
-  email: 'wethebest@gmail.com',
+  email: Faker::Internet.safe_email("DJKhaled"),
   username: 'DJ Khaled',
   password: 'password123',
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/khaled.jpg'
@@ -326,8 +326,8 @@ anime_video_posts = [
 ]
 
 anime_strings = [
-  "Which is your favorite gif?", "This gave me goosebumps!", "So Sick!!!", "Saitama would still win",
-  "Dope!", "Sick!!"
+  "Which is your favorite gif?", "This gave me goosebumps!", "So Sick!!!",
+  "Saitama would still win", "Dope!", "Sick!!"
 ]
 
 anime_pic_posts.each do |pic|
@@ -349,14 +349,53 @@ anime_video_posts.each do |video|
   )
 end
 
+#################################### MFDOOM ####################################
+doom = User.create(
+  email: Faker::Internet.safe_email("doom"),
+  username: 'Anime4Lyfe',
+  password: 'password',
+  avatar: ''
+)
+
+doom_songs = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Black+Star+-+Re%3ADefinition.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Bruno+Mars+-+24K_Magic.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Bruno+Mars+-+Thats_What_I_Like.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Chance+The+Rapper+-+Cocoa_Butter_Kisses.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Chance+the+Rapper+-+Same_Drugs.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Chance+the+Rapper+-+Sunday_Candy.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Childish+Gambino+-+Break.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Childish+Gambino+-+So+Into+You.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/Kanye+West+-+Through_The_Wire.mp3"
+]
+
+words = ["Classic", "Dope", "Dirty", "Chill", "Sleek", "Clean"]
+
+sentences = [
+  "Nothing to say but this is a ", "Where were you when this came out?",
+  "This is a ", "Sometimes you just need a beer and a "
+]
+
+word = [ "hit", "banger", "track", "song" ]
+
+
+doom_songs.each do |audio|
+  posts << Post.new(
+    author_id: doom.id,
+    title: "#{words.sample} AF",
+    body: "#{sentences.sample} #{words.sample} #{word.sample}",
+    content: "audio",
+    image: audio
+  )
+end
+
+
 puts posts
 
 
 # Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
 
 # Post.create(author_id: naruto.id, title: "Naruto Opening 2", body: "Dope track", content: "audio", image: "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/narutoOpening2.mp3")
-
-# users = [guest, tj, jonSnow, himym, dwight, jerome, teemo, naruto, khaled]
 
 # 50.times do |index|
 #   Post.create(author_id: User.all.sample.id, title: Faker::HowIMetYourMother.quote, body:Faker::ChuckNorris.fact)
