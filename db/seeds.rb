@@ -6,85 +6,229 @@
 # Post.create(author_id: User.third.id, title: "Winter is Coming", body: "Game of Thrones news source", content: "https://winteriscoming.net/", summary: "")
 # Post.create(author_id: User.fourth.id, title: "How I Met Your Mother Opening", body: "", content: "https://www.youtube.com/watch?v=ZPLOsabhQSM", summary: "")
 
-
-
 # 50 users, 10-20 posts each
 
 User.destroy_all
 Post.destroy_all
 Follow.destroy_all
 
-
-
 User.create(email: 'guest@guest.com', username: 'guest', password: 'guest1234');
 User.create(email: 'tj.buchannan@gmail.com', username: 'tnice01', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/10389538_10205830560710800_963345743579597519_n.jpg');
-User.create(email: 'gotfanboy@gmail.com', username: 'JonSnow', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/gotavatar.jpg');
-mother = User.create(email: 'himym@gmail.com', username: 'HowIMetYourMother', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/himym-min.png');
-User.create(email: 'dwight@gmail.com', username: 'DKSchrute', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/avatar_47daeec01aae_512-min.png');
 User.create(email: 'jerome@gmail.com', username: 'Playa4rmHimalayas', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/jerome.jpg');
 User.create(email: 'teemo@gmail.com', username: 'Teemo', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/Teemo_square.png');
-naruto = User.create(email: 'ramen@gmail.com', username: 'Naruto Uzumaki', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/naruto-min.png');
-User.create(email: 'wethebest@gmail.com', username: 'DJ Khaled', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/khaled.jpg');
 
+posts = []
+
+################################## Family Guy ##################################
 family_guy_avatars = [
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyBrianBanana.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyCrazyStewie.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyFancyStewie.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyMocking.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyQuagmire.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyQuagmireGiggity.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyMayor.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyMocking.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyQuagmire.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyQuagmireGiggity.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuySickChris.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyStewiePres.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyStewieStare.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/avatars/familyGuyupsideDown.jpg"
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyBrianBanana.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyCrazyStewie.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyFancyStewie.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMocking.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyDeath.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyEvilMonkey.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmire.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmireGiggity.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMayor.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyMocking.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmire.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyQuagmireGiggity.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuySickChris.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyStewiePres.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyStewieStare.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyupsideDown.png"
 ].shuffle
 
 family_guy_users = []
 
 family_guy_avatars.each do |image|
   person = Faker::FamilyGuy.unique.character
-  family_guy_users << User.create(email: Faker::Internet.unique.safe_email, username: person, password: Faker::Internet.password(8), avatar: image )
+  family_guy_users << User.create(
+    email: Faker::Internet.unique.safe_email,
+    username: person,
+    password: Faker::Internet.password(8),
+    avatar: image
+  )
 end
 
 family_guy_pic_posts = [
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuyHuddle.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuyStewieLoveMe.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuychinDance.gif",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/posts/familyGuyPortait.jpg"
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/posts/familyGuyHuddle.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/posts/familyGuyStewieLoveMe.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/posts/familyGuychinDance.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/posts/familyGuyPortait.jpg"
 ]
 
 family_guy_video_posts = [
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/video_posts/familyGuyCoolWhip.mp4",
-  "https://s3.amazonaws.com/keepscrolling-pro/familyGuy/video_posts/familyGuyStewieSinging.mp4"
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/video_posts/familyGuyCoolWhip.mp4",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/video_posts/familyGuyStewieSinging.mp4"
 ]
 
 family_guy_pic_posts.each do |pic|
-  Post.create(author_id: family_guy_users.sample.id, title: Faker::FamilyGuy.unique.location, body: Faker::FamilyGuy.unique.quote, content: "photo", image: pic)
+  posts << Post.new(
+    author_id: family_guy_users.sample.id,
+    title: Faker::FamilyGuy.unique.location,
+    body: Faker::FamilyGuy.unique.quote,
+    content: "photo",
+    image: pic
+  )
 end
 
 family_guy_video_posts.each do |vid|
-  Post.create(author_id: family_guy_users.sample.id, title: Faker::FamilyGuy.unique.location, body: Faker::FamilyGuy.unique.quote, content: "video", image: vid)
+  posts << Post.new(
+    author_id: family_guy_users.sample.id,
+    title: Faker::FamilyGuy.unique.location,
+    body: Faker::FamilyGuy.unique.quote,
+    content: "video",
+    image: vid
+  )
 end
 
-
-# Post.create(author_id: naruto.id, title: "Naruto Opening 2", body: "Dope track", content: "audio", image: "https://s3.amazonaws.com/keepscrolling-pro/naruto/narutoOpening2.mp3")
+#################################### Naruto ####################################
+naruto = User.create(
+  email: 'ramen@gmail.com',
+  username: 'Naruto Uzumaki',
+  password: 'password123',
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/naruto-min.png');
 
 naruto_audio_posts = [
-  "https://s3.amazonaws.com/keepscrolling-pro/naruto/audio_posts/narutoOpening2.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/naruto/audio_posts/narutoOpening3.mp3",
-  "https://s3.amazonaws.com/keepscrolling-pro/naruto/audio_posts/narutoOpening8.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/audio_posts/narutoOpening2.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/audio_posts/narutoOpening3.mp3",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/audio_posts/narutoOpening8.mp3",
 ].shuffle
 
 naruto_audio_posts.each do |audio|
   post_number = audio.split(/[\/.]/)[-2][-1]
-  Post.create(author_id: naruto.id, title: "Naruto Opening #{post_number}", body: "I beat #{Faker::DragonBall.character} to this", content: "audio", image: audio)
+  posts << Post.new(
+    author_id: naruto.id,
+    title: "Naruto Opening #{post_number}",
+    body: "I beat #{Faker::DragonBall.character} to this",
+    content: "audio",
+    image: audio
+  )
 end
 
+naruto_video_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/video_posts/narutoFacesPain.mp4"
+]
+
+naruto_pic_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/posts/boruto.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/posts/narutoFox.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/posts/narutoPowerUp.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/posts/narutoSageBijuu.png",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/posts/narutoSasuke.jpg"
+]
+
+villages = [
+  "Amegakure", "Bamboo Village", "Ceramic Village", "Genjutsu Tree Village",
+  "Getsugakure", "Hachō Village", "Hoshigakure", "Howling Wolf Village", "Inaho Village",
+  "Ishigakure", "Jōmae Village", "Kagerō Village", "Kirigakure", "Kisaragi Village",
+  "Konohagakure", "Kumogakure", "Kusagakure", "Mount Katsuragi", "Mount Myōboku",
+  "Nadeshiko Village", "Otogakure", "Ryūchi Cave", "Shimogakure", "Sugi Village",
+  "Sunagakure", "Takigakure", "Takumi Village", "Tanigakure", "Tonika Village",
+  "Tsuchigumo Village", "Tsukigakure", "Uzushiogakure", "Yugakure", "Yukigakure",
+  "Yumegakure"
+]
+
+naruto_pic_posts.each do |pic|
+  posts << Post.new(
+    author_id: naruto.id,
+    title: villages.sample,
+    body: "BELIEVE IT#{"!" * rand(6)}",
+    content: "photo",
+    image: pic)
+end
+
+naruto_video_posts.each do |video|
+  posts << Post.new(author_id: naruto.id, title: "He wasn't ready, BELIEVE IT", body: , content: "video", image: vid)
+end
+
+################################ Dwight Schrute ################################
+dwight = User.create(
+  email: 'dwight@gmail.com',
+  username: 'DKSchrute',
+  password: 'password123',
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/stare.png'
+)
+
+dwight_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/dwightSchruteFarm.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/dwightSmile.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/dwightfarm.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/fakeCrying.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/hired.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/stare.png"
+].shuffle
+
+dwight_posts.each do |pic|
+  posts << Post.new(
+    author_id: dwight.id,
+    title: "I am..." ,
+    body: "#{Faker::Ancient.god}",
+    content: "photo",
+    image: pic
+  )
+end
+
+################################ Game Of Thrones ###############################
+got = User.create(
+  email: 'gotfanboy@gmail.com',
+  username: 'JonSnow',
+  password: 'password123',
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/gotavatar.jpg'
+)
+
+got_video_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/gameOfThrones/video_posts/gameOfHodor.mp4",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/gameOfThrones/video_posts/nightKingDrake.mp4"
+]
+
+got_pic_posts = [
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/gameOfThrones/posts/jonSnow.gif",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/gameOfThrones/posts/tyrionLanister.png"
+]
+got_pic_posts.each do |pic|
+  posts << Post.new(
+    author_id: got.id,
+    title: "Time to destroy",
+    body: "House #{Faker::GameOfThrones.house}",
+    content: "photo",
+    image: pic)
+end
+
+got_video_posts.each do |video|
+  posts << Post.new(
+    author_id: got.id,
+    title: "#{Faker::GameOfThrones.character} would enjoy this",
+    content: "video",
+    image: vid
+  )
+end
+
+############################ How I Met Your Mother #############################
+mother = User.create(
+  email: 'himym@gmail.com',
+  username: 'HowIMetYourMother',
+  password: 'password123',
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/himym-min.png');
+
+################################## Family Guy ##################################
+khaled = User.create(
+  email: 'wethebest@gmail.com',
+  username: 'DJ Khaled',
+  password: 'password123',
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/khaled.jpg');
+
+
+##################################### Anime ####################################
+anime = User.create(
+  email: Faker::Internet.safe_email("anime"),
+  username: 'Anime4Lyfe',
+  password: 'password',
+  avatar: '');
 # Post.create(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
+
+# Post.create(author_id: naruto.id, title: "Naruto Opening 2", body: "Dope track", content: "audio", image: "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/narutoOpening2.mp3")
 
 # users = [guest, tj, jonSnow, himym, dwight, jerome, teemo, naruto, khaled]
 
