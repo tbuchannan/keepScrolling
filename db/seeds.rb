@@ -13,9 +13,9 @@ Post.destroy_all
 Follow.destroy_all
 
 User.create!(email: 'guest@guest.com', username: 'guest', password: 'guest1234');
-User.create!(email: 'tj.buchannan@gmail.com', username: 'tnice01', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/10389538_10205830560710800_963345743579597519_n.jpg');
-User.create!(email: 'jerome@gmail.com', username: 'Playa4rmHimalayas', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/jerome.jpg');
-User.create!(email: 'teemo@gmail.com', username: 'Teemo', password: 'password123', avatar: 'https://s3.amazonaws.com/keepscrolling-pro/Teemo_square.png');
+User.create!(email: 'tj.buchannan@gmail.com', username: 'tnice01', password: Faker::Internet.password, avatar: 'https://s3.amazonaws.com/keepscrolling-pro/10389538_10205830560710800_963345743579597519_n.jpg');
+User.create!(email: 'jerome@gmail.com', username: 'Playa4rmHimalayas', password: Faker::Internet.password, avatar: 'https://s3.amazonaws.com/keepscrolling-pro/jerome.jpg');
+User.create!(email: 'teemo@gmail.com', username: 'Teemo', password: Faker::Internet.password, avatar: 'https://s3.amazonaws.com/keepscrolling-pro/Teemo_square.png');
 
 posts = []
 
@@ -85,7 +85,7 @@ end
 naruto = User.create!(
   email: Faker::Internet.safe_email('Naruto Uzumaki'),
   username: 'Naruto Uzumaki',
-  password: 'password123',
+  password: Faker::Internet.password,
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/naruto-min.png'
 )
 
@@ -152,7 +152,7 @@ end
 dwight = User.create!(
   email: Faker::Internet.safe_email('DwightSchrute'),
   username: 'DKSchrute',
-  password: 'password123',
+  password: Faker::Internet.password,
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/seeds/dwight/posts/stare.png'
 )
 
@@ -179,7 +179,7 @@ end
 got = User.create!(
   email: Faker::Internet.safe_email('GameOfThrones'),
   username: 'GoTFanBoy',
-  password: 'password123',
+  password: Faker::Internet.password,
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/gotavatar.jpg'
 )
 
@@ -215,7 +215,7 @@ end
 himym = User.create!(
   email: Faker::Internet.safe_email("HowIMetYourMother"),
   username: 'HowIMetYourMother',
-  password: 'password123',
+  password: Faker::Internet.password,
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/himym-min.png'
 )
 
@@ -255,7 +255,7 @@ end
 khaled = User.create!(
   email: Faker::Internet.safe_email("DJKhaled"),
   username: 'DJ Khaled',
-  password: 'password123',
+  password: Faker::Internet.password,
   avatar: 'https://s3.amazonaws.com/keepscrolling-pro/khaled.jpg'
 )
 
@@ -297,7 +297,7 @@ end
 anime = User.create!(
   email: Faker::Internet.safe_email("anime"),
   username: 'Anime4Lyfe',
-  password: 'password',
+  password: Faker::Internet.password,
   avatar: ''
 )
 
@@ -354,7 +354,7 @@ end
 doom = User.create!(
   email: Faker::Internet.safe_email("doom"),
   username: 'MFDoom',
-  password: 'password',
+  password: Faker::Internet.password,
   avatar: "https://s3.amazonaws.com/keepscrolling-pro/seeds/mfDoom/doomAvi.png"
 )
 
@@ -395,7 +395,7 @@ end
 supreme = User.create!(
   email: Faker::Internet.safe_email("HypeBeast"),
   username: 'Hyp3B3ast',
-  password: 'password',
+  password: Faker::Internet.password,
   avatar: "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/supremeAvatar.png"
 )
 supreme_pic_posts = [
@@ -425,13 +425,6 @@ end
 
 
 #################################### Faker Arrays ###################################
-quotes = [
-  Faker::HarryPotter, Faker::LeagueOfLegends, Faker::Friends, Faker::HitchhikersGuideToTheGalaxy,
-  Faker::FamilyGuy, Faker::BackToTheFuture, Faker::HeyArnold, Faker::Hobbit, Faker::HowIMetYourMother,
-  Faker::Matz, Faker::MostInterestingManInTheWorld, Faker::Movie, Faker::OnePiece, Faker::Overwatch,
-  Faker::RickAndMorty, Faker::Robin, Faker::RuPaul, Faker::Seinfeld, Faker::SiliconValley,
-  Faker::Simpsons, Faker::StarWars, Faker::TheFreshPrinceOfBelAir
-]
 
 cities = [Faker::Address, Faker::GameOfThrones]
 
@@ -466,23 +459,57 @@ faker_chars = [
   Faker::OnePiece, Faker::RickAndMorty, Faker::SiliconValley,
   Faker::Simpsons, Faker::TheFreshPrinceOfBelAir
 ]
-
 quotes = [
-  "A wise man once said '#{Faker::LeagueOfLegends.quote}' ",
-  "#{Faker::HitchhikersGuideToTheGalaxy.quote}", "#{Faker::Friends.quote}", "#{Faker::FamilyGuy.quote}",
-  "#{Faker::HarryPotter.quote}"
+  Faker::HarryPotter, Faker::LeagueOfLegends, Faker::Friends, Faker::HitchhikersGuideToTheGalaxy,
+  Faker::FamilyGuy, Faker::BackToTheFuture, Faker::HeyArnold, Faker::Hobbit, Faker::HowIMetYourMother,
+  Faker::Matz, Faker::MostInterestingManInTheWorld, Faker::Movie, Faker::OnePiece, Faker::Overwatch,
+  Faker::RickAndMorty, Faker::Robin, Faker::RuPaul, Faker::Seinfeld, Faker::SiliconValley,
+  Faker::Simpsons, Faker::StarWars, Faker::TheFreshPrinceOfBelAir
 ]
 
 entries = [
-  "A Story about #{User.all.sample.username} and their journey to defeat #{Faker::DragonBall.character}",
+  "A Story about #{User.all.sample.username} and their journey to defeat #{faker_chars.sample.character}",
   "Did you know that #{Faker.ChuckNorris.fact}",
-  "It was #{Faker::FamilyGuy.character} in the city of #{Faker::GameOfThrones.city} with the power of #{Faker::Ancient.god}",
-  "#{Faker::GameOfThrones.character} got a degree in #{Faker::Educator.course} while in #{Faker::LeagueOfLegends.location}",
+  "It was #{faker_chars.sample.character} in the city of #{cities.sample.city} with the power of #{Faker::Ancient.god}",
+  "#{faker_chars.sample.character} got a degree in #{Faker::Educator.course} while in #{locations.sample.location}",
   "Would you rather have the ability of #{Faker::Superhero.power} or #{Faker::Superhero.power}?",
-  "If I was a superhero I think I would want to be called #{Faker::Superhero.prefix} #{Faker::Superhero.name}",
+  "If I was a superhero I think I would want to be called #{Faker::Superhero.prefix} #{Faker::Superhero.name}"
 ]
 
+150.times do
+  username = faker_chars.sample.character
+  user = User.create!(
+    email: Faker.Internet.safe_email(username),
+    username: username,
+    password: Faker::Internet.password,
+    avatar: Faker::Avatar.image(username, "64x64", "png", "set#{rand(1..4)}", "bg1"))
+  )
 
+  posts << Post.new(
+    author_id: user.id,
+    title: Faker::Book.title,
+    body: entries.sample
+  )
+
+  posts << Post.new(
+    author_id: user.id,
+    title: faker_chars.sample.character,
+    body: entries.sample
+  )
+  
+  posts << Post.new(
+    author_id: user.id,
+    title: "— #{faker_chars.sample.character}",
+    content: "quote"
+    body: quotes.sample.quote
+  )
+
+end
+
+
+
+
+#
 # 100.times do
 # posts << Post.new(
 #   author_id: User.sample.id,
@@ -490,7 +517,7 @@ entries = [
 #   body:
 # )
 
-# end
+end
 
 
 # posts.shuffle.each do |post|
