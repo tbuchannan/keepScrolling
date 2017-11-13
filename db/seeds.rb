@@ -18,6 +18,7 @@ User.create!(email: 'jerome@gmail.com', username: 'Playa4rmHimalayas', password:
 User.create!(email: 'teemo@gmail.com', username: 'Teemo', password: Faker::Internet.password, avatar: 'https://s3.amazonaws.com/keepscrolling-pro/Teemo_square.png');
 
 posts = []
+handmade = []
 
 
 ################################## Family Guy ##################################
@@ -62,7 +63,7 @@ family_guy_video_posts = [
 ]
 
 family_guy_pic_posts.each do |pic|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: family_guy_users.sample.id,
     title: Faker::FamilyGuy.unique.location,
     body: Faker::FamilyGuy.unique.quote,
@@ -72,7 +73,7 @@ family_guy_pic_posts.each do |pic|
 end
 
 family_guy_video_posts.each do |vid|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: family_guy_users.sample.id,
     title: Faker::FamilyGuy.unique.location,
     body: Faker::FamilyGuy.unique.quote,
@@ -97,7 +98,7 @@ naruto_audio_posts = [
 
 naruto_audio_posts.each do |audio|
   post_number = audio.split(/[\/.]/)[-2][-1]
-  posts << Post.new(
+  handmade << Post.new(
     author_id: naruto.id,
     title: "Naruto Opening #{post_number}",
     body: "I beat #{Faker::DragonBall.character} to this",
@@ -130,7 +131,7 @@ villages = [
 ]
 
 naruto_pic_posts.each do |pic|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: naruto.id,
     title: villages.sample,
     body: "BELIEVE IT#{"!" * rand(6)}",
@@ -140,7 +141,7 @@ naruto_pic_posts.each do |pic|
 end
 
 naruto_video_posts.each do |video|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: naruto.id,
     title: "He wasn't ready, BELIEVE IT",
     content: "video",
@@ -166,7 +167,7 @@ dwight_posts = [
 ]
 
 dwight_posts.each do |pic|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: dwight.id,
     title: "I am..." ,
     body: "#{Faker::Ancient.god}",
@@ -194,7 +195,7 @@ got_pic_posts = [
 ]
 
 got_pic_posts.each do |pic|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: got.id,
     title: "Time to destroy",
     body: "House #{Faker::GameOfThrones.house}",
@@ -203,7 +204,7 @@ got_pic_posts.each do |pic|
 end
 
 got_video_posts.each do |video|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: got.id,
     title: "#{Faker::GameOfThrones.character} would enjoy this",
     content: "video",
@@ -231,7 +232,7 @@ himym_pic_posts = [
 ]
 
 himym_pic_posts.each do |pic|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: himym.id,
     title: "#{Faker::HowIMetYourMother.catch_phrase}",
     body: "#{Faker::HowIMetYourMother.quote} - #{Faker::HowIMetYourMother.character}",
@@ -241,7 +242,7 @@ himym_pic_posts.each do |pic|
 end
 
 himym_video_posts.each do |video|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: himym.id,
     title: "#{Faker::GameOfThrones.character} would enjoy this",
     content: "video",
@@ -275,7 +276,7 @@ khaled_strings = [
 ]
 
 khaled_pic_posts.each do |pic|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: khaled.id,
     title: "#{khaled_strings.sample}",
     body: "#{khaled_strings.sample}",
@@ -285,7 +286,7 @@ khaled_pic_posts.each do |pic|
 end
 
 khaled_video_posts.each do |video|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: khaled.id,
     title: "#{khaled_strings.sample}",
     content: "video",
@@ -298,7 +299,7 @@ anime = User.create!(
   email: Faker::Internet.safe_email("anime"),
   username: 'Anime4Lyfe',
   password: Faker::Internet.password,
-  avatar: ''
+  avatar: 'https://s3.amazonaws.com/keepscrolling-pro/seeds/anime/obito.jpg'
 )
 
 anime_pic_posts = [
@@ -332,7 +333,7 @@ anime_strings = [
 ]
 
 anime_pic_posts.each do |pic|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: anime.id,
     title: "#{anime_strings.sample}",
     body: "#{Faker::OnePiece.quote}",
@@ -342,7 +343,7 @@ anime_pic_posts.each do |pic|
 end
 
 anime_video_posts.each do |video|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: anime.id,
     title: "Deku#{"!" * rand(9)}",
     content: "video",
@@ -381,7 +382,7 @@ song_synonym = [ "banger", "track", "song" ]
 
 
 doom_songs.each do |audio|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: doom.id,
     title: "#{adjectives.sample} AF",
     body: "#{sentences.sample} #{adjectives.sample} #{song_synonym.sample}",
@@ -414,7 +415,7 @@ supreme_pic_posts = [
 ]
 
 supreme_pic_posts.each do |pic|
-  posts << Post.new(
+  handmade << Post.new(
     author_id: supreme.id,
     title: "HypeBeast",
     body: "",
@@ -508,13 +509,19 @@ entries = [
 end
 
 ################################# Save Posts ###################################
+handmade.shuffle.each do |post|
+  post.save
+end
+
 posts.shuffle.each do |post|
   post.save
 end
 
 ############################### Create Follows #################################
 
-Follow.create!(follower_id: a.id, followee_id: s.id)
+Follow.create!(follower_id: guest.id, followee_id: anime.id)
+Follow.create!(follower_id: guest.id, followee_id: supreme.id)
+Follow.create!(follower_id: guest.id, followee_id: naruto.id)
 
 #################################### TODOS #####################################
 
