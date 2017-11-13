@@ -12,8 +12,8 @@ User.destroy_all
 Post.destroy_all
 Follow.destroy_all
 
-User.create!(email: 'guest@guest.com', username: 'guest', password: 'guest1234');
-User.create!(email: 'tj.buchannan@gmail.com', username: 'tnice01', password: Faker::Internet.password, avatar: 'https://s3.amazonaws.com/keepscrolling-pro/10389538_10205830560710800_963345743579597519_n.jpg');
+guest = User.create!(email: 'guest@guest.com', username: 'guest', password: 'guest1234');
+tj = User.create!(email: 'tj.buchannan@gmail.com', username: 'tnice01', password: Faker::Internet.password, avatar: 'https://s3.amazonaws.com/keepscrolling-pro/10389538_10205830560710800_963345743579597519_n.jpg');
 User.create!(email: 'jerome@gmail.com', username: 'Playa4rmHimalayas', password: Faker::Internet.password, avatar: 'https://s3.amazonaws.com/keepscrolling-pro/jerome.jpg');
 User.create!(email: 'teemo@gmail.com', username: 'Teemo', password: Faker::Internet.password, avatar: 'https://s3.amazonaws.com/keepscrolling-pro/Teemo_square.png');
 
@@ -293,7 +293,7 @@ khaled_video_posts.each do |video|
   )
 end
 
-#################################### Anime ####################################
+#################################### Anime #####################################
 anime = User.create!(
   email: Faker::Internet.safe_email("anime"),
   username: 'Anime4Lyfe',
@@ -424,7 +424,7 @@ supreme_pic_posts.each do |pic|
 end
 
 
-#################################### Faker Arrays ###################################
+################################ Faker Arrays ##################################
 
 cities = [Faker::Address, Faker::GameOfThrones]
 
@@ -476,6 +476,7 @@ entries = [
   "If I was a superhero I think I would want to be called #{Faker::Superhero.prefix} #{Faker::Superhero.name}"
 ]
 
+############################## Create Users ####################################
 
 50.times do |x|
   username = faker_chars.sample.character + " #{x}"
@@ -506,23 +507,16 @@ entries = [
   )
 end
 
-
-# 100.times do
-# posts << Post.new(
-#   author_id: User.sample.id,
-#   title: Faker::Book.title,
-#   body:
-# )
-
+################################# Save Posts ###################################
 posts.shuffle.each do |post|
   post.save
 end
 
+############################### Create Follows #################################
 
-# Post.create!(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
+Follow.create!(follower_id: a.id, followee_id: s.id)
 
-# Post.create!(author_id: naruto.id, title: "Naruto Opening 2", body: "Dope track", content: "audio", image: "https://s3.amazonaws.com/keepscrolling-pro/seeds/naruto/narutoOpening2.mp3")
+#################################### TODOS #####################################
 
-# 50.times do |index|
-#   Post.create!(author_id: User.all.sample.id, title: Faker::HowIMetYourMother.quote, body:Faker::ChuckNorris.fact)
-# end
+# pgSearch
+# pagination
