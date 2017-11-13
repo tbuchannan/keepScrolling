@@ -469,20 +469,21 @@ quotes = [
 
 entries = [
   "A Story about #{User.all.sample.username} and their journey to defeat #{faker_chars.sample.character}",
-  "Did you know that #{Faker.ChuckNorris.fact}",
+  "Did you know that #{Faker::ChuckNorris.fact}",
   "It was #{faker_chars.sample.character} in the city of #{cities.sample.city} with the power of #{Faker::Ancient.god}",
   "#{faker_chars.sample.character} got a degree in #{Faker::Educator.course} while in #{locations.sample.location}",
   "Would you rather have the ability of #{Faker::Superhero.power} or #{Faker::Superhero.power}?",
   "If I was a superhero I think I would want to be called #{Faker::Superhero.prefix} #{Faker::Superhero.name}"
 ]
 
-150.times do
-  username = faker_chars.sample.character
+
+50.times do |x|
+  username = faker_chars.sample.character + " #{x}"
   user = User.create!(
-    email: Faker.Internet.safe_email(username),
-    username: username,
+    email: Faker::Internet.email(username),
+    username: Faker::Internet.user_name(username).capitalize,
     password: Faker::Internet.password,
-    avatar: Faker::Avatar.image(username, "64x64", "png", "set#{rand(1..4)}", "bg1"))
+    avatar: Faker::Avatar.image(username, "64x64", "png", "set#{rand(1..4)}", "bg1")
   )
 
   posts << Post.new(
@@ -496,20 +497,16 @@ entries = [
     title: faker_chars.sample.character,
     body: entries.sample
   )
-  
+
   posts << Post.new(
     author_id: user.id,
     title: "— #{faker_chars.sample.character}",
-    content: "quote"
+    content: "quote",
     body: quotes.sample.quote
   )
-
 end
 
 
-
-
-#
 # 100.times do
 # posts << Post.new(
 #   author_id: User.sample.id,
@@ -517,12 +514,9 @@ end
 #   body:
 # )
 
+posts.shuffle.each do |post|
+  post.save
 end
-
-
-# posts.shuffle.each do |post|
-#   post.save
-# end
 
 
 # Post.create!(author_id: User.fourth.id, title: "Barneys Blog", body: "The most seductive man in all of manhattan", content: "https://www.barneystinsonblog.com/", summary: "")
