@@ -19,6 +19,7 @@ User.create(email: 'teemo@gmail.com', username: 'Teemo', password: 'password123'
 
 posts = []
 
+
 ################################## Family Guy ##################################
 family_guy_avatars = [
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/familyGuy/avatars/familyGuyBrianBanana.gif",
@@ -421,6 +422,76 @@ supreme_pic_posts.each do |pic|
     image: pic
   )
 end
+
+
+#################################### Faker Arrays ###################################
+quotes = [
+  Faker::HarryPotter, Faker::LeagueOfLegends, Faker::Friends, Faker::HitchhikersGuideToTheGalaxy,
+  Faker::FamilyGuy, Faker::BackToTheFuture, Faker::HeyArnold, Faker::Hobbit, Faker::HowIMetYourMother,
+  Faker::Matz, Faker::MostInterestingManInTheWorld, Faker::Movie, Faker::OnePiece, Faker::Overwatch,
+  Faker::RickAndMorty, Faker::Robin, Faker::RuPaul, Faker::Seinfeld, Faker::SiliconValley,
+  Faker::Simpsons, Faker::StarWars, Faker::TheFreshPrinceOfBelAir
+]
+
+cities = [Faker::Address, Faker::GameOfThrones]
+
+# god, primordial, titan, hero
+gods= [Faker::Ancient]
+
+# title, author, publisher, genre
+faker_books = []
+
+locations = [
+  Faker::Friends, Faker::HarryPotter, Faker::HeyArnold, Faker::Hobbit,
+  Faker::HitchhikersGuideToTheGalaxy, Faker::LeagueOfLegends, Faker::LordOfTheRings,
+  Faker::Lovecraft, Faker::OnePiece, Faker::Overwatch, Faker::Pokemon, Faker::RickAndMorty,
+  Faker::Simpsons, Faker::StarTrek, Faker::Witcher, Faker::Zelda
+]
+
+villain = [Faker::StarTrek]
+
+faker_name = [
+  Faker::Cat, Faker::Company, Faker::Pokemon, Faker::ProgrammingLanguage,
+  Faker::RockBand, Faker::Superhero, Faker::Team, Faker::University
+]
+
+faker_catch_phrase = [Faker::DrWho, Faker::HowIMetYourMother]
+
+faker_fact = [Faker::ChuckNorris]
+
+faker_chars = [
+  Faker::BackToTheFuture, Faker::DragonBall, Faker::DrWho,
+  Faker::FamilyGuy, Faker::Friends, Faker::GameOfThrones, Faker::HarryPotter, Faker::HeyArnold, Faker::Hobbit,
+  Faker::HowIMetYourMother, Faker::HitchhikersGuideToTheGalaxy, Faker::LordOfTheRings,
+  Faker::OnePiece, Faker::RickAndMorty, Faker::SiliconValley,
+  Faker::Simpsons, Faker::TheFreshPrinceOfBelAir
+]
+
+quotes = [
+  "A wise man once said '#{Faker::LeagueOfLegends.quote}' ",
+  "#{Faker::HitchhikersGuideToTheGalaxy.quote}", "#{Faker::Friends.quote}", "#{Faker::FamilyGuy.quote}",
+  "#{Faker::HarryPotter.quote}"
+]
+
+entries = [
+  "A Story about #{User.sample.username} and their journey to defeat #{Faker::DragonBall.character}",
+  "Did you know that #{Faker.ChuckNorris.fact}",
+  "It was #{Faker::FamilyGuy.character} in the city of #{Faker::GameOfThrones.city} with the power of #{Faker::Ancient.god}",
+  "#{Faker::GameOfThrones.character} got a degree in #{Faker::Educator.course} while in #{Faker::LeagueOfLegends.location}",
+  "Would you rather have the ability of #{Faker::Superhero.power} or #{Faker::Superhero.power}?",
+  "If I was a superhero I think I would want to be called #{Faker::Superhero.prefix} #{Faker::Superhero.name}",
+]
+
+
+100.times do
+posts << Post.new(
+  author_id: User.sample.id,
+  title: Faker::Book.title,
+  body:
+)
+
+end
+
 
 posts.shuffle.each do |post|
   post.save
