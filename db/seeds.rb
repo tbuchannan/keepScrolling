@@ -413,7 +413,7 @@ supreme_pic_posts = [
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeMarilynMonroe.jpg",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeMoney.jpg",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeMoneyGun.jpg",
-  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeNYC.jpg",
+  "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremeNewYork.jpg",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/supremePool.jpg",
   "https://s3.amazonaws.com/keepscrolling-pro/seeds/hypebeast/posts/bapeCamo.jpg"
 ]
