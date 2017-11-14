@@ -27,10 +27,12 @@ render() {
   } else {
       return (
         <div className="bar-container">
-          <div className="sticky-avatar">
-            <div className="nav-user-avatar">
+            <div className={'current-user-avatar'}>
+              <div className= "current-user-post-bar">
+                <img src={current_user.avatar_url} />
+              </div>
+                <div className="edit_profile"><span className="change">Change</span></div>
             </div>
-          </div>
             <div className="bar">
                 <TextPostForm onClick={this.handleSubmit} hidden={true}/>
                 <PhotoPostForm onClick={this.handleSubmit} hidden={true}/>
