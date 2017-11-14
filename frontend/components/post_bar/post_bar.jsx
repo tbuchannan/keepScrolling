@@ -28,9 +28,7 @@ render() {
       return (
         <div className="bar-container">
             <div className={'current-user-avatar'}>
-              <div className= "current-user-post-bar">
                 <img src={current_user.avatar_url} />
-              </div>
                 <div className="edit_profile"><span className="change">Change</span></div>
             </div>
             <div className="bar">
