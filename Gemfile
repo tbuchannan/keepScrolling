@@ -33,6 +33,8 @@ gem 'paperclip', '~> 5.0.0'
 
 gem 'figaro'
 
+gem 'faker', github: 'stympy/faker'
+
 gem 'aws-sdk', '< 3.0'
 gem 'aws-sdk-resources', '~> 2'
 
@@ -42,8 +44,6 @@ gem 'aws-sdk-resources', '~> 2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-
-  gem 'faker', github: 'stympy/faker'
 
   gem 'factory_girl_rails'
 
