@@ -43,11 +43,15 @@ textarea {
   color: #454545;
 }
 
-.current-user-post-bar {
-  display: flex;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 10px;
+.current-user-post-bar img{
+  width: 64px;
+  height: 64px;
+  border-radius: 3px;
+}
+
+.current-user-avatar {
+  width: 64px;
+  height: 64px;
 }
 
 .title {
