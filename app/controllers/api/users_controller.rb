@@ -19,7 +19,11 @@ class Api::UsersController < ApplicationController
   def followed_posts
     @user = User.find(params[:id])
     @posts = Post.where(author_id: @user.followees.pluck(:followee_id)).or(Post.where(author_id: @user.id)).order(:updated_at)
+  end
 
+  def random_post
+    @user = User.find(params[:id])
+    @post = Post.all.where.not(author_id: @user.id).where(content: "photo").sample
   end
 
   def show
