@@ -3,7 +3,6 @@ import { hashHistory } from 'react-router';
 
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
-
 export const REMOVE_POST = 'REMOVE_POST';
 
 export const receivePost = post => ({
@@ -21,12 +20,10 @@ export const removePost = post =>({
   post
   });
 
-
 export const requestAllPosts = (id) => dispatch => (
   PostUtil.getAllPosts(id).then(
     posts => dispatch(receiveAllPosts(posts)))
 );
-
 
 export const requestOnePost = (id) => dispatch => (
   PostUtil.getOnePost(id).then(
@@ -46,10 +43,12 @@ export const createPhotoPost = post => dispatch => (
   PostUtil.createPhotoPost(post)
   .then(post => dispatch(receivePost(post)))
 );
+
 export const createAudioPost = post => dispatch => (
   PostUtil.createAudioPost(post)
   .then(post => dispatch(receivePost(post)))
 );
+
 export const createVideoPost = post => dispatch => (
   PostUtil.createVideoPost(post)
   .then(post => dispatch(receivePost(post)))
