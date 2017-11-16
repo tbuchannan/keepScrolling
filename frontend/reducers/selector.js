@@ -3,8 +3,8 @@ import { values } from 'lodash';
 export const selectAllPosts = ({ posts }) => {
   return values(posts);
 };
-export const selectAllFollowees = ({ followees }) => {
-  return values(followees);
+export const selectAllPotentials = ({ potentials }) => {
+  return values(potentials);
 };
 
 export const selectRandomPost = ({ randomPost }) => {

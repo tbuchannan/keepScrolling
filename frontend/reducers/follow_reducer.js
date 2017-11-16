@@ -16,9 +16,7 @@ const FollowReducer = (state = {}, action) => {
       // const nextState = merge({}, state);
       // delete nextState[action.follow.followee_id];
       // return nextState;
-    case RECEIVE_ALL_FOLLOWEES:
-    const followees = action.followees;
-      return merge({}, followees);
+      break;
     case RECEIVE_POTENTIAL_FOLLOWEES:
       const potentials = action.followees;
       return merge({}, potentials);

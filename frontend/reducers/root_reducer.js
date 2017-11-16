@@ -8,7 +8,7 @@ import RandomPostReducer from './random_post_reducer';
 const rootReducer = combineReducers({
   session: SessionReducer,
   posts: PostReducer,
-  followees: FollowReducer,
+  potentials: FollowReducer,
   randomPost: RandomPostReducer
 });
 
