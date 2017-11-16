@@ -9,9 +9,9 @@ const FollowReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_FOLLOW:
-    const nextState = merge({}, state);
-    delete nextState[action.follow.followee_id];
-    return nextState;
+      const nextState = merge({}, state);
+      delete nextState[action.follow.followee_id];
+      return nextState;
     case REMOVE_FOLLOW:
       // const nextState = merge({}, state);
       // delete nextState[action.follow.followee_id];
