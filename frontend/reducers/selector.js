@@ -10,3 +10,7 @@ export const selectAllPotentials = ({ potentials }) => {
 export const selectRandomPost = ({ randomPost }) => {
   return randomPost;
 };
+
+export const selectAllFollowees = ({ followees }) => {
+  return followees;
+};
