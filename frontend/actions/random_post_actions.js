@@ -1,4 +1,4 @@
-import * as RandomUtil from '../util/random_post_util';
+import * as RandomUtil from '../util/random_post_api_util';
 import { hashHistory } from 'react-router';
 
 
