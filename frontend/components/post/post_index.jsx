@@ -14,7 +14,6 @@ class PostIndex extends React.Component {
 
 
   render() {
-    // const { posts, children, removeOnePost } = this.props;
       return (
       <div className = "feed">
         <ul>
