@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     receiveFollow: (follow) => dispatch(receiveFollow(follow)),
     requestRandomPost: (id) => dispatch(requestRandomPost(id)),
-    createFollow: (id, follow) => dispatch(createFollow(id, follow))
+    createFollow: (id, follow) => dispatch(createFollow(id, follow)), 
   };
 
 };
