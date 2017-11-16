@@ -3,7 +3,6 @@ import { hashHistory } from 'react-router';
 
 export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
 export const REMOVE_FOLLOW = 'REMOVE_FOLLOW';
-export const RECEIVE_ALL_FOLLOWEES = 'RECEIVE_ALL_FOLLOWEES';
 export const RECEIVE_POTENTIAL_FOLLOWEES = 'RECEIVE_POTENTIAL_FOLLOWEES';
 
 export const receiveFollow = follow => ({
@@ -16,10 +15,6 @@ export const removeFollow = follow =>({
   follow
   });
 
-export const receiveAllFollowees = followees => ({
-  type: RECEIVE_ALL_FOLLOWEES,
-  followees
-});
 
 export const receivePotentialFollowees = followees => ({
   type: RECEIVE_POTENTIAL_FOLLOWEES,
@@ -33,11 +28,6 @@ export const createFollow = (id, follow) => dispatch => (
 export const removeAFollow = (id, follow) => dispatch => (
   FollowUtil.removeFollow(id, follow)
   .then(follow => dispatch(receiveFollow(follow)))
-);
-
-export const requestAllFollowees = (id) => dispatch => (
-  FollowUtil.getAllFollowees(id).then(
-    followees => dispatch(receiveAllFollowees(followees)))
 );
 
 export const requestPotentialFollowees = (id) => dispatch => (
