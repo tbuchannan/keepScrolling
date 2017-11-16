@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 
 const RecommendedItem = (props) => {
   return (
-    <li>
       <div className="radar-item">
         <div className= "radar-img-container">
           <div className="image-container">
@@ -22,7 +21,6 @@ const RecommendedItem = (props) => {
         </div>
 
       </div>
-    </li>
   );
 };
 
