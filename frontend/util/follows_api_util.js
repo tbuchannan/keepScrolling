@@ -12,13 +12,6 @@ export const removeFollow = (user_id, id) => {
   });
 };
 
-export const getAllFollowees = (id) => {
-  return $.ajax({
-    method: 'GET',
-    url: `/api/users/${id}/follows`
-  });
-};
-
 export const getAllPotentialFollowees = (id) => {
   return $.ajax({
     method: 'GET',
