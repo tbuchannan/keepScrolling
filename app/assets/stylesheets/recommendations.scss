@@ -16,6 +16,7 @@
 .image-container{
   height: 37px;
   width: 37px;
+  border: 0;
   display: flex;
   justify-content: center;
 }
@@ -33,7 +34,7 @@
 }
 .radar-item {
   align-items: flex-end;
-  border-bottom: solid 1px #505E72;
+  border-bottom: solid 1px #445168;
   height: 53px;
   display: flex;
   justify-content: space-between;
