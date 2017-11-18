@@ -3,16 +3,11 @@ import { Link, withRouter } from 'react-router';
 import PostBarContainer from '../post_bar/post_bar_container';
 import PostContainer from '../post/post_container';
 import RecommendedContainer from '../recommended/recommended_container';
-
 import RadarContainer from '../radar/radar_container';
 
 
 
 class Dashboard extends React.Component {
-  constructor(props){
-    super(props);
-    }
-
   componentDidMount(){
     document.body.style.background = "#36465D";
     let header = document.getElementsByClassName('parent-div-unmount');
