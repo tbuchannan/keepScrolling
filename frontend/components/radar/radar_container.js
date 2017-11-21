@@ -7,9 +7,9 @@ import { selectAllPosts, selectRandomPost, selectAllFollowees } from '../../redu
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    followees: selectAllFollowees(state),
     randomPost: selectRandomPost(state),
-    current_user: state.session.currentUser,
-    folowees: selectAllFollowees(state)
+    current_user: state.session.currentUser
   };
 };
 
