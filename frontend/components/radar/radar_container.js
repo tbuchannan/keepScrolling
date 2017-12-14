@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     followees: selectAllFollowees(state),
     randomPost: selectRandomPost(state),
-    current_user: state.session.currentUser
+    currentUser: state.session.currentUser
   };
 };
 

@@ -5,32 +5,41 @@ import RecommendedItem from '../recommended/recommended_item';
 class Radar extends React.Component {
 
   componentDidMount(){
-    this.props.requestRandomPost(this.props.current_user.id);
-    this.props.requestAllFollowees(this.props.current_user.id);
+    this.props.requestRandomPost(this.props.currentUser.id);
   }
+
 
   render(){
+    let buttonHide = null;
+    if (this.props.followees[this.props.randomPost.id]){
+      buttonHide = 'hidden';
+    }
       return (
-      <div>
-        <span className="radar-title">RADAR</span>
-        <RecommendedItem
-          key={this.props.randomPost.author}
-          potential={this.props.randomPost}
-          current_user={this.props.current_user}
-          followUser={this.props.createFollow}/>
-          <div className="radar-post">
-            <div className="radar-photo">
-              <img src={this.props.randomPost.image_url} />
+      <ul>
+        <div>
+          <span className="radar-title">RADAR</span>
+          <RecommendedItem
+            key={this.props.randomPost.post_id}
+            potential={this.props.randomPost}
+            currentUser={this.props.currentUser}
+            createFollow={this.props.createFollow}
+            followable={true}
+            hidden={buttonHide}
+            followees={this.props.followees}
+            radar={true}
+            />
+          <div className={"radar-post"}>
+              <div className="radar-photo">
+                <img src={this.props.randomPost.image_url} />
+              </div>
             </div>
-          </div>
-          <div className="post-footer">
+            <div className="post-footer">
 
-          </div>
-      </div>
+            </div>
+        </div>
+      </ul>
     );
   }
-
-
 }
 
 
