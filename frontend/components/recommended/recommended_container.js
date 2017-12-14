@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import Recommended from './recommended';
 import { receiveFollow, requestAllFollowees, requestPotentialFollowees, createFollow } from '../../actions/follow_actions.js';
-import { selectAllPotentials } from '../../reducers/selector';
+import { selectAllPotentials, selectAllFollowees } from '../../reducers/selector';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     potentials: selectAllPotentials(state),
-    current_user: state.session.currentUser};
+    currentUser: state.session.currentUser,
+    followees: selectAllFollowees(state)
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
