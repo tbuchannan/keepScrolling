@@ -15,28 +15,28 @@ class Radar extends React.Component {
       buttonHide = 'hidden';
     }
       return (
-      <ul>
-        <div>
-          <span className="radar-title">RADAR</span>
-          <RecommendedItem
-            key={this.props.randomPost.post_id}
-            potential={this.props.randomPost}
-            currentUser={this.props.currentUser}
-            createFollow={this.props.createFollow}
-            followable={true}
-            hidden={buttonHide}
-            followees={this.props.followees}
-            radar={true}
+      <ul className="follow-feed">
+        <li>
+          <div>
+            <span className="radar-title">RADAR</span>
+            <RecommendedItem
+              key={this.props.randomPost.post_id}
+              potential={this.props.randomPost}
+              currentUser={this.props.currentUser}
+              createFollow={this.props.createFollow}
+              followable={true}
+              hidden={buttonHide}
+              followees={this.props.followees}
+              radar={true}
             />
-          <div className={"radar-post"}>
+            <div className={"radar-post"}>
               <div className="radar-photo">
                 <img src={this.props.randomPost.image_url} />
               </div>
             </div>
-            <div className="post-footer">
-
-            </div>
-        </div>
+            <div className="post-footer"></div>
+          </div>
+        </li>
       </ul>
     );
   }
