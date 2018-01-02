@@ -11,7 +11,7 @@ import VideoPostForm from '../post_forms/video_post_form';
 class PostBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {formVisible: false, form: ""};
+    this.state = {formVisible: false, form: null};
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,13 +22,13 @@ class PostBar extends React.Component {
   }
 
 render() {
-  if (this.state.formVisible){
+  if (this.state.formVisible || !this.props.session.currentUser){
     return this.state.form;
   } else {
       return (
         <div className="bar-container">
             <div className={'current-user-avatar'}>
-                <img src={current_user.avatar_url} />
+                <img src={this.props.session.currentUser.avatar_url} />
                 <div className="edit_profile"><span className="change">Change</span></div>
             </div>
             <div className="bar">
