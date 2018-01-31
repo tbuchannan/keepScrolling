@@ -387,7 +387,7 @@ doom_songs.each do |audio|
   posts << Post.new(
     author_id: doom.id,
     title: "#{adjectives.sample} AF",
-    body: "#{sentences.sample} #{adjectives.sample} #{song_synonym.sample}",
+    body: "#{sentences.sample}#{adjectives.sample} #{song_synonym.sample}",
     content: "audio",
     image: audio
   )
