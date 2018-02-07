@@ -4,6 +4,7 @@ import PostItem from './post_item';
 
 class PostIndex extends React.Component {
   componentDidMount(){
+    this.props.requestAllFollowees(this.props.currentUser.id);
     this.props.requestAllPosts(this.props.currentUser.id);
   }
   componentWillReceiveProps(nextProps){
