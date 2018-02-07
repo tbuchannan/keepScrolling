@@ -95,9 +95,10 @@ const mapStateToProps= (state, props) => {
     currentUser: state.session.currentUser
   };
 };
-  const mapDispatchToProps = dispatch => ({
-    createPost: post => dispatch(createPost(post))
-  });
+
+const mapDispatchToProps = dispatch => ({
+  createPost: post => dispatch(createPost(post))
+});
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TextPostForm);
