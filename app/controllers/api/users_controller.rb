@@ -12,18 +12,15 @@ class Api::UsersController < ApplicationController
   end
 
   def potential_followers
-    @user = User.find(params[:id])
-    @potentials = User.where.not(id: @user.followees.pluck(:followee_id)).where.not(id: @user.id).order('random()').limit(10)
+    @potentials = User.find(params[:id]).potential_followers
   end
 
   def followed_posts
-    @user = User.find(params[:id])
-    @posts = Post.where(author_id: @user.followees.pluck(:followee_id)).or(Post.where(author_id: @user.id)).order(:updated_at)
+    @posts = User.find(params[:id]).followed_posts
   end
 
   def random_post
-    @user = User.find(params[:id])
-    @post = Post.all.where.not(author_id: @user.id).where(content: "photo").sample
+    @post = User.find(params[:id]).random_post
   end
 
   def show

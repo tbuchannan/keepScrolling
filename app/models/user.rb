@@ -73,4 +73,17 @@ class User < ApplicationRecord
     self.save
     self.session_token
   end
+
+  def potential_followers
+    User.where.not(id: self.followees.pluck(:followee_id)).where.not(id: self.id).order('random()').limit(10)
+  end
+
+  def followed_posts
+    Post.where(author_id: self.followees.pluck(:followee_id)).or(Post.where(author_id: self.id)).order(:updated_at)
+  end
+
+  def random_post
+    Post.all.where.not(author_id: self.id).where(content: "photo").sample
+  end
+
 end
