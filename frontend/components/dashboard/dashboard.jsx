@@ -5,8 +5,6 @@ import PostContainer from '../post/post_container';
 import RecommendedContainer from '../recommended/recommended_container';
 import RadarContainer from '../radar/radar_container';
 
-
-
 class Dashboard extends React.Component {
   componentDidMount(){
     document.body.style.background = "#36465D";
