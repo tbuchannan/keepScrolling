@@ -29,7 +29,6 @@ render() {
         <div className="bar-container">
             <div className={'current-user-avatar'}>
                 <img src={this.props.session.currentUser.avatar_url} />
-                <div className="edit_profile"><span className="change">Change</span></div>
             </div>
             <div className="bar">
                 <TextPostForm onClick={this.handleSubmit} hidden={true}/>
