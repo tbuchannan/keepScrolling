@@ -18,7 +18,13 @@ class PostIndex extends React.Component {
       return (
       <div className = "feed">
         <ul>
-          {this.props.posts.reverse().map((post, idx) => <PostItem key={idx} removeOnePost={this.props.removeOnePost} post={post} currentUser={this.props.currentUser}/>) }
+          {this.props.posts.reverse().map((post, idx) =>
+            <PostItem
+              key={idx}
+              removeOnePost={this.props.removeOnePost}
+              post={post}
+              currentUser={this.props.currentUser}/>
+          )}
         </ul>
       </div>
     );
