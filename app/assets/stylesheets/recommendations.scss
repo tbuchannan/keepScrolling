@@ -34,13 +34,14 @@
 }
 .radar-item {
   align-items: flex-end;
-  border-bottom: solid 1px #445168;
   height: 53px;
   display: flex;
   justify-content: space-between;
 }
 
-
+.radarBottom {
+  border-bottom: solid 1px #445168;
+}
 
 .radar-username {
   color: rgba(255, 255, 255, 0.6);
