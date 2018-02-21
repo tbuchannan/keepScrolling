@@ -21,6 +21,7 @@ class RecommendedItem extends React.Component{
   }
   render(){
     let visibility;
+    let border = !this.props.radar ? " radarBottom" : "";
     if(this.props.followees[this.props.potential.id] || (this.state.hideButton && this.props.radar)) {
       visibility = "hidden";
     } else {
@@ -28,7 +29,7 @@ class RecommendedItem extends React.Component{
     }
     return (
       <li>
-        <div className="radar-item">
+        <div className={"radar-item" + border}>
           <div className= "radar-img-container">
             <div className="image-container">
               <img className="radar-img" src={this.props.potential.avatar} />
