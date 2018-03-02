@@ -14,8 +14,10 @@ On the database the posts are stored in one table, containing the columns for `i
 `image_file_size`, `image_updated_at`. Upon login  an API call is made to the database which grabs all of the posts from all of the users, and displays them. They are then held in a slice of the state named posts until the user's session is destroyed.
 
 Posts are rendered in one component, the PostItem component, which displays the author of the post, their profile picture, the post and options to delete the post. The PostItem Component is rendered on the, PostItemIndex Component which is rendered on the Dashboard component upon login. The UI is taken inspired by tumblr, for a clean minimalist look.
-
+### Dashboard
 ![image of dashboard](/docs/images/keepScrollingImage.png)
+
+### Post Picture
 ![image of creating picture post](/docs/images/picPost.png)
 
 ## Future Directions for the Project
