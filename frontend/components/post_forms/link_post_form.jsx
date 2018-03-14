@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import PostBar from '../post_bar/post_bar';
 import { createPost } from '../../actions/post_actions';
 import { hashHistory } from 'react-router';
-import DynamicLink from '../dynamic_link/dynamic_link';
 
 class LinkPostForm extends React.Component {
   constructor(props) {
