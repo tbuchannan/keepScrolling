@@ -487,7 +487,8 @@ entries = [
 ############################## Create Users ####################################
 
 50.times do |x|
-  username = faker_chars.sample.character + " #{x}"
+  name = faker_chars.sample.character.slice(0, 29)
+  username = name + " #{x}"
   user = User.create!(
     email: Faker::Internet.email(username),
     username: Faker::Internet.user_name(username).capitalize,
